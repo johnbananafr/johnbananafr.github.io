@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#f4efe5">
+<title>John Banana</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Mono:wght@400;500;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --purple:#ab04f9;
+    --purple-dark:#7800ad;
+    --purple-light:#d96cff;
+    --black:#080609;
+    --white:#fffdf8;
+    --cream:#f4efe5;
+    --red:#ff304f;
+    --yellow:#ffe600;
+    --ink:#171218;
+    --gray:#77717d;
+    --comic-font:"Bangers",Impact,sans-serif;
+    --body-font:Inter,Arial,sans-serif;
+    --mono:"DM Mono",monospace;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--body-font);
+    overflow-x:hidden;
+}
+
+::selection{
+    background:var(--purple);
+    color:white;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================================================
+   LIGHTWEIGHT TEXTURE
+   Static gradient instead of thousands of rendered dots
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    opacity:.045;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,0,0,.35) 0 1px,
+            transparent 1.2px
+        );
+    background-size:14px 14px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    z-index:20;
+}
+
+.logo-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.logo{
+    font-family:var(--comic-font);
+    font-size:30px;
+    color:var(--ink);
+    letter-spacing:.03em;
+    transform:rotate(-2deg);
+    text-shadow:3px 3px 0 var(--purple);
+    cursor:pointer;
+    user-select:none;
+    transition:transform .15s ease;
+}
+
+.logo:hover{
+    transform:rotate(-4deg) scale(1.04);
+}
+
+/* =========================================================
+   WATERMELON
+========================================================= */
+
+.watermelon{
+    margin-top:12px;
+    margin-left:3px;
+    width:47px;
+    height:47px;
+    border:3px solid var(--ink);
+    border-radius:50%;
+    background:
+        repeating-linear-gradient(
+            65deg,
+            #3d9e48 0 5px,
+            #277536 5px 10px
+        );
+    box-shadow:4px 4px 0 var(--ink);
+    cursor:pointer;
+    position:relative;
+    transition:transform .12s ease,box-shadow .12s ease;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.watermelon::after{
+    content:"🍉";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    transform:rotate(-8deg);
+}
+
+.watermelon:hover{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.watermelon:active{
+    transform:translate(3px,3px);
+    box-shadow:1px 1px 0 var(--ink);
+}
+
+.watermelon-count{
+    position:absolute;
+    left:55px;
+    top:7px;
+    white-space:nowrap;
+    background:var(--yellow);
+    border:3px solid var(--ink);
+    padding:5px 8px;
+    font-family:var(--mono);
+    font-size:8px;
+    font-weight:700;
+    box-shadow:3px 3px 0 var(--ink);
+    transform:rotate(2deg);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .12s ease;
+}
+
+.watermelon.show-count .watermelon-count{
+    opacity:1;
+}
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.header-text{
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:700;
+    background:var(--ink);
+    color:white;
+    padding:7px 10px;
+    transform:rotate(2deg);
+    text-transform:uppercase;
+}
+
+.youtube-mini{
+    background:var(--red);
+    color:white;
+    border:3px solid var(--ink);
+    padding:7px 11px;
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:700;
+    box-shadow:3px 3px 0 var(--ink);
+    transition:transform .12s ease,box-shadow .12s ease;
+}
+
+.youtube-mini:hover{
+    transform:translate(2px,2px) rotate(-2deg);
+    box-shadow:1px 1px 0 var(--ink);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 30px 70px;
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(171,4,249,.15),
+            transparent 28%
+        ),
+        var(--cream);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            rgba(171,4,249,.07) 0deg 8deg,
+            transparent 8deg 18deg
+        );
+    pointer-events:none;
+}
+
+.hero-content{
+    width:min(1250px,100%);
+    display:grid;
+    grid-template-columns:1fr 500px;
+    align-items:center;
+    gap:30px;
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero-title{
+    position:relative;
+    padding:25px;
+}
+
+.hero-title::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:4px solid var(--ink);
+    background:white;
+    z-index:-1;
+    transform:rotate(-1.5deg);
+    box-shadow:12px 12px 0 var(--purple);
+}
+
+.small-title{
+    font-family:var(--mono);
+    font-weight:700;
+    font-size:11px;
+    color:var(--purple);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    margin-bottom:15px;
+}
+
+h1{
+    margin:0;
+    font-family:var(--comic-font);
+    font-size:clamp(90px,12vw,175px);
+    line-height:.72;
+    letter-spacing:.015em;
+    transform:rotate(-2deg);
+    color:var(--ink);
+    text-shadow:6px 6px 0 var(--purple);
+    cursor:pointer;
+    user-select:none;
+}
+
+h1 span{
+    display:block;
+    color:var(--purple);
+    text-shadow:5px 5px 0 var(--ink);
+}
+
+.tagline{
+    max-width:470px;
+    margin:30px 0 0;
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:500;
+    line-height:1.7;
+    color:#48414b;
+}
+
+.tagline strong{
+    color:var(--purple);
+}
+
+/* =========================================================
+   SPEECH
+========================================================= */
+
+.speech{
+    position:absolute;
+    right:-25px;
+    top:-75px;
+    width:190px;
+    background:white;
+    border:4px solid var(--ink);
+    border-radius:50%;
+    padding:22px 18px;
+    text-align:center;
+    font-family:var(--comic-font);
+    font-size:24px;
+    line-height:.9;
+    transform:rotate(8deg);
+    box-shadow:6px 6px 0 var(--ink);
+    pointer-events:none;
+}
+
+.speech::after{
+    content:"";
+    position:absolute;
+    bottom:-25px;
+    left:35px;
+    width:35px;
+    height:35px;
+    background:white;
+    border-right:4px solid var(--ink);
+    border-bottom:4px solid var(--ink);
+    transform:rotate(35deg);
+}
+
+.speech span{
+    color:var(--purple);
+}
+
+/* =========================================================
+   BANANA STAGE
+========================================================= */
+
+.banana-stage{
+    position:relative;
+    width:100%;
+    height:610px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--purple);
+    border:5px solid var(--ink);
+    box-shadow:14px 14px 0 var(--ink);
+    overflow:visible;
+    transform:rotate(1.2deg);
+}
+
+.banana-stage::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.3) 1.5px,
+            transparent 1.7px
+        );
+    background-size:18px 18px;
+    opacity:.25;
+    pointer-events:none;
+}
+
+.banana-stage::after{
+    content:"BANANA!";
+    position:absolute;
+    bottom:-35px;
+    left:-25px;
+    font-family:var(--comic-font);
+    font-size:70px;
+    color:var(--yellow);
+    -webkit-text-stroke:4px var(--ink);
+    transform:rotate(-8deg);
+    z-index:4;
+    text-shadow:6px 6px 0 var(--ink);
+}
+
+/* =========================================================
+   ACTUAL CLICKABLE JOHN BANANA IMAGE
+========================================================= */
+
+.banana-stage img{
+    position:relative;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:20px;
+    filter:drop-shadow(10px 15px 0 rgba(0,0,0,.65));
+    z-index:2;
+    user-select:none;
+    -webkit-user-drag:none;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.banana-stage img:active{
+    transform:scale(.97);
+}
+
+.hero-caption{
+    position:absolute;
+    right:-35px;
+    bottom:70px;
+    z-index:5;
+    background:var(--yellow);
+    color:var(--ink);
+    border:4px solid var(--ink);
+    padding:10px 14px;
+    font-family:var(--comic-font);
+    font-size:20px;
+    transform:rotate(-5deg);
+    box-shadow:5px 5px 0 var(--ink);
+    pointer-events:none;
+}
+
+/* =========================================================
+   BANANA CLICK MESSAGE
+========================================================= */
+
+.banana-click-message{
+    position:absolute;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%) rotate(-2deg) scale(.9);
+    background:var(--yellow);
+    color:var(--ink);
+    border:4px solid var(--ink);
+    padding:9px 14px;
+    font-family:var(--comic-font);
+    font-size:22px;
+    box-shadow:5px 5px 0 var(--ink);
+    z-index:10;
+    opacity:0;
+    pointer-events:none;
+    white-space:nowrap;
+}
+
+.banana-click-message.show{
+    animation:bananaMessage .4s ease-out forwards;
+}
+
+@keyframes bananaMessage{
+    0%{
+        opacity:0;
+        transform:translateX(-50%) rotate(-8deg) scale(.7);
+    }
+    60%{
+        opacity:1;
+        transform:translateX(-50%) rotate(3deg) scale(1.08);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(-50%) rotate(-2deg) scale(1);
+    }
+}
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.scroll{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects{
+    position:relative;
+    padding:130px 25px;
+    background:var(--purple);
+    border-top:6px solid var(--ink);
+    border-bottom:6px solid var(--ink);
+    overflow:hidden;
+}
+
+.projects::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,0,0,.22) 1.5px,
+            transparent 1.7px
+        );
+    background-size:18px 18px;
+    opacity:.35;
+}
+
+.projects-inner{
+    width:min(950px,100%);
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.projects-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:50px;
+    transform:rotate(-1deg);
+}
+
+.projects-heading h2{
+    margin:0;
+    font-family:var(--comic-font);
+    font-size:80px;
+    line-height:.8;
+    color:white;
+    -webkit-text-stroke:3px var(--ink);
+    text-shadow:7px 7px 0 var(--ink);
+}
+
+.projects-heading p{
+    background:var(--yellow);
+    border:4px solid var(--ink);
+    padding:10px 14px;
+    font-family:var(--mono);
+    font-size:10px;
+    font-weight:700;
+    transform:rotate(3deg);
+    box-shadow:5px 5px 0 var(--ink);
+}
+
+/* =========================================================
+   PROJECT CARDS
+========================================================= */
+
+.project{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    padding:28px;
+    margin-bottom:22px;
+    background:white;
+    border:5px solid var(--ink);
+    box-shadow:8px 8px 0 var(--ink);
+    transition:transform .15s ease,box-shadow .15s ease;
+    overflow:hidden;
+}
+
+.project:nth-child(2){
+    transform:rotate(1deg);
+}
+
+.project:nth-child(3){
+    transform:rotate(-1deg);
+}
+
+.project:hover{
+    transform:translate(-4px,-4px) rotate(0deg);
+    box-shadow:13px 13px 0 var(--ink);
+}
+
+.project::before{
+    content:"";
+    position:absolute;
+    width:160px;
+    height:160px;
+    right:-55px;
+    bottom:-65px;
+    background:var(--purple);
+    border-radius:50%;
+    opacity:.15;
+}
+
+.project-left{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    position:relative;
+    z-index:2;
+}
+
+.project-number{
+    font-family:var(--comic-font);
+    font-size:36px;
+    color:var(--purple);
+    -webkit-text-stroke:1px var(--ink);
+    width:35px;
+}
+
+.project-name{
+    font-family:var(--comic-font);
+    font-size:39px;
+    letter-spacing:.02em;
+}
+
+.project-desc{
+    margin-top:3px;
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--gray);
+    font-weight:500;
+}
+
+.project-arrow{
+    font-family:var(--comic-font);
+    font-size:45px;
+    color:var(--purple);
+    position:relative;
+    z-index:2;
+    transition:transform .15s ease;
+}
+
+.project:hover .project-arrow{
+    transform:rotate(-10deg) scale(1.12);
+    color:var(--red);
+}
+
+/* =========================================================
+   YOUTUBE
+========================================================= */
+
+.youtube-section{
+    padding:100px 25px;
+    background:var(--cream);
+}
+
+.youtube-panel{
+    width:min(950px,100%);
+    margin:auto;
+    position:relative;
+    background:var(--red);
+    border:5px solid var(--ink);
+    box-shadow:12px 12px 0 var(--ink);
+    padding:45px;
+    overflow:hidden;
+    transform:rotate(.7deg);
+}
+
+.youtube-panel::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,0,0,.18) 1.5px,
+            transparent 1.7px
+        );
+    background-size:18px 18px;
+    opacity:.35;
+}
+
+.youtube-content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.youtube-title{
+    font-family:var(--comic-font);
+    font-size:clamp(45px,7vw,80px);
+    color:white;
+    line-height:.85;
+    -webkit-text-stroke:3px var(--ink);
+    text-shadow:6px 6px 0 var(--ink);
+}
+
+.youtube-sub{
+    margin-top:15px;
+    color:white;
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1.6;
+}
+
+.youtube-button{
+    flex-shrink:0;
+    background:white;
+    color:var(--ink);
+    border:5px solid var(--ink);
+    padding:17px 23px;
+    font-family:var(--comic-font);
+    font-size:25px;
+    box-shadow:7px 7px 0 var(--ink);
+    transition:.12s;
+}
+
+.youtube-button:hover{
+    transform:translate(4px,4px) rotate(-2deg);
+    box-shadow:3px 3px 0 var(--ink);
+}
+
+/* =========================================================
+   F40
+========================================================= */
+
+.f40-section{
+    padding:30px 18px 150px;
+    background:var(--cream);
+}
+
+.f40-wrap{
+    position:relative;
+    width:min(1250px,100%);
+    margin:auto;
+    border:6px solid var(--ink);
+    background:var(--ink);
+    box-shadow:15px 15px 0 var(--purple);
+    transform:rotate(-.6deg);
+    overflow:hidden;
+}
+
+.f40-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 45%,
+            rgba(255,255,255,.12) 45%,
+            rgba(255,255,255,.12) 47%,
+            transparent 47%
+        );
+    pointer-events:none;
+    z-index:2;
+}
+
+.f40-wrap img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.f40-info{
+    position:absolute;
+    left:25px;
+    bottom:25px;
+    z-index:5;
+    background:var(--yellow);
+    color:var(--ink);
+    border:4px solid var(--ink);
+    padding:9px 13px;
+    font-family:var(--mono);
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+    transform:rotate(-2deg);
+    box-shadow:4px 4px 0 var(--ink);
+}
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.caption-section{
+    padding:30px 25px 100px;
+    text-align:center;
+    background:var(--cream);
+}
+
+.stupid-caption{
+    display:inline-block;
+    font-family:var(--comic-font);
+    font-size:clamp(40px,7vw,75px);
+    color:var(--ink);
+    transform:rotate(-2deg);
+    text-shadow:5px 5px 0 var(--purple);
+}
+
+.caption-small{
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--gray);
+    margin-top:15px;
+}
+
+/* =========================================================
+   DANGER
+========================================================= */
+
+.danger-zone{
+    padding:70px 25px 100px;
+    background:var(--black);
+    text-align:center;
+    border-top:6px solid var(--ink);
+}
+
+.danger-label{
+    color:white;
+    font-family:var(--mono);
+    font-size:9px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    opacity:.5;
+}
+
+.dont-button{
+    position:relative;
+    display:inline-block;
+    background:var(--purple);
+    color:white;
+    border:5px solid white;
+    padding:18px 30px;
+    font-family:var(--comic-font);
+    font-size:38px;
+    letter-spacing:.04em;
+    cursor:pointer;
+    box-shadow:9px 9px 0 white;
+    transform:rotate(-2deg);
+    transition:background .12s ease,transform .12s ease,box-shadow .12s ease;
+}
+
+.dont-button:hover{
+    background:var(--red);
+    transform:rotate(2deg) scale(1.04);
+    box-shadow:12px 12px 0 white;
+}
+
+.dont-button:active{
+    transform:translate(7px,7px);
+    box-shadow:2px 2px 0 white;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    padding:45px 25px 70px;
+    background:var(--black);
+    text-align:center;
+    color:white;
+    border-top:1px solid #29232d;
+}
+
+.footer-big{
+    font-family:var(--comic-font);
+    font-size:35px;
+    color:var(--purple);
+    text-shadow:3px 3px 0 white;
+}
+
+.footer-small{
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:9px;
+    color:#66606b;
+}
+
+/* =========================================================
+   FULLSCREEN VIDEO
+========================================================= */
+
+.video-overlay{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:#000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+}
+
+.video-overlay.active{
+    display:flex;
+}
+
+.video-overlay video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#000;
+}
+
+/* =========================================================
+   MILD GLITCH MODE
+   No violent shaking / no rapid flashing
+========================================================= */
+
+body.glitching{
+    animation:mildGlitch .18s steps(2,end) infinite;
+}
+
+@keyframes mildGlitch{
+    0%,100%{
+        transform:translate(0,0);
+    }
+    50%{
+        transform:translate(1px,0);
+    }
+}
+
+body.glitching::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    pointer-events:none;
+    background:
+        linear-gradient(
+            transparent 0 48%,
+            rgba(171,4,249,.06) 50%,
+            transparent 52%
+        );
+    opacity:.35;
+}
+
+body.glitching .hero,
+body.glitching .projects,
+body.glitching .youtube-section,
+body.glitching .f40-section,
+body.glitching .danger-zone,
+body.glitching .footer{
+    filter:contrast(1.08) saturate(1.08);
+}
+
+body.glitching h1{
+    animation:textGlitch .25s steps(2,end) infinite;
+}
+
+@keyframes textGlitch{
+    0%,100%{
+        transform:rotate(-2deg);
+    }
+    50%{
+        transform:translate(2px,-1px) rotate(-2deg);
+    }
+}
+
+body.glitching .project{
+    animation:projectGlitch .3s steps(2,end) infinite;
+}
+
+@keyframes projectGlitch{
+    0%,100%{
+        transform:translate(0);
+    }
+    50%{
+        transform:translate(2px,-1px);
+    }
+}
+
+/* =========================================================
+   CURSED MESSAGE
+========================================================= */
+
+.cursed-message{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) scale(0);
+    z-index:2000;
+    width:min(600px,90%);
+    background:var(--black);
+    color:white;
+    border:7px solid var(--purple);
+    box-shadow:
+        15px 15px 0 red,
+        -15px -15px 0 cyan;
+    padding:35px;
+    text-align:center;
+    opacity:0;
+    pointer-events:none;
+}
+
+.cursed-message.active{
+    animation:cursedAppear .5s forwards;
+}
+
+@keyframes cursedAppear{
+    0%{
+        transform:translate(-50%,-50%) scale(0) rotate(8deg);
+        opacity:0;
+    }
+    70%{
+        transform:translate(-50%,-50%) scale(1.04) rotate(-1deg);
+        opacity:1;
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1) rotate(0);
+        opacity:1;
+    }
+}
+
+.cursed-message h2{
+    margin:0;
+    font-family:var(--comic-font);
+    font-size:65px;
+    color:var(--purple);
+    text-shadow:4px 4px 0 white;
+}
+
+.cursed-message p{
+    margin:15px 0 0;
+    font-family:var(--mono);
+    font-size:11px;
+    line-height:1.7;
+}
+
+.cursed-message button{
+    margin-top:25px;
+    background:white;
+    color:black;
+    border:4px solid white;
+    padding:10px 18px;
+    font-family:var(--mono);
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+    body::before{
+        opacity:.025;
+    }
+
+    header{
+        padding:16px;
+    }
+
+    .header-text{
+        display:none;
+    }
+
+    .logo{
+        font-size:25px;
+    }
+
+    .watermelon{
+        width:42px;
+        height:42px;
+        margin-top:10px;
+    }
+
+    .watermelon-count{
+        left:49px;
+        top:4px;
+        font-size:7px;
+    }
+
+    .youtube-mini{
+        padding:6px 8px;
+        font-size:9px;
+    }
+
+    .hero{
+        padding:100px 15px 70px;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .hero-title{
+        text-align:center;
+        padding:22px;
+    }
+
+    h1{
+        font-size:clamp(70px,20vw,125px);
+    }
+
+    .tagline{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .speech{
+        right:-5px;
+        top:-65px;
+        width:145px;
+        font-size:20px;
+        padding:17px;
+    }
+
+    .banana-stage{
+        height:480px;
+        width:calc(100% - 15px);
+        margin:auto;
+    }
+
+    .banana-stage::after{
+        font-size:52px;
+        left:5px;
+        bottom:-28px;
+    }
+
+    .banana-stage img{
+        padding:10px;
+    }
+
+    .hero-caption{
+        right:0;
+        bottom:30px;
+        font-size:16px;
+    }
+
+    .banana-click-message{
+        font-size:17px;
+        bottom:18px;
+    }
+
+    .projects{
+        padding:90px 15px;
+    }
+
+    .projects-heading{
+        display:block;
+    }
+
+    .projects-heading h2{
+        font-size:65px;
+    }
+
+    .projects-heading p{
+        display:inline-block;
+        margin-top:20px;
+    }
+
+    .project{
+        padding:22px 18px;
+    }
+
+    .project-left{
+        gap:10px;
+    }
+
+    .project-number{
+        font-size:27px;
+        width:25px;
+    }
+
+    .project-name{
+        font-size:32px;
+    }
+
+    .project-desc{
+        font-size:9px;
+    }
+
+    .youtube-section{
+        padding:80px 15px;
+    }
+
+    .youtube-panel{
+        padding:30px 20px;
+    }
+
+    .youtube-content{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .youtube-title{
+        font-size:55px;
+    }
+
+    .youtube-button{
+        font-size:22px;
+    }
+
+    .f40-section{
+        padding:20px 8px 100px;
+    }
+
+    .f40-info{
+        left:12px;
+        bottom:12px;
+        font-size:7px;
+    }
+
+    .dont-button{
+        font-size:30px;
+        padding:15px 22px;
+    }
+
+    .cursed-message{
+        width:calc(100% - 30px);
+        padding:25px 18px;
+    }
+
+    .cursed-message h2{
+        font-size:52px;
+    }
+
+    .cursed-message p{
+        font-size:10px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition:none!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="logo-wrap">
+
+        <div
+            class="logo"
+            id="logo"
+            title="click me"
+        >
+            JOHN BANANA
+        </div>
+
+        <div
+            class="watermelon"
+            id="watermelon"
+            title="you probably shouldn't press this either"
+        >
+            <div
+                class="watermelon-count"
+                id="watermelon-count"
+            >
+                YOU HAVE PRESSED THIS 0 TIMES
+            </div>
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <div class="header-text">
+            probably unnecessary
+        </div>
+
+        <a
+            class="youtube-mini"
+            href="https://www.youtube.com/@johnbananafr"
+            target="_blank"
+            rel="noopener"
+        >
+            ▶ YOUTUBE
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-title">
+
+            <div class="small-title">
+                somewhere on the internet
+            </div>
+
+            <h1 id="main-title">
+                JOHN
+                <span>BANANA</span>
+            </h1>
+
+            <p
+                class="tagline"
+                id="tagline"
+            >
+                A small collection of
+                <strong>games</strong>,
+                questionable ideas,
+                and things that probably
+                should've stayed in the drafts.
+            </p>
+
+            <div class="speech">
+                WAIT...
+                <br>
+                <span>HE MADE A WEBSITE?</span>
+            </div>
+
+        </div>
+
+
+        <div class="banana-stage">
+
+            <!-- THIS IS NOW THE CLICKABLE JOHN BANANA -->
+            <img
+                src="image.png"
+                alt="John Banana"
+                loading="eager"
+                decoding="async"
+                id="banana-image"
+            >
+
+            <div class="hero-caption">
+                HE'S JUST STANDING THERE.
+            </div>
+
+            <div
+                class="banana-click-message"
+                id="banana-click-message"
+            >
+                🍌 HEY.
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        ↓ there is more nonsense below ↓
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section
+    class="projects"
+    id="projects"
+>
+
+    <div class="projects-inner">
+
+        <div class="projects-heading">
+
+            <h2>
+                STUFF.
+            </h2>
+
+            <p>
+                100% real projects
+            </p>
+
+        </div>
+
+
+        <!-- SONGGUESSR -->
+
+        <a
+            href="https://johnbananafr.github.io/songguessr/"
+            class="project"
+        >
+
+            <div class="project-left">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div>
+
+                    <div class="project-name">
+                        SongGuessr
+                    </div>
+
+                    <div class="project-desc">
+                        Guess the song before the clip gets longer.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- SORTED -->
+
+        <a
+            href="https://johnbananafr.github.io/sorted/"
+            class="project"
+        >
+
+            <div class="project-left">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div>
+
+                    <div class="project-name">
+                        SORTED
+                    </div>
+
+                    <div class="project-desc">
+                        Put things in the correct order.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     YOUTUBE
+===================================================== -->
+
+<section class="youtube-section">
+
+    <div class="youtube-panel">
+
+        <div class="youtube-content">
+
+            <div>
+
+                <div class="youtube-title">
+                    THE<br>
+                    YOUTUBE<br>
+                    THING.
+                </div>
+
+                <div class="youtube-sub">
+                    videos • fruit • questionable decisions<br>
+                    somehow there is already a whole channel
+                </div>
+
+            </div>
+
+            <a
+                href="https://www.youtube.com/@johnbananafr"
+                target="_blank"
+                rel="noopener"
+                class="youtube-button"
+            >
+                ▶ WATCH IT
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     F40
+===================================================== -->
+
+<section class="f40-section">
+
+    <div class="f40-wrap">
+
+        <img
+            src="f40.png"
+            alt="John Banana with a Ferrari F40"
+            loading="lazy"
+            decoding="async"
+        >
+
+        <div class="f40-info">
+            JOHN BANANA
+            &nbsp; / &nbsp;
+            F40
+            &nbsp; / &nbsp;
+            NO FURTHER QUESTIONS
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RANDOM CAPTION
+===================================================== -->
+
+<section class="caption-section">
+
+    <div class="stupid-caption">
+        THIS WAS A TERRIBLE IDEA.
+    </div>
+
+    <div class="caption-small">
+        anyway here's the website
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DO NOT PRESS
+===================================================== -->
+
+<section class="danger-zone">
+
+    <div class="danger-label">
+        seriously. there is absolutely no reason to click this.
+    </div>
+
+    <button
+        class="dont-button"
+        id="dont-button"
+    >
+        DO NOT PRESS
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     FULLSCREEN VIDEO
+===================================================== -->
+
+<div
+    class="video-overlay"
+    id="video-overlay"
+>
+
+    <video
+        id="scene-video"
+        src="scene.mp4"
+        playsinline
+        preload="auto"
+    ></video>
+
+</div>
+
+
+<!-- =====================================================
+     CURSED MESSAGE
+===================================================== -->
+
+<div
+    class="cursed-message"
+    id="cursed-message"
+>
+
+    <h2>
+        OH NO.
+    </h2>
+
+    <p>
+        YOU PRESSED THE BUTTON.
+        <br><br>
+        WHY WOULD YOU DO THAT.
+        <br><br>
+        JOHN BANANA IS CURRENTLY EXPERIENCING
+        UNFORESEEN TECHNICAL DIFFICULTIES.
+    </p>
+
+    <button id="escape-button">
+        UNDO MY MISTAKE
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-big">
+        JOHN BANANA
+    </div>
+
+    <div
+        class="footer-small"
+        id="footer-small"
+    >
+        more stuff eventually.
+        probably.
+    </div>
+
+</footer>
+
+
+<script>
+"use strict";
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const dontButton =
+    document.getElementById("dont-button");
+
+const cursedMessage =
+    document.getElementById("cursed-message");
+
+const escapeButton =
+    document.getElementById("escape-button");
+
+const videoOverlay =
+    document.getElementById("video-overlay");
+
+const sceneVideo =
+    document.getElementById("scene-video");
+
+const mainTitle =
+    document.getElementById("main-title");
+
+const tagline =
+    document.getElementById("tagline");
+
+const footerSmall =
+    document.getElementById("footer-small");
+
+const hero =
+    document.querySelector(".hero");
+
+const watermelon =
+    document.getElementById("watermelon");
+
+const watermelonCount =
+    document.getElementById("watermelon-count");
+
+const bananaImage =
+    document.getElementById("banana-image");
+
+const bananaMessage =
+    document.getElementById("banana-click-message");
+
+const logo =
+    document.getElementById("logo");
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let cursed = false;
+let bananaClicks = 0;
+let watermelonClicks = 0;
+let videoTimer = null;
+let curseTimers = [];
+
+
+/* =========================================================
+   WATERMELON
+   LOCAL ONLY 🍉
+========================================================= */
+
+watermelon.addEventListener("click", () => {
+
+    watermelonClicks++;
+
+    watermelon.classList.add("show-count");
+
+    watermelonCount.textContent =
+        `YOU HAVE PRESSED THIS ${watermelonClicks} TIME${watermelonClicks === 1 ? "" : "S"}`;
+
+    clearTimeout(watermelon.hideTimer);
+
+    watermelon.hideTimer =
+        setTimeout(() => {
+            watermelon.classList.remove("show-count");
+        },2200);
+
+});
+
+
+/* =========================================================
+   CLICK THE ACTUAL JOHN BANANA IMAGE 🍌
+   MESSAGES LOOP FOREVER
+========================================================= */
+
+const bananaMessages = [
+    "🍌 HEY.",
+    "🍌 STOP CLICKING ME.",
+    "🍌 WHY.",
+    "🍌 I SAID STOP.",
+    "🍌 THIS IS GETTING CONCERNING.",
+    "🍌 YOU HAVE TOO MUCH FREE TIME.",
+    "🍌 JOHN BANANA HAS NOTICED YOU.",
+    "🍌 OKAY THAT'S ENOUGH.",
+    "🍌 SERIOUSLY.",
+    "🍌 BANANA."
+];
+
+function bananaEasterEgg(){
+
+    bananaClicks++;
+
+    /*
+        Modulo makes the messages loop forever.
+        1 → message 1
+        10 → message 10
+        11 → message 1 again
+        etc.
+    */
+
+    const message =
+        bananaMessages[
+            (bananaClicks - 1) % bananaMessages.length
+        ];
+
+    bananaMessage.textContent = message;
+
+    bananaMessage.classList.remove("show");
+
+    /*
+        Force animation restart without creating
+        a permanent animation loop.
+    */
+
+    void bananaMessage.offsetWidth;
+
+    bananaMessage.classList.add("show");
+
+}
+
+
+/* Actual image */
+bananaImage.addEventListener(
+    "click",
+    bananaEasterEgg
+);
+
+
+/* Logo also works */
+logo.addEventListener(
+    "click",
+    bananaEasterEgg
+);
+
+
+/* Big JOHN BANANA title also works */
+mainTitle.addEventListener(
+    "click",
+    bananaEasterEgg
+);
+
+
+/* =========================================================
+   OPEN VIDEO
+========================================================= */
+
+async function playScene(){
+
+    videoOverlay.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    sceneVideo.currentTime = 0;
+
+    clearTimeout(videoTimer);
+
+    try{
+
+        await sceneVideo.play();
+
+    }catch(error){
+
+        console.warn(
+            "scene.mp4 could not autoplay:",
+            error
+        );
+
+    }
+
+    /*
+        Safety fallback.
+
+        This is deliberately generous so the video gets
+        time to finish normally.
+
+        The ended event is what normally closes it.
+    */
+
+    videoTimer =
+        setTimeout(
+            closeScene,
+            600000
+        );
+
+}
+
+
+/* =========================================================
+   VIDEO ENDED
+========================================================= */
+
+sceneVideo.addEventListener(
+    "ended",
+    closeScene
+);
+
+
+/* =========================================================
+   CLOSE VIDEO
+========================================================= */
+
+function closeScene(){
+
+    clearTimeout(videoTimer);
+
+    sceneVideo.pause();
+
+    videoOverlay.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+    if(document.fullscreenElement){
+
+        document
+            .exitFullscreen()
+            .catch(() => {});
+
+    }
+
+    /*
+        IMPORTANT:
+
+        The video is completely finished FIRST.
+
+        Only now do the effects begin.
+    */
+
+    triggerCurse();
+
+}
+
+
+/* =========================================================
+   DO NOT PRESS
+========================================================= */
+
+dontButton.addEventListener("click", async () => {
+
+    if(cursed) return;
+
+    cursed = true;
+
+    /*
+        Absolutely NO effects while video plays.
+    */
+
+    await playScene();
+
+});
+
+
+/* =========================================================
+   CURSE EFFECT
+   Runs for exactly ~5 seconds
+========================================================= */
+
+function triggerCurse(){
+
+    document.body.classList.add("glitching");
+
+    dontButton.textContent =
+        "YOU PRESSED IT";
+
+
+    /* Mild visual change */
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            hero.style.transform =
+                "skewX(-1deg)";
+
+        },300)
+    );
+
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            mainTitle.innerHTML =
+                'JOHN<br><span>BANANA?</span>';
+
+        },700)
+    );
+
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            tagline.innerHTML =
+                "something has gone <strong>VERY WRONG.</strong>";
+
+        },1000)
+    );
+
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            footerSmall.textContent =
+                "please leave";
+
+        },1300)
+    );
+
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            cursedMessage.classList.add("active");
+
+        },1700)
+    );
+
+
+    /*
+        EXACTLY 5 seconds after the effects begin:
+        everything stops.
+    */
+
+    curseTimers.push(
+        setTimeout(() => {
+
+            stopCurseEffects();
+
+        },5000)
+    );
+
+}
+
+
+/* =========================================================
+   STOP ALL EFFECTS
+========================================================= */
+
+function stopCurseEffects(){
+
+    document.body.classList.remove("glitching");
+
+    hero.style.transform = "";
+
+}
+
+
+/* =========================================================
+   RESET EVERYTHING
+========================================================= */
+
+function resetEverything(){
+
+    curseTimers.forEach(clearTimeout);
+
+    curseTimers = [];
+
+    cursed = false;
+
+    cursedMessage.classList.remove("active");
+
+    stopCurseEffects();
+
+    mainTitle.innerHTML =
+        'JOHN<br><span>BANANA</span>';
+
+    tagline.innerHTML =
+        "A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.";
+
+    footerSmall.textContent =
+        "more stuff eventually. probably.";
+
+    dontButton.textContent =
+        "DO NOT PRESS";
+
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+escapeButton.addEventListener(
+    "click",
+    resetEverything
+);
+
+
+/* =========================================================
+   VIDEO CLEANUP
+========================================================= */
+
+sceneVideo.addEventListener(
+    "error",
+    () => {
+
+        console.warn(
+            "Could not load scene.mp4"
+        );
+
+        closeScene();
+
+    }
+);
+
+
+/* =========================================================
+   CONSOLE
+========================================================= */
+
+console.log(`
+🍌 JOHN BANANA
+
+You found the console.
+
+There is still nothing useful here.
+
+You could've been playing SongGuessr.
+
+Why are you like this.
+`);
+
+</script>
+
+</body>
+</html>
