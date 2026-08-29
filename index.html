@@ -1,10 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#f4efe5">
+<meta name="theme-color" content="#ab04f9">
 <marquee><title>the weird internet place</title></marquee>
+
+<link rel="icon" type="image/png" href="banana.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +32,7 @@
 
 *{
     box-sizing:border-box;
+    cursor:url("./pointing.png") 8 2,auto !important;
 }
 
 html{
@@ -41,6 +45,16 @@ body{
     color:var(--ink);
     font-family:var(--body-font);
     overflow-x:hidden;
+}
+
+button,
+button *,
+a,
+a *,
+input,
+select,
+textarea{
+    cursor:url("./pointing.png") 8 2,pointer !important;
 }
 
 ::selection{
@@ -59,7 +73,6 @@ button{
 
 /* =========================================================
    LIGHTWEIGHT TEXTURE
-   Static gradient instead of thousands of rendered dots
 ========================================================= */
 
 body::before{
@@ -107,7 +120,6 @@ header{
     letter-spacing:.03em;
     transform:rotate(-2deg);
     text-shadow:3px 3px 0 var(--purple);
-    cursor:pointer;
     user-select:none;
     transition:transform .15s ease;
 }
@@ -134,7 +146,6 @@ header{
             #277536 5px 10px
         );
     box-shadow:4px 4px 0 var(--ink);
-    cursor:pointer;
     position:relative;
     transition:transform .12s ease,box-shadow .12s ease;
     -webkit-tap-highlight-color:transparent;
@@ -307,7 +318,6 @@ h1{
     transform:rotate(-2deg);
     color:var(--ink);
     text-shadow:6px 6px 0 var(--purple);
-    cursor:pointer;
     user-select:none;
 }
 
@@ -417,10 +427,6 @@ h1 span{
     text-shadow:6px 6px 0 var(--ink);
 }
 
-/* =========================================================
-   ACTUAL CLICKABLE JOHN BANANA IMAGE
-========================================================= */
-
 .banana-stage img{
     position:relative;
     width:100%;
@@ -431,7 +437,6 @@ h1 span{
     z-index:2;
     user-select:none;
     -webkit-user-drag:none;
-    cursor:pointer;
     -webkit-tap-highlight-color:transparent;
 }
 
@@ -600,6 +605,10 @@ h1 span{
 
 .project:nth-child(3){
     transform:rotate(-1deg);
+}
+
+.project:nth-child(4){
+    transform:rotate(1.2deg);
 }
 
 .project:hover{
@@ -857,7 +866,6 @@ h1 span{
     font-family:var(--comic-font);
     font-size:38px;
     letter-spacing:.04em;
-    cursor:pointer;
     box-shadow:9px 9px 0 white;
     transform:rotate(-2deg);
     transition:background .12s ease,transform .12s ease,box-shadow .12s ease;
@@ -927,7 +935,6 @@ h1 span{
 
 /* =========================================================
    MILD GLITCH MODE
-   No violent shaking / no rapid flashing
 ========================================================= */
 
 body.glitching{
@@ -1058,7 +1065,6 @@ body.glitching .project{
     padding:10px 18px;
     font-family:var(--mono);
     font-weight:700;
-    cursor:pointer;
 }
 
 /* =========================================================
@@ -1244,6 +1250,10 @@ body.glitching .project{
     .cursed-message p{
         font-size:10px;
     }
+
+    .project-name{
+        line-height:1;
+    }
 }
 
 /* =========================================================
@@ -1358,7 +1368,6 @@ body.glitching .project{
 
         <div class="banana-stage">
 
-            <!-- THIS IS NOW THE CLICKABLE JOHN BANANA -->
             <img
                 src="image.png"
                 alt="John Banana"
@@ -1468,6 +1477,40 @@ body.glitching .project{
 
                     <div class="project-desc">
                         Put things in the correct order.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </a>
+
+
+        <!-- HOW NORMAL ARE YOU? -->
+
+        <a
+            href="https://johnbananafr.github.io/normal/"
+            class="project"
+        >
+
+            <div class="project-left">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <div>
+
+                    <div class="project-name">
+                        HOW NORMAL ARE YOU?
+                    </div>
+
+                    <div class="project-desc">
+                        Find out how normal you actually are.
                     </div>
 
                 </div>
@@ -1723,7 +1766,6 @@ let curseTimers = [];
 
 /* =========================================================
    WATERMELON
-   LOCAL ONLY 🍉
 ========================================================= */
 
 watermelon.addEventListener("click", () => {
@@ -1746,8 +1788,7 @@ watermelon.addEventListener("click", () => {
 
 
 /* =========================================================
-   CLICK THE ACTUAL JOHN BANANA IMAGE 🍌
-   MESSAGES LOOP FOREVER
+   CLICK JOHN BANANA
 ========================================================= */
 
 const bananaMessages = [
@@ -1767,14 +1808,6 @@ function bananaEasterEgg(){
 
     bananaClicks++;
 
-    /*
-        Modulo makes the messages loop forever.
-        1 → message 1
-        10 → message 10
-        11 → message 1 again
-        etc.
-    */
-
     const message =
         bananaMessages[
             (bananaClicks - 1) % bananaMessages.length
@@ -1783,11 +1816,6 @@ function bananaEasterEgg(){
     bananaMessage.textContent = message;
 
     bananaMessage.classList.remove("show");
-
-    /*
-        Force animation restart without creating
-        a permanent animation loop.
-    */
 
     void bananaMessage.offsetWidth;
 
@@ -1810,7 +1838,7 @@ logo.addEventListener(
 );
 
 
-/* Big JOHN BANANA title also works */
+/* Big title also works */
 mainTitle.addEventListener(
     "click",
     bananaEasterEgg
@@ -1843,15 +1871,6 @@ async function playScene(){
         );
 
     }
-
-    /*
-        Safety fallback.
-
-        This is deliberately generous so the video gets
-        time to finish normally.
-
-        The ended event is what normally closes it.
-    */
 
     videoTimer =
         setTimeout(
@@ -1894,14 +1913,6 @@ function closeScene(){
 
     }
 
-    /*
-        IMPORTANT:
-
-        The video is completely finished FIRST.
-
-        Only now do the effects begin.
-    */
-
     triggerCurse();
 
 }
@@ -1917,10 +1928,6 @@ dontButton.addEventListener("click", async () => {
 
     cursed = true;
 
-    /*
-        Absolutely NO effects while video plays.
-    */
-
     await playScene();
 
 });
@@ -1928,7 +1935,6 @@ dontButton.addEventListener("click", async () => {
 
 /* =========================================================
    CURSE EFFECT
-   Runs for exactly ~5 seconds
 ========================================================= */
 
 function triggerCurse(){
@@ -1938,8 +1944,6 @@ function triggerCurse(){
     dontButton.textContent =
         "YOU PRESSED IT";
 
-
-    /* Mild visual change */
 
     curseTimers.push(
         setTimeout(() => {
@@ -1990,11 +1994,6 @@ function triggerCurse(){
     );
 
 
-    /*
-        EXACTLY 5 seconds after the effects begin:
-        everything stops.
-    */
-
     curseTimers.push(
         setTimeout(() => {
 
@@ -2007,7 +2006,7 @@ function triggerCurse(){
 
 
 /* =========================================================
-   STOP ALL EFFECTS
+   STOP EFFECTS
 ========================================================= */
 
 function stopCurseEffects(){
@@ -2098,3 +2097,4 @@ Why are you like this.
 
 </body>
 </html>
+```
