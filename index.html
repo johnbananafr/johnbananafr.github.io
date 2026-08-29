@@ -1,18 +1,24 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#ab04f9">
-<marquee><title>the weird internet place</title></marquee>
 
-<link rel="icon" type="image/png" href="banana.png">
+<title>John Banana</title>
+
+<link rel="icon" href="./banana.png?v=2" type="image/png">
+<link rel="shortcut icon" href="./banana.png?v=2" type="image/png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Mono:wght@400;500;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
     --purple:#ab04f9;
     --purple-dark:#7800ad;
@@ -24,14 +30,21 @@
     --yellow:#ffe600;
     --ink:#171218;
     --gray:#77717d;
+
     --comic-font:"Bangers",Impact,sans-serif;
     --body-font:Inter,Arial,sans-serif;
     --mono:"DM Mono",monospace;
 }
 
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 *{
     box-sizing:border-box;
-    cursor:url("./pointing.png") 8 2,auto !important;
+
+    cursor:url("pointing.png") 8 2,auto;
 }
 
 html{
@@ -49,11 +62,8 @@ body{
 button,
 button *,
 a,
-a *,
-input,
-select,
-textarea{
-    cursor:url("./pointing.png") 8 2,pointer !important;
+a *{
+    cursor:url("pointing.png") 8 2,pointer !important;
 }
 
 ::selection{
@@ -70,8 +80,9 @@ button{
     font-family:inherit;
 }
 
+
 /* =========================================================
-   LIGHTWEIGHT TEXTURE
+   TEXTURE
 ========================================================= */
 
 body::before{
@@ -81,14 +92,17 @@ body::before{
     pointer-events:none;
     z-index:999;
     opacity:.045;
+
     background:
         radial-gradient(
             circle at 20% 20%,
             rgba(0,0,0,.35) 0 1px,
             transparent 1.2px
         );
+
     background-size:14px 14px;
 }
+
 
 /* =========================================================
    HEADER
@@ -99,10 +113,13 @@ header{
     top:0;
     left:0;
     width:100%;
+
     padding:22px 28px;
+
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
+
     z-index:20;
 }
 
@@ -117,15 +134,22 @@ header{
     font-size:30px;
     color:var(--ink);
     letter-spacing:.03em;
+
     transform:rotate(-2deg);
+
     text-shadow:3px 3px 0 var(--purple);
+
+    cursor:url("pointing.png") 8 2,pointer !important;
+
     user-select:none;
+
     transition:transform .15s ease;
 }
 
 .logo:hover{
     transform:rotate(-4deg) scale(1.04);
 }
+
 
 /* =========================================================
    WATERMELON
@@ -134,30 +158,45 @@ header{
 .watermelon{
     margin-top:12px;
     margin-left:3px;
+
     width:47px;
     height:47px;
+
     border:3px solid var(--ink);
     border-radius:50%;
+
     background:
         repeating-linear-gradient(
             65deg,
             #3d9e48 0 5px,
             #277536 5px 10px
         );
+
     box-shadow:4px 4px 0 var(--ink);
+
     position:relative;
-    transition:transform .12s ease,box-shadow .12s ease;
+
+    cursor:url("pointing.png") 8 2,pointer !important;
+
+    transition:
+        transform .12s ease,
+        box-shadow .12s ease;
+
     -webkit-tap-highlight-color:transparent;
 }
 
 .watermelon::after{
     content:"🍉";
+
     position:absolute;
     inset:0;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     font-size:27px;
+
     transform:rotate(-8deg);
 }
 
@@ -172,25 +211,36 @@ header{
 
 .watermelon-count{
     position:absolute;
+
     left:55px;
     top:7px;
+
     white-space:nowrap;
+
     background:var(--yellow);
+
     border:3px solid var(--ink);
+
     padding:5px 8px;
+
     font-family:var(--mono);
     font-size:8px;
     font-weight:700;
+
     box-shadow:3px 3px 0 var(--ink);
+
     transform:rotate(2deg);
+
     opacity:0;
     pointer-events:none;
+
     transition:opacity .12s ease;
 }
 
 .watermelon.show-count .watermelon-count{
     opacity:1;
 }
+
 
 /* =========================================================
    HEADER RIGHT
@@ -206,23 +256,34 @@ header{
     font-family:var(--mono);
     font-size:9px;
     font-weight:700;
+
     background:var(--ink);
     color:white;
+
     padding:7px 10px;
+
     transform:rotate(2deg);
+
     text-transform:uppercase;
 }
 
 .youtube-mini{
     background:var(--red);
     color:white;
+
     border:3px solid var(--ink);
+
     padding:7px 11px;
+
     font-family:var(--mono);
     font-size:10px;
     font-weight:700;
+
     box-shadow:3px 3px 0 var(--ink);
-    transition:transform .12s ease,box-shadow .12s ease;
+
+    transition:
+        transform .12s ease,
+        box-shadow .12s ease;
 }
 
 .youtube-mini:hover{
@@ -230,18 +291,23 @@ header{
     box-shadow:1px 1px 0 var(--ink);
 }
 
+
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
     min-height:100vh;
+
     position:relative;
     overflow:hidden;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding:100px 30px 70px;
+
     background:
         radial-gradient(
             circle at 80% 40%,
@@ -253,30 +319,43 @@ header{
 
 .hero::before{
     content:"";
+
     position:absolute;
+
     width:900px;
     height:900px;
+
     left:50%;
     top:50%;
+
     transform:translate(-50%,-50%);
+
     background:
         repeating-conic-gradient(
             from 0deg,
             rgba(171,4,249,.07) 0deg 8deg,
             transparent 8deg 18deg
         );
+
     pointer-events:none;
 }
 
 .hero-content{
     width:min(1250px,100%);
+
     display:grid;
+
     grid-template-columns:1fr 500px;
+
     align-items:center;
+
     gap:30px;
+
     position:relative;
+
     z-index:2;
 }
+
 
 /* =========================================================
    HERO TITLE
@@ -289,12 +368,18 @@ header{
 
 .hero-title::before{
     content:"";
+
     position:absolute;
     inset:0;
+
     border:4px solid var(--ink);
+
     background:white;
+
     z-index:-1;
+
     transform:rotate(-1.5deg);
+
     box-shadow:12px 12px 0 var(--purple);
 }
 
@@ -302,37 +387,61 @@ header{
     font-family:var(--mono);
     font-weight:700;
     font-size:11px;
+
     color:var(--purple);
+
     text-transform:uppercase;
+
     letter-spacing:.12em;
+
     margin-bottom:15px;
 }
 
 h1{
     margin:0;
+
     font-family:var(--comic-font);
+
     font-size:clamp(90px,12vw,175px);
+
     line-height:.72;
+
     letter-spacing:.015em;
+
     transform:rotate(-2deg);
+
     color:var(--ink);
-    text-shadow:6px 6px 0 var(--purple);
+
+    text-shadow:
+        6px 6px 0 var(--purple);
+
+    cursor:url("pointing.png") 8 2,pointer !important;
+
     user-select:none;
 }
 
 h1 span{
     display:block;
+
     color:var(--purple);
-    text-shadow:5px 5px 0 var(--ink);
+
+    text-shadow:
+        5px 5px 0 var(--ink);
 }
 
 .tagline{
     max-width:470px;
+
     margin:30px 0 0;
+
     font-family:var(--mono);
+
     font-size:12px;
+
     font-weight:500;
+
     line-height:1.7;
+
     color:#48414b;
 }
 
@@ -340,38 +449,58 @@ h1 span{
     color:var(--purple);
 }
 
+
 /* =========================================================
    SPEECH
 ========================================================= */
 
 .speech{
     position:absolute;
+
     right:-25px;
     top:-75px;
+
     width:190px;
+
     background:white;
+
     border:4px solid var(--ink);
+
     border-radius:50%;
+
     padding:22px 18px;
+
     text-align:center;
+
     font-family:var(--comic-font);
+
     font-size:24px;
+
     line-height:.9;
+
     transform:rotate(8deg);
+
     box-shadow:6px 6px 0 var(--ink);
+
     pointer-events:none;
 }
 
 .speech::after{
     content:"";
+
     position:absolute;
+
     bottom:-25px;
     left:35px;
+
     width:35px;
     height:35px;
+
     background:white;
+
     border-right:4px solid var(--ink);
     border-bottom:4px solid var(--ink);
+
     transform:rotate(35deg);
 }
 
@@ -379,63 +508,100 @@ h1 span{
     color:var(--purple);
 }
 
+
 /* =========================================================
    BANANA STAGE
 ========================================================= */
 
 .banana-stage{
     position:relative;
+
     width:100%;
     height:610px;
+
     display:flex;
+
     justify-content:center;
     align-items:center;
+
     background:var(--purple);
+
     border:5px solid var(--ink);
+
     box-shadow:14px 14px 0 var(--ink);
+
     overflow:visible;
+
     transform:rotate(1.2deg);
 }
 
 .banana-stage::before{
     content:"";
+
     position:absolute;
     inset:0;
+
     background:
         radial-gradient(
             circle,
             rgba(255,255,255,.3) 1.5px,
             transparent 1.7px
         );
+
     background-size:18px 18px;
+
     opacity:.25;
+
     pointer-events:none;
 }
 
 .banana-stage::after{
     content:"BANANA!";
+
     position:absolute;
+
     bottom:-35px;
     left:-25px;
+
     font-family:var(--comic-font);
+
     font-size:70px;
+
     color:var(--yellow);
+
     -webkit-text-stroke:4px var(--ink);
+
     transform:rotate(-8deg);
+
     z-index:4;
-    text-shadow:6px 6px 0 var(--ink);
+
+    text-shadow:
+        6px 6px 0 var(--ink);
 }
 
 .banana-stage img{
     position:relative;
+
     width:100%;
     height:100%;
+
     object-fit:contain;
+
     padding:20px;
-    filter:drop-shadow(10px 15px 0 rgba(0,0,0,.65));
+
+    filter:
+        drop-shadow(
+            10px 15px 0 rgba(0,0,0,.65)
+        );
+
     z-index:2;
+
     user-select:none;
+
     -webkit-user-drag:none;
+
+    cursor:url("pointing.png") 8 2,pointer !important;
+
     -webkit-tap-highlight-color:transparent;
 }
 
@@ -445,19 +611,31 @@ h1 span{
 
 .hero-caption{
     position:absolute;
+
     right:-35px;
     bottom:70px;
+
     z-index:5;
+
     background:var(--yellow);
+
     color:var(--ink);
+
     border:4px solid var(--ink);
+
     padding:10px 14px;
+
     font-family:var(--comic-font);
+
     font-size:20px;
+
     transform:rotate(-5deg);
+
     box-shadow:5px 5px 0 var(--ink);
+
     pointer-events:none;
 }
+
 
 /* =========================================================
    BANANA CLICK MESSAGE
@@ -465,19 +643,35 @@ h1 span{
 
 .banana-click-message{
     position:absolute;
+
     left:50%;
     bottom:25px;
-    transform:translateX(-50%) rotate(-2deg) scale(.9);
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg)
+        scale(.9);
+
     background:var(--yellow);
+
     color:var(--ink);
+
     border:4px solid var(--ink);
+
     padding:9px 14px;
+
     font-family:var(--comic-font);
+
     font-size:22px;
+
     box-shadow:5px 5px 0 var(--ink);
+
     z-index:10;
+
     opacity:0;
+
     pointer-events:none;
+
     white-space:nowrap;
 }
 
@@ -486,19 +680,35 @@ h1 span{
 }
 
 @keyframes bananaMessage{
+
     0%{
         opacity:0;
-        transform:translateX(-50%) rotate(-8deg) scale(.7);
+
+        transform:
+            translateX(-50%)
+            rotate(-8deg)
+            scale(.7);
     }
+
     60%{
         opacity:1;
-        transform:translateX(-50%) rotate(3deg) scale(1.08);
+
+        transform:
+            translateX(-50%)
+            rotate(3deg)
+            scale(1.08);
     }
+
     100%{
         opacity:1;
-        transform:translateX(-50%) rotate(-2deg) scale(1);
+
+        transform:
+            translateX(-50%)
+            rotate(-2deg)
+            scale(1);
     }
 }
+
 
 /* =========================================================
    SCROLL
@@ -506,15 +716,23 @@ h1 span{
 
 .scroll{
     position:absolute;
+
     bottom:20px;
     left:50%;
+
     transform:translateX(-50%);
+
     font-family:var(--mono);
+
     font-size:9px;
+
     font-weight:700;
+
     text-transform:uppercase;
+
     letter-spacing:.15em;
 }
+
 
 /* =========================================================
    PROJECTS
@@ -522,62 +740,92 @@ h1 span{
 
 .projects{
     position:relative;
+
     padding:130px 25px;
+
     background:var(--purple);
+
     border-top:6px solid var(--ink);
     border-bottom:6px solid var(--ink);
+
     overflow:hidden;
 }
 
 .projects::before{
     content:"";
+
     position:absolute;
     inset:0;
+
     background:
         radial-gradient(
             circle,
             rgba(0,0,0,.22) 1.5px,
             transparent 1.7px
         );
+
     background-size:18px 18px;
+
     opacity:.35;
 }
 
 .projects-inner{
     width:min(950px,100%);
+
     margin:auto;
+
     position:relative;
+
     z-index:2;
 }
 
 .projects-heading{
     display:flex;
+
     justify-content:space-between;
+
     align-items:flex-end;
+
     margin-bottom:50px;
+
     transform:rotate(-1deg);
 }
 
 .projects-heading h2{
     margin:0;
+
     font-family:var(--comic-font);
+
     font-size:80px;
+
     line-height:.8;
+
     color:white;
+
     -webkit-text-stroke:3px var(--ink);
-    text-shadow:7px 7px 0 var(--ink);
+
+    text-shadow:
+        7px 7px 0 var(--ink);
 }
 
 .projects-heading p{
     background:var(--yellow);
+
     border:4px solid var(--ink);
+
     padding:10px 14px;
+
     font-family:var(--mono);
+
     font-size:10px;
+
     font-weight:700;
+
     transform:rotate(3deg);
+
     box-shadow:5px 5px 0 var(--ink);
 }
+
 
 /* =========================================================
    PROJECT CARDS
@@ -585,16 +833,29 @@ h1 span{
 
 .project{
     position:relative;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:20px;
+
     padding:28px;
+
     margin-bottom:22px;
+
     background:white;
+
     border:5px solid var(--ink);
+
     box-shadow:8px 8px 0 var(--ink);
-    transition:transform .15s ease,box-shadow .15s ease;
+
+    transition:
+        transform .15s ease,
+        box-shadow .15s ease;
+
     overflow:hidden;
 }
 
@@ -607,69 +868,257 @@ h1 span{
 }
 
 .project:nth-child(4){
-    transform:rotate(1.2deg);
+    transform:rotate(.7deg);
 }
 
 .project:hover{
-    transform:translate(-4px,-4px) rotate(0deg);
-    box-shadow:13px 13px 0 var(--ink);
+    transform:
+        translate(-4px,-4px)
+        rotate(0deg);
+
+    box-shadow:
+        13px 13px 0 var(--ink);
 }
 
 .project::before{
     content:"";
+
     position:absolute;
+
     width:160px;
     height:160px;
+
     right:-55px;
     bottom:-65px;
+
     background:var(--purple);
+
     border-radius:50%;
+
     opacity:.15;
 }
 
 .project-left{
     display:flex;
+
     align-items:center;
+
     gap:20px;
+
     position:relative;
+
     z-index:2;
 }
 
 .project-number{
     font-family:var(--comic-font);
+
     font-size:36px;
+
     color:var(--purple);
+
     -webkit-text-stroke:1px var(--ink);
+
     width:35px;
 }
 
 .project-name{
     font-family:var(--comic-font);
+
     font-size:39px;
+
     letter-spacing:.02em;
 }
 
 .project-desc{
     margin-top:3px;
+
     font-family:var(--mono);
+
     font-size:10px;
+
     color:var(--gray);
+
     font-weight:500;
 }
 
 .project-arrow{
     font-family:var(--comic-font);
+
     font-size:45px;
+
     color:var(--purple);
+
     position:relative;
+
     z-index:2;
-    transition:transform .15s ease;
+
+    transition:
+        transform .15s ease;
 }
 
 .project:hover .project-arrow{
-    transform:rotate(-10deg) scale(1.12);
+    transform:
+        rotate(-10deg)
+        scale(1.12);
+
     color:var(--red);
 }
+
+
+/* =========================================================
+   CAR STORY
+========================================================= */
+
+.car-story{
+    position:relative;
+
+    padding:130px 20px 150px;
+
+    background:var(--cream);
+
+    overflow:hidden;
+
+    border-bottom:6px solid var(--ink);
+}
+
+.car-story-inner{
+    width:min(1100px,100%);
+
+    margin:auto;
+
+    position:relative;
+}
+
+.car-story-title{
+    font-family:var(--comic-font);
+
+    font-size:clamp(55px,9vw,105px);
+
+    line-height:.82;
+
+    text-align:center;
+
+    color:var(--ink);
+
+    transform:rotate(-2deg);
+
+    text-shadow:
+        6px 6px 0 var(--purple);
+
+    margin-bottom:18px;
+}
+
+.car-story-title span{
+    color:var(--purple);
+
+    text-shadow:
+        5px 5px 0 var(--ink);
+}
+
+.car-story-note{
+    display:table;
+
+    margin:
+        0 auto 55px;
+
+    background:var(--yellow);
+
+    border:4px solid var(--ink);
+
+    padding:9px 15px;
+
+    font-family:var(--mono);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    box-shadow:
+        5px 5px 0 var(--ink);
+
+    transform:rotate(2deg);
+}
+
+.car-story-image{
+    position:relative;
+
+    width:min(900px,100%);
+
+    margin:auto;
+
+    background:white;
+
+    border:6px solid var(--ink);
+
+    box-shadow:
+        12px 12px 0 var(--ink);
+
+    overflow:hidden;
+}
+
+.car-story-image img{
+    display:block;
+
+    width:100%;
+
+    height:auto;
+}
+
+.first-car{
+    transform:rotate(1deg);
+}
+
+.five-minutes{
+    width:max-content;
+
+    max-width:100%;
+
+    margin:100px auto;
+
+    background:var(--purple);
+
+    color:white;
+
+    border:5px solid var(--ink);
+
+    padding:18px 25px;
+
+    font-family:var(--comic-font);
+
+    font-size:clamp(35px,6vw,65px);
+
+    box-shadow:
+        8px 8px 0 var(--ink);
+
+    transform:rotate(-3deg);
+}
+
+.second-car{
+    transform:rotate(-1deg);
+}
+
+.car-story-ending{
+    display:table;
+
+    margin:65px auto 0;
+
+    background:var(--yellow);
+
+    border:4px solid var(--ink);
+
+    padding:12px 18px;
+
+    font-family:var(--comic-font);
+
+    font-size:28px;
+
+    box-shadow:
+        5px 5px 0 var(--ink);
+
+    transform:rotate(2deg);
+}
+
 
 /* =========================================================
    YOUTUBE
@@ -677,77 +1126,121 @@ h1 span{
 
 .youtube-section{
     padding:100px 25px;
+
     background:var(--cream);
 }
 
 .youtube-panel{
     width:min(950px,100%);
+
     margin:auto;
+
     position:relative;
+
     background:var(--red);
+
     border:5px solid var(--ink);
-    box-shadow:12px 12px 0 var(--ink);
+
+    box-shadow:
+        12px 12px 0 var(--ink);
+
     padding:45px;
+
     overflow:hidden;
+
     transform:rotate(.7deg);
 }
 
 .youtube-panel::before{
     content:"";
+
     position:absolute;
+
     inset:0;
+
     background:
         radial-gradient(
             circle,
             rgba(0,0,0,.18) 1.5px,
             transparent 1.7px
         );
+
     background-size:18px 18px;
+
     opacity:.35;
 }
 
 .youtube-content{
     position:relative;
+
     z-index:2;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:30px;
 }
 
 .youtube-title{
     font-family:var(--comic-font);
+
     font-size:clamp(45px,7vw,80px);
+
     color:white;
+
     line-height:.85;
+
     -webkit-text-stroke:3px var(--ink);
-    text-shadow:6px 6px 0 var(--ink);
+
+    text-shadow:
+        6px 6px 0 var(--ink);
 }
 
 .youtube-sub{
     margin-top:15px;
+
     color:white;
+
     font-family:var(--mono);
+
     font-size:11px;
+
     line-height:1.6;
 }
 
 .youtube-button{
     flex-shrink:0;
+
     background:white;
+
     color:var(--ink);
+
     border:5px solid var(--ink);
+
     padding:17px 23px;
+
     font-family:var(--comic-font);
+
     font-size:25px;
-    box-shadow:7px 7px 0 var(--ink);
+
+    box-shadow:
+        7px 7px 0 var(--ink);
+
     transition:.12s;
 }
 
 .youtube-button:hover{
-    transform:translate(4px,4px) rotate(-2deg);
-    box-shadow:3px 3px 0 var(--ink);
+    transform:
+        translate(4px,4px)
+        rotate(-2deg);
+
+    box-shadow:
+        3px 3px 0 var(--ink);
 }
+
 
 /* =========================================================
    F40
@@ -755,24 +1248,36 @@ h1 span{
 
 .f40-section{
     padding:30px 18px 150px;
+
     background:var(--cream);
 }
 
 .f40-wrap{
     position:relative;
+
     width:min(1250px,100%);
+
     margin:auto;
+
     border:6px solid var(--ink);
+
     background:var(--ink);
-    box-shadow:15px 15px 0 var(--purple);
+
+    box-shadow:
+        15px 15px 0 var(--purple);
+
     transform:rotate(-.6deg);
+
     overflow:hidden;
 }
 
 .f40-wrap::before{
     content:"";
+
     position:absolute;
+
     inset:0;
+
     background:
         linear-gradient(
             135deg,
@@ -781,32 +1286,50 @@ h1 span{
             rgba(255,255,255,.12) 47%,
             transparent 47%
         );
+
     pointer-events:none;
+
     z-index:2;
 }
 
 .f40-wrap img{
     display:block;
+
     width:100%;
+
     height:auto;
 }
 
 .f40-info{
     position:absolute;
+
     left:25px;
     bottom:25px;
+
     z-index:5;
+
     background:var(--yellow);
+
     color:var(--ink);
+
     border:4px solid var(--ink);
+
     padding:9px 13px;
+
     font-family:var(--mono);
+
     font-size:9px;
+
     font-weight:700;
+
     text-transform:uppercase;
+
     transform:rotate(-2deg);
-    box-shadow:4px 4px 0 var(--ink);
+
+    box-shadow:
+        4px 4px 0 var(--ink);
 }
+
 
 /* =========================================================
    CAPTION
@@ -814,25 +1337,37 @@ h1 span{
 
 .caption-section{
     padding:30px 25px 100px;
+
     text-align:center;
+
     background:var(--cream);
 }
 
 .stupid-caption{
     display:inline-block;
+
     font-family:var(--comic-font);
+
     font-size:clamp(40px,7vw,75px);
+
     color:var(--ink);
+
     transform:rotate(-2deg);
-    text-shadow:5px 5px 0 var(--purple);
+
+    text-shadow:
+        5px 5px 0 var(--purple);
 }
 
 .caption-small{
     font-family:var(--mono);
+
     font-size:10px;
+
     color:var(--gray);
+
     margin-top:15px;
 }
+
 
 /* =========================================================
    DANGER
@@ -840,46 +1375,79 @@ h1 span{
 
 .danger-zone{
     padding:70px 25px 100px;
+
     background:var(--black);
+
     text-align:center;
+
     border-top:6px solid var(--ink);
 }
 
 .danger-label{
     color:white;
+
     font-family:var(--mono);
+
     font-size:9px;
+
     letter-spacing:.15em;
+
     text-transform:uppercase;
+
     margin-bottom:18px;
+
     opacity:.5;
 }
 
 .dont-button{
     position:relative;
+
     display:inline-block;
+
     background:var(--purple);
+
     color:white;
+
     border:5px solid white;
+
     padding:18px 30px;
+
     font-family:var(--comic-font);
+
     font-size:38px;
+
     letter-spacing:.04em;
-    box-shadow:9px 9px 0 white;
+
+    box-shadow:
+        9px 9px 0 white;
+
     transform:rotate(-2deg);
-    transition:background .12s ease,transform .12s ease,box-shadow .12s ease;
+
+    transition:
+        background .12s ease,
+        transform .12s ease,
+        box-shadow .12s ease;
 }
 
 .dont-button:hover{
     background:var(--red);
-    transform:rotate(2deg) scale(1.04);
-    box-shadow:12px 12px 0 white;
+
+    transform:
+        rotate(2deg)
+        scale(1.04);
+
+    box-shadow:
+        12px 12px 0 white;
 }
 
 .dont-button:active{
-    transform:translate(7px,7px);
-    box-shadow:2px 2px 0 white;
+    transform:
+        translate(7px,7px);
+
+    box-shadow:
+        2px 2px 0 white;
 }
+
 
 /* =========================================================
    FOOTER
@@ -887,25 +1455,37 @@ h1 span{
 
 .footer{
     padding:45px 25px 70px;
+
     background:var(--black);
+
     text-align:center;
+
     color:white;
+
     border-top:1px solid #29232d;
 }
 
 .footer-big{
     font-family:var(--comic-font);
+
     font-size:35px;
+
     color:var(--purple);
-    text-shadow:3px 3px 0 white;
+
+    text-shadow:
+        3px 3px 0 white;
 }
 
 .footer-small{
     margin-top:12px;
+
     font-family:var(--mono);
+
     font-size:9px;
+
     color:#66606b;
 }
+
 
 /* =========================================================
    FULLSCREEN VIDEO
@@ -913,11 +1493,17 @@ h1 span{
 
 .video-overlay{
     position:fixed;
+
     inset:0;
+
     z-index:10000;
+
     background:#000;
+
     display:none;
+
     align-items:center;
+
     justify-content:center;
 }
 
@@ -927,23 +1513,30 @@ h1 span{
 
 .video-overlay video{
     width:100%;
+
     height:100%;
+
     object-fit:contain;
+
     background:#000;
 }
 
+
 /* =========================================================
-   MILD GLITCH MODE
+   GLITCH
 ========================================================= */
 
 body.glitching{
-    animation:mildGlitch .18s steps(2,end) infinite;
+    animation:
+        mildGlitch .18s steps(2,end) infinite;
 }
 
 @keyframes mildGlitch{
+
     0%,100%{
         transform:translate(0,0);
     }
+
     50%{
         transform:translate(1px,0);
     }
@@ -951,16 +1544,22 @@ body.glitching{
 
 body.glitching::after{
     content:"";
+
     position:fixed;
+
     inset:0;
+
     z-index:1000;
+
     pointer-events:none;
+
     background:
         linear-gradient(
             transparent 0 48%,
             rgba(171,4,249,.06) 50%,
             transparent 52%
         );
+
     opacity:.35;
 }
 
@@ -970,34 +1569,46 @@ body.glitching .youtube-section,
 body.glitching .f40-section,
 body.glitching .danger-zone,
 body.glitching .footer{
-    filter:contrast(1.08) saturate(1.08);
+    filter:
+        contrast(1.08)
+        saturate(1.08);
 }
 
 body.glitching h1{
-    animation:textGlitch .25s steps(2,end) infinite;
+    animation:
+        textGlitch .25s steps(2,end) infinite;
 }
 
 @keyframes textGlitch{
+
     0%,100%{
         transform:rotate(-2deg);
     }
+
     50%{
-        transform:translate(2px,-1px) rotate(-2deg);
+        transform:
+            translate(2px,-1px)
+            rotate(-2deg);
     }
 }
 
 body.glitching .project{
-    animation:projectGlitch .3s steps(2,end) infinite;
+    animation:
+        projectGlitch .3s steps(2,end) infinite;
 }
 
 @keyframes projectGlitch{
+
     0%,100%{
         transform:translate(0);
     }
+
     50%{
-        transform:translate(2px,-1px);
+        transform:
+            translate(2px,-1px);
     }
 }
+
 
 /* =========================================================
    CURSED MESSAGE
@@ -1005,66 +1616,111 @@ body.glitching .project{
 
 .cursed-message{
     position:fixed;
+
     left:50%;
     top:50%;
-    transform:translate(-50%,-50%) scale(0);
+
+    transform:
+        translate(-50%,-50%)
+        scale(0);
+
     z-index:2000;
+
     width:min(600px,90%);
+
     background:var(--black);
+
     color:white;
+
     border:7px solid var(--purple);
+
     box-shadow:
         15px 15px 0 red,
         -15px -15px 0 cyan;
+
     padding:35px;
+
     text-align:center;
+
     opacity:0;
+
     pointer-events:none;
 }
 
 .cursed-message.active{
-    animation:cursedAppear .5s forwards;
+    animation:
+        cursedAppear .5s forwards;
 }
 
 @keyframes cursedAppear{
+
     0%{
-        transform:translate(-50%,-50%) scale(0) rotate(8deg);
+        transform:
+            translate(-50%,-50%)
+            scale(0)
+            rotate(8deg);
+
         opacity:0;
     }
+
     70%{
-        transform:translate(-50%,-50%) scale(1.04) rotate(-1deg);
+        transform:
+            translate(-50%,-50%)
+            scale(1.04)
+            rotate(-1deg);
+
         opacity:1;
     }
+
     100%{
-        transform:translate(-50%,-50%) scale(1) rotate(0);
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(0);
+
         opacity:1;
     }
 }
 
 .cursed-message h2{
     margin:0;
+
     font-family:var(--comic-font);
+
     font-size:65px;
+
     color:var(--purple);
-    text-shadow:4px 4px 0 white;
+
+    text-shadow:
+        4px 4px 0 white;
 }
 
 .cursed-message p{
     margin:15px 0 0;
+
     font-family:var(--mono);
+
     font-size:11px;
+
     line-height:1.7;
 }
 
 .cursed-message button{
     margin-top:25px;
+
     background:white;
+
     color:black;
+
     border:4px solid white;
+
     padding:10px 18px;
+
     font-family:var(--mono);
+
     font-weight:700;
 }
+
 
 /* =========================================================
    MOBILE
@@ -1091,17 +1747,20 @@ body.glitching .project{
     .watermelon{
         width:42px;
         height:42px;
+
         margin-top:10px;
     }
 
     .watermelon-count{
         left:49px;
         top:4px;
+
         font-size:7px;
     }
 
     .youtube-mini{
         padding:6px 8px;
+
         font-size:9px;
     }
 
@@ -1111,16 +1770,19 @@ body.glitching .project{
 
     .hero-content{
         grid-template-columns:1fr;
+
         gap:40px;
     }
 
     .hero-title{
         text-align:center;
+
         padding:22px;
     }
 
     h1{
-        font-size:clamp(70px,20vw,125px);
+        font-size:
+            clamp(70px,20vw,125px);
     }
 
     .tagline{
@@ -1131,20 +1793,28 @@ body.glitching .project{
     .speech{
         right:-5px;
         top:-65px;
+
         width:145px;
+
         font-size:20px;
+
         padding:17px;
     }
 
     .banana-stage{
         height:480px;
-        width:calc(100% - 15px);
+
+        width:
+            calc(100% - 15px);
+
         margin:auto;
     }
 
     .banana-stage::after{
         font-size:52px;
+
         left:5px;
+
         bottom:-28px;
     }
 
@@ -1154,14 +1824,20 @@ body.glitching .project{
 
     .hero-caption{
         right:0;
+
         bottom:30px;
+
         font-size:16px;
     }
 
     .banana-click-message{
         font-size:17px;
+
         bottom:18px;
     }
+
+
+    /* PROJECTS */
 
     .projects{
         padding:90px 15px;
@@ -1177,6 +1853,7 @@ body.glitching .project{
 
     .projects-heading p{
         display:inline-block;
+
         margin-top:20px;
     }
 
@@ -1190,6 +1867,7 @@ body.glitching .project{
 
     .project-number{
         font-size:27px;
+
         width:25px;
     }
 
@@ -1201,6 +1879,49 @@ body.glitching .project{
         font-size:9px;
     }
 
+
+    /* CAR STORY */
+
+    .car-story{
+        padding:90px 14px 110px;
+    }
+
+    .car-story-title{
+        font-size:
+            clamp(48px,13vw,80px);
+    }
+
+    .car-story-note{
+        margin-bottom:40px;
+
+        font-size:8px;
+    }
+
+    .car-story-image{
+        border-width:5px;
+
+        box-shadow:
+            8px 8px 0 var(--ink);
+    }
+
+    .five-minutes{
+        margin:75px auto;
+
+        font-size:38px;
+
+        padding:14px 18px;
+
+        box-shadow:
+            6px 6px 0 var(--ink);
+    }
+
+    .car-story-ending{
+        font-size:22px;
+    }
+
+
+    /* YOUTUBE */
+
     .youtube-section{
         padding:80px 15px;
     }
@@ -1211,6 +1932,7 @@ body.glitching .project{
 
     .youtube-content{
         flex-direction:column;
+
         align-items:flex-start;
     }
 
@@ -1222,6 +1944,9 @@ body.glitching .project{
         font-size:22px;
     }
 
+
+    /* F40 */
+
     .f40-section{
         padding:20px 8px 100px;
     }
@@ -1229,16 +1954,26 @@ body.glitching .project{
     .f40-info{
         left:12px;
         bottom:12px;
+
         font-size:7px;
     }
 
+
+    /* DANGER */
+
     .dont-button{
         font-size:30px;
+
         padding:15px 22px;
     }
 
+
+    /* CURSED */
+
     .cursed-message{
-        width:calc(100% - 30px);
+        width:
+            calc(100% - 30px);
+
         padding:25px 18px;
     }
 
@@ -1250,10 +1985,8 @@ body.glitching .project{
         font-size:10px;
     }
 
-    .project-name{
-        line-height:1;
-    }
 }
+
 
 /* =========================================================
    REDUCED MOTION
@@ -1265,12 +1998,18 @@ body.glitching .project{
     *::before,
     *::after{
         animation-duration:.01ms!important;
+
         animation-iteration-count:1!important;
+
         scroll-behavior:auto!important;
+
         transition:none!important;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
@@ -1281,50 +2020,54 @@ body.glitching .project{
 
 <header>
 
-    <div class="logo-wrap">
+```
+<div class="logo-wrap">
+
+    <div
+        class="logo"
+        id="logo"
+        title="click me"
+    >
+        JOHN BANANA
+    </div>
+
+    <div
+        class="watermelon"
+        id="watermelon"
+        title="you probably shouldn't press this either"
+    >
 
         <div
-            class="logo"
-            id="logo"
-            title="click me"
+            class="watermelon-count"
+            id="watermelon-count"
         >
-            JOHN BANANA
-        </div>
-
-        <div
-            class="watermelon"
-            id="watermelon"
-            title="you probably shouldn't press this either"
-        >
-            <div
-                class="watermelon-count"
-                id="watermelon-count"
-            >
-                YOU HAVE PRESSED THIS 0 TIMES
-            </div>
+            YOU HAVE PRESSED THIS 0 TIMES
         </div>
 
     </div>
 
-    <div class="header-right">
+</div>
 
-        <div class="header-text">
-            probably unnecessary
-        </div>
 
-        <a
-            class="youtube-mini"
-            href="https://www.youtube.com/@johnbananafr"
-            target="_blank"
-            rel="noopener"
-        >
-            ▶ YOUTUBE
-        </a>
+<div class="header-right">
 
+    <div class="header-text">
+        probably unnecessary
     </div>
+
+    <a
+        class="youtube-mini"
+        href="https://www.youtube.com/@johnbananafr"
+        target="_blank"
+        rel="noopener"
+    >
+        ▶ YOUTUBE
+    </a>
+
+</div>
+```
 
 </header>
-
 
 <!-- =====================================================
      HERO
@@ -1332,74 +2075,73 @@ body.glitching .project{
 
 <section class="hero">
 
-    <div class="hero-content">
+```
+<div class="hero-content">
 
-        <div class="hero-title">
 
-            <div class="small-title">
-                somewhere on the internet
-            </div>
+    <div class="hero-title">
 
-            <h1 id="main-title">
-                JOHN
-                <span>BANANA</span>
-            </h1>
-
-            <p
-                class="tagline"
-                id="tagline"
-            >
-                A small collection of
-                <strong>games</strong>,
-                questionable ideas,
-                and things that probably
-                should've stayed in the drafts.
-            </p>
-
-            <div class="speech">
-                WAIT...
-                <br>
-                <span>HE MADE A WEBSITE?</span>
-            </div>
-
+        <div class="small-title">
+            somewhere on the internet
         </div>
 
+        <h1 id="main-title">
+            JOHN
+            <span>BANANA</span>
+        </h1>
 
-        <div class="banana-stage">
+        <p
+            class="tagline"
+            id="tagline"
+        >
+            A small collection of
+            <strong>games</strong>,
+            questionable ideas,
+            and things that probably
+            should've stayed in the drafts.
+        </p>
 
-            <img
-                src="image.png"
-                alt="John Banana"
-                loading="eager"
-                decoding="async"
-                id="banana-image"
-            >
-
-            <div class="hero-caption">
-                HE'S JUST STANDING THERE.
-            </div>
-
-            <div
-                class="banana-click-message"
-                id="banana-click-message"
-            >
-                🍌 HEY.
-            </div>
-
+        <div class="speech">
+            WAIT...
+            <br>
+            <span>HE MADE A WEBSITE?</span>
         </div>
 
     </div>
 
-    <div class="scroll">
-        ↓ there is more nonsense below ↓
+
+    <div class="banana-stage">
+
+        <img
+            src="image.png"
+            alt="John Banana"
+            loading="eager"
+            decoding="async"
+            id="banana-image"
+        >
+
+        <div class="hero-caption">
+            HE'S JUST STANDING THERE.
+        </div>
+
+        <div
+            class="banana-click-message"
+            id="banana-click-message"
+        >
+            🍌 HEY.
+        </div>
+
     </div>
+
+</div>
+
+
+<div class="scroll">
+    ↓ there is more nonsense below ↓
+</div>
+```
 
 </section>
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
 
 <!-- =====================================================
      PROJECTS
@@ -1410,126 +2152,199 @@ body.glitching .project{
     id="projects"
 >
 
-    <div class="projects-inner">
-
-        <div class="projects-heading">
-
-            <h2>
-                STUFF.
-            </h2>
-
-            <p>
-                100% real projects
-            </p>
-
-        </div>
+```
+<div class="projects-inner">
 
 
-        <!-- SONGGUESSR -->
+    <div class="projects-heading">
 
-        <a
-            href="https://johnbananafr.github.io/songguessr/"
-            class="project"
-        >
+        <h2>
+            STUFF.
+        </h2>
 
-            <div class="project-left">
-
-                <div class="project-number">
-                    01
-                </div>
-
-                <div>
-
-                    <div class="project-name">
-                        SongGuessr
-                    </div>
-
-                    <div class="project-desc">
-                        Guess the song before the clip gets longer.
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- SORTED -->
-
-        <a
-            href="https://johnbananafr.github.io/sorted/"
-            class="project"
-        >
-
-            <div class="project-left">
-
-                <div class="project-number">
-                    02
-                </div>
-
-                <div>
-
-                    <div class="project-name">
-                        SORTED
-                    </div>
-
-                    <div class="project-desc">
-                        Put things in the correct order.
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project-arrow">
-                ↗
-            </div>
-
-        </a>
-
-
-        <!-- HOW NORMAL ARE YOU? -->
-
-        <a
-            href="https://johnbananafr.github.io/normal/"
-            class="project"
-        >
-
-            <div class="project-left">
-
-                <div class="project-number">
-                    03
-                </div>
-
-                <div>
-
-                    <div class="project-name">
-                        HOW NORMAL ARE YOU?
-                    </div>
-
-                    <div class="project-desc">
-                        Find out how normal you actually are.
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="project-arrow">
-                ↗
-            </div>
-
-        </a>
+        <p>
+            100% real projects
+        </p>
 
     </div>
 
+
+    <!-- SONGGUESSR -->
+
+    <a
+        href="https://johnbananafr.github.io/songguessr/"
+        class="project"
+    >
+
+        <div class="project-left">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    SongGuessr
+                </div>
+
+                <div class="project-desc">
+                    Guess the song before the clip gets longer.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </a>
+
+
+    <!-- SORTED -->
+
+    <a
+        href="https://johnbananafr.github.io/sorted/"
+        class="project"
+    >
+
+        <div class="project-left">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    SORTED
+                </div>
+
+                <div class="project-desc">
+                    Put things in the correct order.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </a>
+
+
+    <!-- HOW NORMAL ARE YOU -->
+
+    <a
+        href="https://johnbananafr.github.io/normal/"
+        class="project"
+    >
+
+        <div class="project-left">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div>
+
+                <div class="project-name">
+                    HOW NORMAL ARE YOU?
+                </div>
+
+                <div class="project-desc">
+                    Find out how normal you actually are.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-arrow">
+            ↗
+        </div>
+
+    </a>
+
+</div>
+```
+
 </section>
 
+<!-- =====================================================
+     JOHN BANANA FINDS A CAR
+===================================================== -->
+
+<section class="car-story">
+
+```
+<div class="car-story-inner">
+
+
+    <div class="car-story-title">
+
+        JOHN BANANA FINDS<br>
+
+        <span>
+            A CAR IN THE WILD!!
+        </span>
+
+    </div>
+
+
+    <div class="car-story-note">
+        SOMEWHERE OUT THERE...
+    </div>
+
+
+    <!-- FIRST IMAGE -->
+
+    <div class="car-story-image first-car">
+
+        <img
+            src="wowf40.png"
+            alt="John Banana finds a car in the wild"
+            loading="lazy"
+            decoding="async"
+        >
+
+    </div>
+
+
+    <!-- TIME JUMP -->
+
+    <div class="five-minutes">
+        5 MINUTES LATER...
+    </div>
+
+
+    <!-- SECOND IMAGE -->
+
+    <div class="car-story-image second-car">
+
+        <img
+            src="f40.png"
+            alt="John Banana with an F40"
+            loading="lazy"
+            decoding="async"
+        >
+
+    </div>
+
+
+    <div class="car-story-ending">
+        HE MADE A DECISION.
+    </div>
+
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      YOUTUBE
@@ -1537,40 +2352,43 @@ body.glitching .project{
 
 <section class="youtube-section">
 
-    <div class="youtube-panel">
+```
+<div class="youtube-panel">
 
-        <div class="youtube-content">
+    <div class="youtube-content">
 
-            <div>
+        <div>
 
-                <div class="youtube-title">
-                    THE<br>
-                    YOUTUBE<br>
-                    THING.
-                </div>
-
-                <div class="youtube-sub">
-                    videos • fruit • questionable decisions<br>
-                    somehow there is already a whole channel
-                </div>
-
+            <div class="youtube-title">
+                THE<br>
+                YOUTUBE<br>
+                THING.
             </div>
 
-            <a
-                href="https://www.youtube.com/@johnbananafr"
-                target="_blank"
-                rel="noopener"
-                class="youtube-button"
-            >
-                ▶ WATCH IT
-            </a>
+            <div class="youtube-sub">
+                videos • fruit • questionable decisions
+                <br>
+                somehow there is already a whole channel
+            </div>
 
         </div>
 
+
+        <a
+            href="https://www.youtube.com/@johnbananafr"
+            target="_blank"
+            rel="noopener"
+            class="youtube-button"
+        >
+            ▶ WATCH IT
+        </a>
+
     </div>
 
-</section>
+</div>
+```
 
+</section>
 
 <!-- =====================================================
      F40
@@ -1578,27 +2396,28 @@ body.glitching .project{
 
 <section class="f40-section">
 
-    <div class="f40-wrap">
+```
+<div class="f40-wrap">
 
-        <img
-            src="f40.png"
-            alt="John Banana with a Ferrari F40"
-            loading="lazy"
-            decoding="async"
-        >
+    <img
+        src="f40.png"
+        alt="John Banana with a Ferrari F40"
+        loading="lazy"
+        decoding="async"
+    >
 
-        <div class="f40-info">
-            JOHN BANANA
-            &nbsp; / &nbsp;
-            F40
-            &nbsp; / &nbsp;
-            NO FURTHER QUESTIONS
-        </div>
-
+    <div class="f40-info">
+        JOHN BANANA
+        &nbsp; / &nbsp;
+        F40
+        &nbsp; / &nbsp;
+        NO FURTHER QUESTIONS
     </div>
 
-</section>
+</div>
+```
 
+</section>
 
 <!-- =====================================================
      RANDOM CAPTION
@@ -1606,16 +2425,17 @@ body.glitching .project{
 
 <section class="caption-section">
 
-    <div class="stupid-caption">
-        THIS WAS A TERRIBLE IDEA.
-    </div>
+```
+<div class="stupid-caption">
+    THIS WAS A TERRIBLE IDEA.
+</div>
 
-    <div class="caption-small">
-        anyway here's the website
-    </div>
+<div class="caption-small">
+    anyway here's the website
+</div>
+```
 
 </section>
-
 
 <!-- =====================================================
      DO NOT PRESS
@@ -1623,19 +2443,20 @@ body.glitching .project{
 
 <section class="danger-zone">
 
-    <div class="danger-label">
-        seriously. there is absolutely no reason to click this.
-    </div>
+```
+<div class="danger-label">
+    seriously. there is absolutely no reason to click this.
+</div>
 
-    <button
-        class="dont-button"
-        id="dont-button"
-    >
-        DO NOT PRESS
-    </button>
+<button
+    class="dont-button"
+    id="dont-button"
+>
+    DO NOT PRESS
+</button>
+```
 
 </section>
-
 
 <!-- =====================================================
      FULLSCREEN VIDEO
@@ -1646,15 +2467,16 @@ body.glitching .project{
     id="video-overlay"
 >
 
-    <video
-        id="scene-video"
-        src="scene.mp4"
-        playsinline
-        preload="auto"
-    ></video>
+```
+<video
+    id="scene-video"
+    src="scene.mp4"
+    playsinline
+    preload="auto"
+></video>
+```
 
 </div>
-
 
 <!-- =====================================================
      CURSED MESSAGE
@@ -1665,25 +2487,26 @@ body.glitching .project{
     id="cursed-message"
 >
 
-    <h2>
-        OH NO.
-    </h2>
+```
+<h2>
+    OH NO.
+</h2>
 
-    <p>
-        YOU PRESSED THE BUTTON.
-        <br><br>
-        WHY WOULD YOU DO THAT.
-        <br><br>
-        JOHN BANANA IS CURRENTLY EXPERIENCING
-        UNFORESEEN TECHNICAL DIFFICULTIES.
-    </p>
+<p>
+    YOU PRESSED THE BUTTON.
+    <br><br>
+    WHY WOULD YOU DO THAT.
+    <br><br>
+    JOHN BANANA IS CURRENTLY EXPERIENCING
+    UNFORESEEN TECHNICAL DIFFICULTIES.
+</p>
 
-    <button id="escape-button">
-        UNDO MY MISTAKE
-    </button>
+<button id="escape-button">
+    UNDO MY MISTAKE
+</button>
+```
 
 </div>
-
 
 <!-- =====================================================
      FOOTER
@@ -1691,23 +2514,26 @@ body.glitching .project{
 
 <footer class="footer">
 
-    <div class="footer-big">
-        JOHN BANANA
-    </div>
+```
+<div class="footer-big">
+    JOHN BANANA
+</div>
 
-    <div
-        class="footer-small"
-        id="footer-small"
-    >
-        more stuff eventually.
-        probably.
-    </div>
+<div
+    class="footer-small"
+    id="footer-small"
+>
+    more stuff eventually.
+    probably.
+</div>
+```
 
 </footer>
 
-
 <script>
+
 "use strict";
+
 
 /* =========================================================
    ELEMENTS
@@ -1761,9 +2587,13 @@ const logo =
 ========================================================= */
 
 let cursed = false;
+
 let bananaClicks = 0;
+
 let watermelonClicks = 0;
+
 let videoTimer = null;
+
 let curseTimers = [];
 
 
@@ -1771,7 +2601,7 @@ let curseTimers = [];
    WATERMELON
 ========================================================= */
 
-watermelon.addEventListener("click", () => {
+watermelon.addEventListener("click",() => {
 
     watermelonClicks++;
 
@@ -1784,28 +2614,44 @@ watermelon.addEventListener("click", () => {
 
     watermelon.hideTimer =
         setTimeout(() => {
-            watermelon.classList.remove("show-count");
+
+            watermelon.classList.remove(
+                "show-count"
+            );
+
         },2200);
 
 });
 
 
 /* =========================================================
-   CLICK JOHN BANANA
+   BANANA EASTER EGG
 ========================================================= */
 
 const bananaMessages = [
+
     "🍌 HEY.",
+
     "🍌 STOP CLICKING ME.",
+
     "🍌 WHY.",
+
     "🍌 I SAID STOP.",
+
     "🍌 THIS IS GETTING CONCERNING.",
+
     "🍌 YOU HAVE TOO MUCH FREE TIME.",
+
     "🍌 JOHN BANANA HAS NOTICED YOU.",
+
     "🍌 OKAY THAT'S ENOUGH.",
+
     "🍌 SERIOUSLY.",
+
     "🍌 BANANA."
+
 ];
+
 
 function bananaEasterEgg(){
 
@@ -1813,35 +2659,36 @@ function bananaEasterEgg(){
 
     const message =
         bananaMessages[
-            (bananaClicks - 1) % bananaMessages.length
+            (bananaClicks - 1)
+            % bananaMessages.length
         ];
 
-    bananaMessage.textContent = message;
+    bananaMessage.textContent =
+        message;
 
-    bananaMessage.classList.remove("show");
+    bananaMessage.classList.remove(
+        "show"
+    );
 
     void bananaMessage.offsetWidth;
 
-    bananaMessage.classList.add("show");
+    bananaMessage.classList.add(
+        "show"
+    );
 
 }
 
 
-/* Actual image */
 bananaImage.addEventListener(
     "click",
     bananaEasterEgg
 );
 
-
-/* Logo also works */
 logo.addEventListener(
     "click",
     bananaEasterEgg
 );
 
-
-/* Big title also works */
 mainTitle.addEventListener(
     "click",
     bananaEasterEgg
@@ -1854,9 +2701,12 @@ mainTitle.addEventListener(
 
 async function playScene(){
 
-    videoOverlay.classList.add("active");
+    videoOverlay.classList.add(
+        "active"
+    );
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
     sceneVideo.currentTime = 0;
 
@@ -1904,9 +2754,12 @@ function closeScene(){
 
     sceneVideo.pause();
 
-    videoOverlay.classList.remove("active");
+    videoOverlay.classList.remove(
+        "active"
+    );
 
-    document.body.style.overflow = "";
+    document.body.style.overflow =
+        "";
 
     if(document.fullscreenElement){
 
@@ -1925,15 +2778,18 @@ function closeScene(){
    DO NOT PRESS
 ========================================================= */
 
-dontButton.addEventListener("click", async () => {
+dontButton.addEventListener(
+    "click",
+    async () => {
 
-    if(cursed) return;
+        if(cursed) return;
 
-    cursed = true;
+        cursed = true;
 
-    await playScene();
+        await playScene();
 
-});
+    }
+);
 
 
 /* =========================================================
@@ -1942,67 +2798,83 @@ dontButton.addEventListener("click", async () => {
 
 function triggerCurse(){
 
-    document.body.classList.add("glitching");
+    document.body.classList.add(
+        "glitching"
+    );
 
     dontButton.textContent =
         "YOU PRESSED IT";
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
             hero.style.transform =
                 "skewX(-1deg)";
 
         },300)
+
     );
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
             mainTitle.innerHTML =
                 'JOHN<br><span>BANANA?</span>';
 
         },700)
+
     );
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
             tagline.innerHTML =
                 "something has gone <strong>VERY WRONG.</strong>";
 
         },1000)
+
     );
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
             footerSmall.textContent =
                 "please leave";
 
         },1300)
+
     );
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
-            cursedMessage.classList.add("active");
+            cursedMessage.classList.add(
+                "active"
+            );
 
         },1700)
+
     );
 
 
     curseTimers.push(
+
         setTimeout(() => {
 
             stopCurseEffects();
 
         },5000)
+
     );
 
 }
@@ -2014,26 +2886,33 @@ function triggerCurse(){
 
 function stopCurseEffects(){
 
-    document.body.classList.remove("glitching");
+    document.body.classList.remove(
+        "glitching"
+    );
 
-    hero.style.transform = "";
+    hero.style.transform =
+        "";
 
 }
 
 
 /* =========================================================
-   RESET EVERYTHING
+   RESET
 ========================================================= */
 
 function resetEverything(){
 
-    curseTimers.forEach(clearTimeout);
+    curseTimers.forEach(
+        clearTimeout
+    );
 
     curseTimers = [];
 
     cursed = false;
 
-    cursedMessage.classList.remove("active");
+    cursedMessage.classList.remove(
+        "active"
+    );
 
     stopCurseEffects();
 
@@ -2063,7 +2942,7 @@ escapeButton.addEventListener(
 
 
 /* =========================================================
-   VIDEO CLEANUP
+   VIDEO ERROR
 ========================================================= */
 
 sceneVideo.addEventListener(
@@ -2085,6 +2964,7 @@ sceneVideo.addEventListener(
 ========================================================= */
 
 console.log(`
+
 🍌 JOHN BANANA
 
 You found the console.
@@ -2094,10 +2974,10 @@ There is still nothing useful here.
 You could've been playing SongGuessr.
 
 Why are you like this.
+
 `);
 
 </script>
 
 </body>
 </html>
-```
