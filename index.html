@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#f4efe5">
+
 <title>John Banana</title>
 <link rel="icon" type="image/png" href="banana.png">
 <link rel="shortcut icon" type="image/png" href="banana.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Mono:wght@400;500;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
@@ -35,7 +36,6 @@
 
 html{
     scroll-behavior:smooth;
-    overflow-x:hidden;
 }
 
 body{
@@ -44,7 +44,6 @@ body{
     color:var(--ink);
     font-family:var(--body-font);
     overflow-x:hidden;
-    max-width:100%;
 }
 
 ::selection{
@@ -61,10 +60,6 @@ button{
     font-family:inherit;
 }
 
-img{
-    max-width:100%;
-}
-
 body::before{
     content:"";
     position:fixed;
@@ -72,12 +67,7 @@ body::before{
     pointer-events:none;
     z-index:999;
     opacity:.045;
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(0,0,0,.35) 0 1px,
-            transparent 1.2px
-        );
+    background:radial-gradient(circle at 20% 20%,rgba(0,0,0,.35) 0 1px,transparent 1.2px);
     background-size:14px 14px;
 }
 
@@ -122,12 +112,7 @@ header{
     height:47px;
     border:3px solid var(--ink);
     border-radius:50%;
-    background:
-        repeating-linear-gradient(
-            65deg,
-            #3d9e48 0 5px,
-            #277536 5px 10px
-        );
+    background:repeating-linear-gradient(65deg,#3d9e48 0 5px,#277536 5px 10px);
     box-shadow:4px 4px 0 var(--ink);
     cursor:pointer;
     position:relative;
@@ -219,13 +204,7 @@ header{
     align-items:center;
     justify-content:center;
     padding:100px 30px 70px;
-    background:
-        radial-gradient(
-            circle at 80% 40%,
-            rgba(171,4,249,.15),
-            transparent 28%
-        ),
-        var(--cream);
+    background:radial-gradient(circle at 80% 40%,rgba(171,4,249,.15),transparent 28%),var(--cream);
 }
 
 .hero::before{
@@ -236,19 +215,14 @@ header{
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    background:
-        repeating-conic-gradient(
-            from 0deg,
-            rgba(171,4,249,.07) 0deg 8deg,
-            transparent 8deg 18deg
-        );
+    background:repeating-conic-gradient(from 0deg,rgba(171,4,249,.07) 0deg 8deg,transparent 8deg 18deg);
     pointer-events:none;
 }
 
 .hero-content{
     width:min(1250px,100%);
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,500px);
+    grid-template-columns:1fr 500px;
     align-items:center;
     gap:30px;
     position:relative;
@@ -367,12 +341,7 @@ h1 span{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.3) 1.5px,
-            transparent 1.7px
-        );
+    background:radial-gradient(circle,rgba(255,255,255,.3) 1.5px,transparent 1.7px);
     background-size:18px 18px;
     opacity:.25;
     pointer-events:none;
@@ -473,7 +442,6 @@ h1 span{
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:.15em;
-    white-space:nowrap;
 }
 
 .projects{
@@ -489,12 +457,7 @@ h1 span{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,0,0,.22) 1.5px,
-            transparent 1.7px
-        );
+    background:radial-gradient(circle,rgba(0,0,0,.22) 1.5px,transparent 1.7px);
     background-size:18px 18px;
     opacity:.35;
 }
@@ -512,7 +475,6 @@ h1 span{
     align-items:flex-end;
     margin-bottom:50px;
     transform:rotate(-1deg);
-    gap:20px;
 }
 
 .projects-heading h2{
@@ -534,7 +496,6 @@ h1 span{
     font-weight:700;
     transform:rotate(3deg);
     box-shadow:5px 5px 0 var(--ink);
-    flex-shrink:0;
 }
 
 .project{
@@ -550,7 +511,6 @@ h1 span{
     box-shadow:8px 8px 0 var(--ink);
     transition:transform .15s ease,box-shadow .15s ease;
     overflow:hidden;
-    min-width:0;
 }
 
 .project:nth-child(2){
@@ -588,7 +548,6 @@ h1 span{
     gap:20px;
     position:relative;
     z-index:2;
-    min-width:0;
 }
 
 .project-number{
@@ -604,7 +563,6 @@ h1 span{
     font-family:var(--comic-font);
     font-size:39px;
     letter-spacing:.02em;
-    overflow-wrap:anywhere;
 }
 
 .project-desc{
@@ -613,7 +571,6 @@ h1 span{
     font-size:10px;
     color:var(--gray);
     font-weight:500;
-    line-height:1.5;
 }
 
 .project-arrow{
@@ -652,12 +609,7 @@ h1 span{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,0,0,.18) 1.5px,
-            transparent 1.7px
-        );
+    background:radial-gradient(circle,rgba(0,0,0,.18) 1.5px,transparent 1.7px);
     background-size:18px 18px;
     opacity:.35;
 }
@@ -705,6 +657,86 @@ h1 span{
     box-shadow:3px 3px 0 var(--ink);
 }
 
+.car-section{
+    padding:80px 20px 120px;
+    background:var(--cream);
+}
+
+.car-inner{
+    width:min(1100px,100%);
+    margin:auto;
+}
+
+.car-heading{
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.car-heading h2{
+    margin:0;
+    font-family:var(--comic-font);
+    font-size:clamp(55px,9vw,100px);
+    line-height:.8;
+    transform:rotate(-2deg);
+    text-shadow:5px 5px 0 var(--purple);
+}
+
+.car-heading p{
+    margin:20px 0 0;
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--gray);
+}
+
+.car-photo{
+    position:relative;
+    background:white;
+    border:6px solid var(--ink);
+    box-shadow:14px 14px 0 var(--purple);
+    padding:14px;
+    transform:rotate(.8deg);
+}
+
+.car-photo + .car-photo{
+    margin-top:90px;
+    transform:rotate(-.8deg);
+}
+
+.car-photo img{
+    display:block;
+    width:100%;
+    height:auto;
+    border:4px solid var(--ink);
+}
+
+.car-label{
+    position:absolute;
+    left:25px;
+    top:-28px;
+    background:var(--yellow);
+    border:4px solid var(--ink);
+    padding:9px 14px;
+    font-family:var(--comic-font);
+    font-size:clamp(20px,4vw,34px);
+    box-shadow:5px 5px 0 var(--ink);
+    transform:rotate(-3deg);
+}
+
+.car-photo:nth-child(3) .car-label{
+    left:auto;
+    right:25px;
+    transform:rotate(3deg);
+}
+
+.car-divider{
+    text-align:center;
+    margin:65px 0 15px;
+    font-family:var(--comic-font);
+    font-size:45px;
+    color:var(--purple);
+    text-shadow:3px 3px 0 var(--ink);
+}
+
 .f40-section{
     padding:30px 18px 100px;
     background:var(--cream);
@@ -725,14 +757,7 @@ h1 span{
     content:"";
     position:absolute;
     inset:0;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 45%,
-            rgba(255,255,255,.12) 45%,
-            rgba(255,255,255,.12) 47%,
-            transparent 47%
-        );
+    background:linear-gradient(135deg,transparent 45%,rgba(255,255,255,.12) 45%,rgba(255,255,255,.12) 47%,transparent 47%);
     pointer-events:none;
     z-index:2;
 }
@@ -758,7 +783,6 @@ h1 span{
     text-transform:uppercase;
     transform:rotate(-2deg);
     box-shadow:4px 4px 0 var(--ink);
-    max-width:calc(100% - 30px);
 }
 
 .disappointment-section{
@@ -862,12 +886,7 @@ h1 span{
     left:50%;
     width:130px;
     height:38px;
-    background:
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,230,0,.75) 0 12px,
-            rgba(255,240,120,.75) 12px 24px
-        );
+    background:repeating-linear-gradient(90deg,rgba(255,230,0,.75) 0 12px,rgba(255,240,120,.75) 12px 24px);
     border:2px solid rgba(23,18,24,.3);
     transform:translateX(-50%) rotate(-2deg);
     z-index:5;
@@ -1164,18 +1183,14 @@ body.glitching::after{
     inset:0;
     z-index:1000;
     pointer-events:none;
-    background:
-        linear-gradient(
-            transparent 0 48%,
-            rgba(171,4,249,.06) 50%,
-            transparent 52%
-        );
+    background:linear-gradient(transparent 0 48%,rgba(171,4,249,.06) 50%,transparent 52%);
     opacity:.35;
 }
 
 body.glitching .hero,
 body.glitching .projects,
 body.glitching .youtube-section,
+body.glitching .car-section,
 body.glitching .f40-section,
 body.glitching .disappointment-section,
 body.glitching .danger-zone,
@@ -1285,7 +1300,7 @@ body.glitching .project{
     }
 
     .logo{
-        font-size:24px;
+        font-size:23px;
     }
 
     .watermelon{
@@ -1295,10 +1310,11 @@ body.glitching .project{
     }
 
     .watermelon-count{
-        left:46px;
-        top:2px;
+        left:47px;
+        top:3px;
         font-size:7px;
-        padding:4px 6px;
+        max-width:180px;
+        white-space:normal;
     }
 
     .youtube-mini{
@@ -1308,95 +1324,72 @@ body.glitching .project{
 
     .hero{
         min-height:auto;
-        padding:105px 12px 80px;
+        padding:100px 12px 75px;
     }
 
     .hero-content{
         grid-template-columns:1fr;
-        gap:45px;
-        width:100%;
+        gap:48px;
     }
 
     .hero-title{
         padding:20px 15px;
-        width:100%;
-    }
-
-    .small-title{
-        font-size:9px;
     }
 
     h1{
-        font-size:clamp(67px,20vw,115px);
-        line-height:.76;
+        font-size:clamp(68px,20vw,115px);
     }
 
     .tagline{
+        margin:25px auto 0;
+        max-width:400px;
         font-size:10px;
-        line-height:1.65;
-        margin-top:25px;
     }
 
     .speech{
-        right:-2px;
-        top:-65px;
-        width:140px;
+        right:0;
+        top:-58px;
+        width:135px;
         font-size:18px;
-        padding:16px 12px;
-    }
-
-    .speech::after{
-        left:25px;
-        width:28px;
-        height:28px;
+        padding:15px 12px;
     }
 
     .banana-stage{
-        width:calc(100% - 12px);
-        height:min(470px,110vw);
-        margin:0 auto;
-        box-shadow:9px 9px 0 var(--ink);
+        height:auto;
+        min-height:380px;
+        width:calc(100% - 8px);
+        margin:auto;
     }
 
     .banana-stage img{
-        padding:8px;
+        padding:12px;
     }
 
     .banana-stage::after{
-        font-size:46px;
-        left:3px;
-        bottom:-26px;
-        -webkit-text-stroke:3px var(--ink);
-        text-shadow:4px 4px 0 var(--ink);
+        font-size:45px;
+        left:0;
+        bottom:-25px;
     }
 
     .hero-caption{
         right:-2px;
-        bottom:26px;
+        bottom:22px;
         font-size:14px;
-        padding:8px 10px;
-        border-width:3px;
-        box-shadow:3px 3px 0 var(--ink);
+        padding:7px 9px;
     }
 
     .banana-click-message{
-        bottom:15px;
         font-size:16px;
-        padding:7px 10px;
-        border-width:3px;
+        bottom:12px;
+        max-width:90%;
     }
 
     .scroll{
-        bottom:18px;
-        font-size:7px;
+        display:none;
     }
 
     .projects{
-        padding:85px 12px 80px;
-    }
-
-    .projects-inner{
-        width:100%;
+        padding:80px 12px;
     }
 
     .projects-heading{
@@ -1405,41 +1398,37 @@ body.glitching .project{
     }
 
     .projects-heading h2{
-        font-size:63px;
+        font-size:62px;
     }
 
     .projects-heading p{
         display:inline-block;
         margin-top:18px;
-        font-size:8px;
     }
 
     .project{
-        padding:19px 14px;
+        padding:19px 15px;
         gap:8px;
-        margin-bottom:18px;
-        border-width:4px;
-        box-shadow:6px 6px 0 var(--ink);
     }
 
     .project-left{
         gap:9px;
+        min-width:0;
     }
 
     .project-number{
-        width:24px;
-        font-size:26px;
+        font-size:25px;
+        width:27px;
     }
 
     .project-name{
-        font-size:28px;
+        font-size:clamp(25px,8vw,34px);
         line-height:.95;
     }
 
     .project-desc{
         font-size:8px;
-        line-height:1.45;
-        margin-top:5px;
+        line-height:1.4;
     }
 
     .project-arrow{
@@ -1452,8 +1441,6 @@ body.glitching .project{
 
     .youtube-panel{
         padding:28px 18px;
-        border-width:4px;
-        box-shadow:8px 8px 0 var(--ink);
     }
 
     .youtube-content{
@@ -1463,9 +1450,7 @@ body.glitching .project{
     }
 
     .youtube-title{
-        font-size:clamp(45px,15vw,65px);
-        -webkit-text-stroke:2px var(--ink);
-        text-shadow:4px 4px 0 var(--ink);
+        font-size:52px;
     }
 
     .youtube-sub{
@@ -1474,61 +1459,91 @@ body.glitching .project{
 
     .youtube-button{
         font-size:20px;
-        padding:13px 18px;
+        padding:14px 18px;
+    }
+
+    .car-section{
+        padding:65px 12px 100px;
+    }
+
+    .car-heading{
+        margin-bottom:32px;
+    }
+
+    .car-heading h2{
+        font-size:clamp(48px,14vw,80px);
+    }
+
+    .car-heading p{
+        font-size:8px;
+    }
+
+    .car-photo{
+        padding:8px;
         border-width:4px;
-        box-shadow:5px 5px 0 var(--ink);
+        box-shadow:9px 9px 0 var(--purple);
+    }
+
+    .car-photo + .car-photo{
+        margin-top:65px;
+    }
+
+    .car-photo img{
+        border-width:3px;
+    }
+
+    .car-label{
+        left:12px;
+        top:-22px;
+        font-size:20px;
+        padding:7px 10px;
+        border-width:3px;
+        box-shadow:4px 4px 0 var(--ink);
+    }
+
+    .car-photo:nth-child(3) .car-label{
+        right:12px;
+    }
+
+    .car-divider{
+        margin:45px 0 10px;
+        font-size:34px;
     }
 
     .f40-section{
-        padding:15px 8px 70px;
+        padding:15px 8px 75px;
     }
 
     .f40-wrap{
         border-width:4px;
-        box-shadow:8px 8px 0 var(--purple);
+        box-shadow:9px 9px 0 var(--purple);
     }
 
     .f40-info{
-        left:8px;
-        bottom:8px;
+        left:9px;
+        bottom:9px;
         font-size:6px;
         padding:6px 8px;
-        border-width:3px;
-        box-shadow:2px 2px 0 var(--ink);
+        border-width:2px;
     }
 
     .disappointment-section{
         padding:65px 10px 100px;
     }
 
-    .disappointment-section::before{
-        left:-50px;
-        top:25px;
-        font-size:85px;
-    }
-
-    .disappointment-section::after{
-        font-size:22px;
-        right:-30px;
-    }
-
     .disappointment-heading{
         display:block;
-        margin-bottom:30px;
+        margin-bottom:32px;
     }
 
     .disappointment-title{
-        font-size:clamp(58px,17vw,82px);
-        line-height:.78;
+        font-size:clamp(55px,16vw,78px);
     }
 
     .disappointment-sticker{
         display:inline-block;
-        margin-top:24px;
+        margin-top:23px;
         font-size:8px;
-        padding:9px 11px;
-        border-width:3px;
-        box-shadow:4px 4px 0 var(--ink);
     }
 
     .map-paper{
@@ -1539,45 +1554,39 @@ body.glitching .project{
 
     .map-paper::before{
         width:85px;
-        height:25px;
-        top:-13px;
-    }
-
-    .map-doodle{
-        font-size:15px;
+        height:27px;
+        top:-14px;
     }
 
     .map-doodle.one{
         left:-2px;
-        top:5%;
+        top:4%;
+        font-size:14px;
     }
 
     .map-doodle.two{
         right:-2px;
         top:auto;
-        bottom:15%;
+        bottom:14%;
+        font-size:14px;
     }
 
     .map-doodle.three{
         left:4%;
-        bottom:-32px;
+        bottom:-31px;
         font-size:12px;
         padding:6px 8px;
-        border-width:2px;
-        box-shadow:3px 3px 0 var(--ink);
     }
 
     .disappointment-info{
         grid-template-columns:1fr;
-        gap:17px;
-        margin-top:48px;
+        gap:18px;
+        margin-top:50px;
     }
 
     .disappointment-card{
         min-height:auto;
         padding:16px;
-        border-width:3px;
-        box-shadow:5px 5px 0 var(--ink);
     }
 
     .disappointment-card h3{
@@ -1588,67 +1597,27 @@ body.glitching .project{
         font-size:8px;
     }
 
-    .map-message{
-        width:calc(100% - 24px);
-        padding:22px 15px;
-        border-width:4px;
-        box-shadow:7px 7px 0 var(--purple);
-    }
-
-    .map-message h2{
-        font-size:42px;
-    }
-
-    .map-message p{
-        font-size:8px;
-    }
-
-    .map-message button{
-        border-width:3px;
-        font-size:9px;
-    }
-
     .caption-section{
         padding:20px 15px 75px;
     }
 
     .stupid-caption{
-        font-size:clamp(38px,12vw,60px);
-    }
-
-    .caption-small{
-        font-size:8px;
+        font-size:clamp(38px,11vw,60px);
     }
 
     .danger-zone{
         padding:55px 15px 80px;
     }
 
-    .danger-label{
-        font-size:7px;
-        line-height:1.5;
-    }
-
     .dont-button{
         font-size:27px;
-        padding:14px 19px;
-        border-width:4px;
+        padding:14px 20px;
         box-shadow:7px 7px 0 white;
-    }
-
-    .footer{
-        padding:35px 15px 55px;
-    }
-
-    .footer-big{
-        font-size:30px;
     }
 
     .cursed-message{
         width:calc(100% - 24px);
-        padding:22px 15px;
-        border-width:5px;
-        box-shadow:8px 8px 0 red,-8px -8px 0 cyan;
+        padding:24px 15px;
     }
 
     .cursed-message h2{
@@ -1656,65 +1625,20 @@ body.glitching .project{
     }
 
     .cursed-message p{
-        font-size:8px;
-    }
-}
-
-@media(max-width:420px){
-    .logo{
-        font-size:21px;
+        font-size:9px;
     }
 
-    .youtube-mini{
-        font-size:7px;
-        padding:5px 6px;
+    .map-message{
+        width:calc(100% - 24px);
+        padding:23px 15px;
     }
 
-    .hero{
-        padding-left:8px;
-        padding-right:8px;
+    .map-message h2{
+        font-size:42px;
     }
 
-    .hero-title{
-        padding:18px 10px;
-    }
-
-    h1{
-        font-size:20vw;
-    }
-
-    .speech{
-        width:120px;
-        font-size:16px;
-        right:-4px;
-    }
-
-    .banana-stage{
-        height:400px;
-    }
-
-    .banana-stage::after{
-        font-size:38px;
-    }
-
-    .hero-caption{
-        font-size:11px;
-    }
-
-    .project-name{
-        font-size:25px;
-    }
-
-    .project-desc{
-        font-size:7px;
-    }
-
-    .project-arrow{
-        font-size:31px;
-    }
-
-    .disappointment-title{
-        font-size:16vw;
+    .footer{
+        padding:38px 15px 60px;
     }
 }
 
@@ -1729,7 +1653,6 @@ body.glitching .project{
     }
 }
 </style>
-
 </head>
 
 <body>
@@ -1740,29 +1663,22 @@ body.glitching .project{
             JOHN BANANA
         </div>
 
-    <div class="watermelon" id="watermelon" title="you probably shouldn't press this either">
-        <div class="watermelon-count" id="watermelon-count">
-            YOU HAVE PRESSED THIS 0 TIMES
+        <div class="watermelon" id="watermelon" title="you probably shouldn't press this either">
+            <div class="watermelon-count" id="watermelon-count">
+                YOU HAVE PRESSED THIS 0 TIMES
+            </div>
         </div>
     </div>
-</div>
 
-<div class="header-right">
-    <div class="header-text">
-        probably unnecessary
+    <div class="header-right">
+        <div class="header-text">
+            probably unnecessary
+        </div>
+
+        <a class="youtube-mini" href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener">
+            ▶ YOUTUBE
+        </a>
     </div>
-
-    <a
-        class="youtube-mini"
-        href="https://www.youtube.com/@johnbananafr"
-        target="_blank"
-        rel="noopener"
-    >
-        ▶ YOUTUBE
-    </a>
-</div>
-
-
 </header>
 
 <section class="hero">
@@ -1772,50 +1688,42 @@ body.glitching .project{
                 somewhere on the internet
             </div>
 
-        <h1 id="main-title">
-            JOHN
-            <span>BANANA</span>
-        </h1>
+            <h1 id="main-title">
+                JOHN
+                <span>BANANA</span>
+            </h1>
 
-        <p class="tagline" id="tagline">
-            A small collection of
-            <strong>games</strong>,
-            questionable ideas,
-            and things that probably
-            should've stayed in the drafts.
-        </p>
+            <p class="tagline" id="tagline">
+                A small collection of
+                <strong>games</strong>,
+                questionable ideas,
+                and things that probably
+                should've stayed in the drafts.
+            </p>
 
-        <div class="speech">
-            WAIT...
-            <br>
-            <span>HE MADE A WEBSITE?</span>
+            <div class="speech">
+                WAIT...
+                <br>
+                <span>HE MADE A WEBSITE?</span>
+            </div>
+        </div>
+
+        <div class="banana-stage">
+            <img src="image.png" alt="John Banana" loading="eager" decoding="async" id="banana-image">
+
+            <div class="hero-caption">
+                HE'S JUST STANDING THERE.
+            </div>
+
+            <div class="banana-click-message" id="banana-click-message">
+                🍌 HEY.
+            </div>
         </div>
     </div>
 
-    <div class="banana-stage">
-        <img
-            src="image.png"
-            alt="John Banana"
-            loading="eager"
-            decoding="async"
-            id="banana-image"
-        >
-
-        <div class="hero-caption">
-            HE'S JUST STANDING THERE.
-        </div>
-
-        <div class="banana-click-message" id="banana-click-message">
-            🍌 HEY.
-        </div>
+    <div class="scroll">
+        ↓ there is more nonsense below ↓
     </div>
-</div>
-
-<div class="scroll">
-    ↓ there is more nonsense below ↓
-</div>
-
-
 </section>
 
 <section class="projects" id="projects">
@@ -1825,60 +1733,39 @@ body.glitching .project{
             <p>100% real projects</p>
         </div>
 
-
-    <a
-        href="https://johnbananafr.github.io/songguessr/"
-        class="project"
-    >
-        <div class="project-left">
-            <div class="project-number">01</div>
-            <div>
-                <div class="project-name">SongGuessr</div>
-                <div class="project-desc">
-                    Guess the song before the clip gets longer.
+        <a href="https://johnbananafr.github.io/songguessr/" class="project">
+            <div class="project-left">
+                <div class="project-number">01</div>
+                <div>
+                    <div class="project-name">SongGuessr</div>
+                    <div class="project-desc">Guess the song before the clip gets longer.</div>
                 </div>
             </div>
-        </div>
+            <div class="project-arrow">↗</div>
+        </a>
 
-        <div class="project-arrow">↗</div>
-    </a>
-
-    <a
-        href="https://johnbananafr.github.io/sorted/"
-        class="project"
-    >
-        <div class="project-left">
-            <div class="project-number">02</div>
-            <div>
-                <div class="project-name">SORTED</div>
-                <div class="project-desc">
-                    Put things in the correct order.
+        <a href="https://johnbananafr.github.io/sorted/" class="project">
+            <div class="project-left">
+                <div class="project-number">02</div>
+                <div>
+                    <div class="project-name">SORTED</div>
+                    <div class="project-desc">Put things in the correct order.</div>
                 </div>
             </div>
-        </div>
+            <div class="project-arrow">↗</div>
+        </a>
 
-        <div class="project-arrow">↗</div>
-    </a>
-
-    <a
-        href="https://johnbananafr.github.io/normal"
-        class="project"
-    >
-        <div class="project-left">
-            <div class="project-number">03</div>
-            <div>
-                <div class="project-name">HOW NORMAL ARE YOU?</div>
-                <div class="project-desc">
-                    Find out how normal you really are.
+        <a href="https://johnbananafr.github.io/normal" class="project">
+            <div class="project-left">
+                <div class="project-number">03</div>
+                <div>
+                    <div class="project-name">HOW NORMAL ARE YOU?</div>
+                    <div class="project-desc">Find out how normal you really are.</div>
                 </div>
             </div>
-        </div>
-
-        <div class="project-arrow">↗</div>
-    </a>
-</div>
-
-
+            <div class="project-arrow">↗</div>
+        </a>
+    </div>
 </section>
 
 <section class="youtube-section">
@@ -1893,47 +1780,59 @@ body.glitching .project{
                     THING.
                 </div>
 
+                <div class="youtube-sub">
+                    videos • fruit • questionable decisions
+                    <br>
+                    somehow there is already a whole channel
+                </div>
+            </div>
 
-            <div class="youtube-sub">
-                videos • fruit • questionable decisions
-                <br>
-                somehow there is already a whole channel
+            <a href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener" class="youtube-button">
+                ▶ WATCH IT
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="car-section">
+    <div class="car-inner">
+        <div class="car-heading">
+            <h2>JOHN BANANA FINDS A CAR IN THE WILD!!</h2>
+            <p>rare footage of john banana discovering automotive engineering</p>
+        </div>
+
+        <div class="car-photo">
+            <img src="wowf40.png" alt="John Banana finds a Ferrari F40" loading="lazy" decoding="async">
+            <div class="car-label">
+                JOHN BANANA FINDS A CAR IN THE WILD!!
             </div>
         </div>
 
-        <a
-            href="https://www.youtube.com/@johnbananafr"
-            target="_blank"
-            rel="noopener"
-            class="youtube-button"
-        >
-            ▶ WATCH IT
-        </a>
+        <div class="car-divider">
+            5 MINUTES LATER...
+        </div>
+
+        <div class="car-photo">
+            <img src="f40.png" alt="John Banana with a Ferrari F40" loading="lazy" decoding="async">
+            <div class="car-label">
+                HE HAS ACQUIRED THE F40.
+            </div>
+        </div>
     </div>
-</div>
-
-
 </section>
 
 <section class="f40-section">
     <div class="f40-wrap">
-        <img
-            src="f40.png"
-            alt="John Banana with a Ferrari F40"
-            loading="lazy"
-            decoding="async"
-        >
+        <img src="f40.png" alt="John Banana with a Ferrari F40" loading="lazy" decoding="async">
 
-    <div class="f40-info">
-        JOHN BANANA
-        &nbsp; / &nbsp;
-        F40
-        &nbsp; / &nbsp;
-        NO FURTHER QUESTIONS
+        <div class="f40-info">
+            JOHN BANANA
+            &nbsp; / &nbsp;
+            F40
+            &nbsp; / &nbsp;
+            NO FURTHER QUESTIONS
+        </div>
     </div>
-</div>
-
-
 </section>
 
 <section class="disappointment-section" id="disappointment-island">
@@ -1944,79 +1843,74 @@ body.glitching .project{
                 <span>ISLAND.</span>
             </h2>
 
+            <div class="disappointment-sticker">
+                YES.
+                <br>
+                THIS IS REAL.
+            </div>
+        </div>
 
-        <div class="disappointment-sticker">
-            YES.
-            <br>
-            THIS IS REAL.
+        <div class="map-paper" id="map-paper" title="do not click the island">
+            <img src="map.png" alt="Doodled map of Disappointment Island" class="map-image" loading="lazy" decoding="async">
+
+            <div class="map-doodle one">
+                WHY.
+            </div>
+
+            <div class="map-doodle two">
+                OH NO.
+            </div>
+
+            <div class="map-doodle three">
+                JOHN WAS HERE →
+            </div>
+        </div>
+
+        <div class="disappointment-info">
+            <div class="disappointment-card">
+                <h3>FIELD REPORT</h3>
+                <p>
+                    John Banana travelled here.
+                    Nobody knows why.
+                </p>
+            </div>
+
+            <div class="disappointment-card">
+                <h3>BANANAS FOUND</h3>
+                <p>
+                    0.
+                    <br><br>
+                    This is considered extremely disappointing.
+                </p>
+            </div>
+
+            <div class="disappointment-card">
+                <h3>OVERALL RATING</h3>
+                <p>
+                    ★☆☆☆☆
+                    <br><br>
+                    Would probably not visit again.
+                </p>
+            </div>
         </div>
     </div>
-
-    <div class="map-paper" id="map-paper" title="do not click the island">
-        <img
-            src="map.png"
-            alt="Doodled map of Disappointment Island"
-            class="map-image"
-            loading="lazy"
-            decoding="async"
-        >
-
-        <div class="map-doodle one">WHY.</div>
-        <div class="map-doodle two">OH NO.</div>
-        <div class="map-doodle three">JOHN WAS HERE →</div>
-    </div>
-
-    <div class="disappointment-info">
-        <div class="disappointment-card">
-            <h3>FIELD REPORT</h3>
-            <p>
-                John Banana travelled here.
-                <br><br>
-                Nobody knows why.
-            </p>
-        </div>
-
-        <div class="disappointment-card">
-            <h3>BANANAS FOUND</h3>
-            <p>
-                0.
-                <br><br>
-                This is considered extremely disappointing.
-            </p>
-        </div>
-
-        <div class="disappointment-card">
-            <h3>OVERALL RATING</h3>
-            <p>
-                ★☆☆☆☆
-                <br><br>
-                Would probably not visit again.
-            </p>
-        </div>
-    </div>
-</div>
-
-
 </section>
 
 <div class="map-message" id="map-message">
     <h2>YOU FOUND IT.</h2>
 
+    <p>
+        CONGRATULATIONS.
+        <br><br>
+        YOU ARE NOW TECHNICALLY
+        ON DISAPPOINTMENT ISLAND.
+        <br><br>
+        THERE IS NOTHING HERE.
+    </p>
 
-<p>
-    CONGRATULATIONS.
-    <br><br>
-    YOU ARE NOW TECHNICALLY
-    ON DISAPPOINTMENT ISLAND.
-    <br><br>
-    THERE IS NOTHING HERE.
-</p>
-
-<button id="map-close">
-    LEAVE THE ISLAND
-</button>
-
-
+    <button id="map-close">
+        LEAVE THE ISLAND
+    </button>
 </div>
 
 <section class="caption-section">
@@ -2024,12 +1918,9 @@ body.glitching .project{
         THIS WAS A TERRIBLE IDEA.
     </div>
 
-
-<div class="caption-small">
-    anyway here's the website
-</div>
-
-
+    <div class="caption-small">
+        anyway here's the website
+    </div>
 </section>
 
 <section class="danger-zone">
@@ -2037,41 +1928,30 @@ body.glitching .project{
         seriously. there is absolutely no reason to click this.
     </div>
 
-
-<button class="dont-button" id="dont-button">
-    DO NOT PRESS
-</button>
-
-
+    <button class="dont-button" id="dont-button">
+        DO NOT PRESS
+    </button>
 </section>
 
 <div class="video-overlay" id="video-overlay">
-    <video
-        id="scene-video"
-        src="scene.mp4"
-        playsinline
-        preload="auto"
-    ></video>
+    <video id="scene-video" src="scene.mp4" playsinline preload="auto"></video>
 </div>
 
 <div class="cursed-message" id="cursed-message">
     <h2>OH NO.</h2>
 
+    <p>
+        YOU PRESSED THE BUTTON.
+        <br><br>
+        WHY WOULD YOU DO THAT.
+        <br><br>
+        JOHN BANANA IS CURRENTLY EXPERIENCING
+        UNFORESEEN TECHNICAL DIFFICULTIES.
+    </p>
 
-<p>
-    YOU PRESSED THE BUTTON.
-    <br><br>
-    WHY WOULD YOU DO THAT.
-    <br><br>
-    JOHN BANANA IS CURRENTLY EXPERIENCING
-    UNFORESEEN TECHNICAL DIFFICULTIES.
-</p>
-
-<button id="escape-button">
-    UNDO MY MISTAKE
-</button>
-
-
+    <button id="escape-button">
+        UNDO MY MISTAKE
+    </button>
 </div>
 
 <footer class="footer">
@@ -2079,13 +1959,10 @@ body.glitching .project{
         JOHN BANANA
     </div>
 
-
-<div class="footer-small" id="footer-small">
-    more stuff eventually.
-    probably.
-</div>
-
-
+    <div class="footer-small" id="footer-small">
+        more stuff eventually.
+        probably.
+    </div>
 </footer>
 
 <script>
@@ -2275,7 +2152,8 @@ function resetEverything(){
     tagline.innerHTML=
         "A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.";
 
-    footerSmall.textContent="more stuff eventually. probably.";
+    footerSmall.textContent=
+        "more stuff eventually. probably.";
 
     dontButton.textContent="DO NOT PRESS";
 }
