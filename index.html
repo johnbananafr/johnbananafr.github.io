@@ -513,15 +513,15 @@ h1 span{
     overflow:hidden;
 }
 
-.project:nth-child(2){
+.project:nth-of-type(2){
     transform:rotate(1deg);
 }
 
-.project:nth-child(3){
+.project:nth-of-type(3){
     transform:rotate(-1deg);
 }
 
-.project:nth-child(4){
+.project:nth-of-type(4){
     transform:rotate(.8deg);
 }
 
@@ -548,6 +548,7 @@ h1 span{
     gap:20px;
     position:relative;
     z-index:2;
+    min-width:0;
 }
 
 .project-number{
@@ -657,99 +658,45 @@ h1 span{
     box-shadow:3px 3px 0 var(--ink);
 }
 
-.car-section{
-    padding:80px 20px 120px;
-    background:var(--cream);
-}
-
-.car-inner{
-    width:min(1100px,100%);
-    margin:auto;
-}
-
-.car-heading{
-    margin-bottom:40px;
-    text-align:center;
-}
-
-.car-heading h2{
-    margin:0;
-    font-family:var(--comic-font);
-    font-size:clamp(55px,9vw,100px);
-    line-height:.8;
-    transform:rotate(-2deg);
-    text-shadow:5px 5px 0 var(--purple);
-}
-
-.car-heading p{
-    margin:20px 0 0;
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--gray);
-}
-
-.car-photo{
-    position:relative;
-    background:white;
-    border:6px solid var(--ink);
-    box-shadow:14px 14px 0 var(--purple);
-    padding:14px;
-    transform:rotate(.8deg);
-}
-
-.car-photo + .car-photo{
-    margin-top:90px;
-    transform:rotate(-.8deg);
-}
-
-.car-photo img{
-    display:block;
-    width:100%;
-    height:auto;
-    border:4px solid var(--ink);
-}
-
-.car-label{
-    position:absolute;
-    left:25px;
-    top:-28px;
-    background:var(--yellow);
-    border:4px solid var(--ink);
-    padding:9px 14px;
-    font-family:var(--comic-font);
-    font-size:clamp(20px,4vw,34px);
-    box-shadow:5px 5px 0 var(--ink);
-    transform:rotate(-3deg);
-}
-
-.car-photo:nth-child(3) .car-label{
-    left:auto;
-    right:25px;
-    transform:rotate(3deg);
-}
-
-.car-divider{
-    text-align:center;
-    margin:65px 0 15px;
-    font-family:var(--comic-font);
-    font-size:45px;
-    color:var(--purple);
-    text-shadow:3px 3px 0 var(--ink);
-}
-
 .f40-section{
     padding:30px 18px 100px;
     background:var(--cream);
 }
 
-.f40-wrap{
-    position:relative;
+.f40-story{
     width:min(1250px,100%);
     margin:auto;
+}
+
+.f40-card{
+    position:relative;
+    margin-bottom:70px;
+}
+
+.f40-card:last-child{
+    margin-bottom:0;
+}
+
+.f40-label{
+    display:inline-block;
+    position:relative;
+    z-index:5;
+    margin:0 0 -18px 20px;
+    background:var(--yellow);
+    border:5px solid var(--ink);
+    padding:10px 18px;
+    font-family:var(--comic-font);
+    font-size:30px;
+    transform:rotate(-2deg);
+    box-shadow:6px 6px 0 var(--ink);
+}
+
+.f40-wrap{
+    position:relative;
+    width:100%;
     border:6px solid var(--ink);
     background:var(--ink);
     box-shadow:15px 15px 0 var(--purple);
-    transform:rotate(-.6deg);
     overflow:hidden;
 }
 
@@ -766,23 +713,6 @@ h1 span{
     display:block;
     width:100%;
     height:auto;
-}
-
-.f40-info{
-    position:absolute;
-    left:25px;
-    bottom:25px;
-    z-index:5;
-    background:var(--yellow);
-    color:var(--ink);
-    border:4px solid var(--ink);
-    padding:9px 13px;
-    font-family:var(--mono);
-    font-size:9px;
-    font-weight:700;
-    text-transform:uppercase;
-    transform:rotate(-2deg);
-    box-shadow:4px 4px 0 var(--ink);
 }
 
 .disappointment-section{
@@ -1190,7 +1120,6 @@ body.glitching::after{
 body.glitching .hero,
 body.glitching .projects,
 body.glitching .youtube-section,
-body.glitching .car-section,
 body.glitching .f40-section,
 body.glitching .disappointment-section,
 body.glitching .danger-zone,
@@ -1292,7 +1221,7 @@ body.glitching .project{
     }
 
     header{
-        padding:14px 12px;
+        padding:14px;
     }
 
     .header-text{
@@ -1300,7 +1229,7 @@ body.glitching .project{
     }
 
     .logo{
-        font-size:23px;
+        font-size:24px;
     }
 
     .watermelon{
@@ -1313,8 +1242,6 @@ body.glitching .project{
         left:47px;
         top:3px;
         font-size:7px;
-        max-width:180px;
-        white-space:normal;
     }
 
     .youtube-mini{
@@ -1324,64 +1251,68 @@ body.glitching .project{
 
     .hero{
         min-height:auto;
-        padding:100px 12px 75px;
+        padding:110px 12px 80px;
     }
 
     .hero-content{
         grid-template-columns:1fr;
-        gap:48px;
+        gap:50px;
     }
 
     .hero-title{
-        padding:20px 15px;
+        padding:20px 16px;
+    }
+
+    .small-title{
+        font-size:9px;
     }
 
     h1{
-        font-size:clamp(68px,20vw,115px);
+        font-size:clamp(65px,20vw,105px);
+        line-height:.75;
     }
 
     .tagline{
-        margin:25px auto 0;
-        max-width:400px;
+        margin-top:25px;
         font-size:10px;
+        line-height:1.7;
     }
 
     .speech{
-        right:0;
+        right:-4px;
         top:-58px;
         width:135px;
         font-size:18px;
-        padding:15px 12px;
+        padding:15px;
     }
 
     .banana-stage{
-        height:auto;
-        min-height:380px;
+        height:min(115vw,480px);
+        min-height:350px;
         width:calc(100% - 8px);
         margin:auto;
     }
 
     .banana-stage img{
-        padding:12px;
+        padding:8px;
     }
 
     .banana-stage::after{
         font-size:45px;
-        left:0;
+        left:3px;
         bottom:-25px;
     }
 
     .hero-caption{
         right:-2px;
-        bottom:22px;
+        bottom:24px;
         font-size:14px;
-        padding:7px 9px;
+        padding:8px 10px;
     }
 
     .banana-click-message{
         font-size:16px;
-        bottom:12px;
-        max-width:90%;
+        bottom:14px;
     }
 
     .scroll{
@@ -1389,7 +1320,7 @@ body.glitching .project{
     }
 
     .projects{
-        padding:80px 12px;
+        padding:75px 12px 90px;
     }
 
     .projects-heading{
@@ -1407,8 +1338,9 @@ body.glitching .project{
     }
 
     .project{
-        padding:19px 15px;
-        gap:8px;
+        padding:20px 15px;
+        gap:10px;
+        margin-bottom:20px;
     }
 
     .project-left{
@@ -1417,22 +1349,23 @@ body.glitching .project{
     }
 
     .project-number{
+        width:24px;
         font-size:25px;
-        width:27px;
     }
 
     .project-name{
-        font-size:clamp(25px,8vw,34px);
+        font-size:clamp(25px,7vw,34px);
         line-height:.95;
     }
 
     .project-desc{
         font-size:8px;
-        line-height:1.4;
+        line-height:1.5;
+        max-width:230px;
     }
 
     .project-arrow{
-        font-size:36px;
+        font-size:35px;
     }
 
     .youtube-section{
@@ -1462,69 +1395,24 @@ body.glitching .project{
         padding:14px 18px;
     }
 
-    .car-section{
-        padding:65px 12px 100px;
-    }
-
-    .car-heading{
-        margin-bottom:32px;
-    }
-
-    .car-heading h2{
-        font-size:clamp(48px,14vw,80px);
-    }
-
-    .car-heading p{
-        font-size:8px;
-    }
-
-    .car-photo{
-        padding:8px;
-        border-width:4px;
-        box-shadow:9px 9px 0 var(--purple);
-    }
-
-    .car-photo + .car-photo{
-        margin-top:65px;
-    }
-
-    .car-photo img{
-        border-width:3px;
-    }
-
-    .car-label{
-        left:12px;
-        top:-22px;
-        font-size:20px;
-        padding:7px 10px;
-        border-width:3px;
-        box-shadow:4px 4px 0 var(--ink);
-    }
-
-    .car-photo:nth-child(3) .car-label{
-        right:12px;
-    }
-
-    .car-divider{
-        margin:45px 0 10px;
-        font-size:34px;
-    }
-
     .f40-section{
-        padding:15px 8px 75px;
+        padding:15px 8px 80px;
+    }
+
+    .f40-card{
+        margin-bottom:55px;
+    }
+
+    .f40-label{
+        font-size:21px;
+        padding:8px 12px;
+        margin-left:10px;
+        margin-bottom:-14px;
     }
 
     .f40-wrap{
         border-width:4px;
         box-shadow:9px 9px 0 var(--purple);
-    }
-
-    .f40-info{
-        left:9px;
-        bottom:9px;
-        font-size:6px;
-        padding:6px 8px;
-        border-width:2px;
     }
 
     .disappointment-section{
@@ -1533,7 +1421,7 @@ body.glitching .project{
 
     .disappointment-heading{
         display:block;
-        margin-bottom:32px;
+        margin-bottom:30px;
     }
 
     .disappointment-title{
@@ -1542,33 +1430,34 @@ body.glitching .project{
 
     .disappointment-sticker{
         display:inline-block;
-        margin-top:23px;
+        margin-top:22px;
         font-size:8px;
     }
 
     .map-paper{
-        padding:7px;
-        border-width:4px;
+        padding:8px;
         box-shadow:7px 7px 0 var(--ink);
     }
 
     .map-paper::before{
-        width:85px;
+        width:90px;
         height:27px;
         top:-14px;
     }
 
+    .map-doodle{
+        font-size:15px;
+    }
+
     .map-doodle.one{
         left:-2px;
-        top:4%;
-        font-size:14px;
+        top:5%;
     }
 
     .map-doodle.two{
         right:-2px;
         top:auto;
-        bottom:14%;
-        font-size:14px;
+        bottom:15%;
     }
 
     .map-doodle.three{
@@ -1586,7 +1475,7 @@ body.glitching .project{
 
     .disappointment-card{
         min-height:auto;
-        padding:16px;
+        padding:17px;
     }
 
     .disappointment-card h3{
@@ -1598,20 +1487,26 @@ body.glitching .project{
     }
 
     .caption-section{
-        padding:20px 15px 75px;
+        padding:25px 15px 80px;
     }
 
     .stupid-caption{
-        font-size:clamp(38px,11vw,60px);
+        font-size:clamp(36px,11vw,60px);
     }
 
     .danger-zone{
-        padding:55px 15px 80px;
+        padding:60px 15px 85px;
+    }
+
+    .danger-label{
+        max-width:300px;
+        margin:0 auto 18px;
+        line-height:1.6;
     }
 
     .dont-button{
-        font-size:27px;
-        padding:14px 20px;
+        font-size:28px;
+        padding:14px 19px;
         box-shadow:7px 7px 0 white;
     }
 
@@ -1630,7 +1525,7 @@ body.glitching .project{
 
     .map-message{
         width:calc(100% - 24px);
-        padding:23px 15px;
+        padding:24px 16px;
     }
 
     .map-message h2{
@@ -1638,7 +1533,79 @@ body.glitching .project{
     }
 
     .footer{
-        padding:38px 15px 60px;
+        padding:40px 15px 60px;
+    }
+}
+
+@media(max-width:420px){
+    header{
+        padding:12px;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .youtube-mini{
+        font-size:7px;
+        padding:5px 6px;
+    }
+
+    .hero{
+        padding-top:100px;
+    }
+
+    .hero-title{
+        padding:18px 12px;
+    }
+
+    h1{
+        font-size:70px;
+    }
+
+    .speech{
+        width:115px;
+        font-size:15px;
+        top:-50px;
+        right:-3px;
+    }
+
+    .banana-stage{
+        height:350px;
+        min-height:0;
+    }
+
+    .banana-stage::after{
+        font-size:36px;
+    }
+
+    .hero-caption{
+        font-size:11px;
+        bottom:20px;
+    }
+
+    .project-name{
+        font-size:24px;
+    }
+
+    .project-desc{
+        max-width:190px;
+    }
+
+    .project-arrow{
+        font-size:30px;
+    }
+
+    .youtube-title{
+        font-size:44px;
+    }
+
+    .f40-label{
+        font-size:18px;
+    }
+
+    .disappointment-title{
+        font-size:54px;
     }
 }
 
@@ -1738,9 +1705,12 @@ body.glitching .project{
                 <div class="project-number">01</div>
                 <div>
                     <div class="project-name">SongGuessr</div>
-                    <div class="project-desc">Guess the song before the clip gets longer.</div>
+                    <div class="project-desc">
+                        Guess the song before the clip gets longer.
+                    </div>
                 </div>
             </div>
+
             <div class="project-arrow">↗</div>
         </a>
 
@@ -1749,9 +1719,12 @@ body.glitching .project{
                 <div class="project-number">02</div>
                 <div>
                     <div class="project-name">SORTED</div>
-                    <div class="project-desc">Put things in the correct order.</div>
+                    <div class="project-desc">
+                        Put things in the correct order.
+                    </div>
                 </div>
             </div>
+
             <div class="project-arrow">↗</div>
         </a>
 
@@ -1760,9 +1733,12 @@ body.glitching .project{
                 <div class="project-number">03</div>
                 <div>
                     <div class="project-name">HOW NORMAL ARE YOU?</div>
-                    <div class="project-desc">Find out how normal you really are.</div>
+                    <div class="project-desc">
+                        Find out how normal you really are.
+                    </div>
                 </div>
             </div>
+
             <div class="project-arrow">↗</div>
         </a>
     </div>
@@ -1794,49 +1770,45 @@ body.glitching .project{
     </div>
 </section>
 
-<section class="car-section">
-    <div class="car-inner">
-        <div class="car-heading">
-            <h2>JOHN BANANA FINDS A CAR IN THE WILD!!</h2>
-            <p>rare footage of john banana discovering automotive engineering</p>
-        </div>
+<section class="f40-section">
+    <div class="f40-story">
 
-        <div class="car-photo">
-            <img src="wowf40.png" alt="John Banana finds a Ferrari F40" loading="lazy" decoding="async">
-            <div class="car-label">
+        <div class="f40-card">
+            <div class="f40-label">
                 JOHN BANANA FINDS A CAR IN THE WILD!!
             </div>
-        </div>
 
-        <div class="car-divider">
-            5 MINUTES LATER...
-        </div>
-
-        <div class="car-photo">
-            <img src="f40.png" alt="John Banana with a Ferrari F40" loading="lazy" decoding="async">
-            <div class="car-label">
-                HE HAS ACQUIRED THE F40.
+            <div class="f40-wrap">
+                <img
+                    src="wowf40.png"
+                    alt="John Banana pointing at a Ferrari F40"
+                    loading="lazy"
+                    decoding="async"
+                >
             </div>
         </div>
-    </div>
-</section>
 
-<section class="f40-section">
-    <div class="f40-wrap">
-        <img src="f40.png" alt="John Banana with a Ferrari F40" loading="lazy" decoding="async">
+        <div class="f40-card">
+            <div class="f40-label">
+                5 MINUTES LATER...
+            </div>
 
-        <div class="f40-info">
-            JOHN BANANA
-            &nbsp; / &nbsp;
-            F40
-            &nbsp; / &nbsp;
-            NO FURTHER QUESTIONS
+            <div class="f40-wrap">
+                <img
+                    src="f40.png"
+                    alt="Ferrari F40"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
         </div>
+
     </div>
 </section>
 
 <section class="disappointment-section" id="disappointment-island">
     <div class="disappointment-inner">
+
         <div class="disappointment-heading">
             <h2 class="disappointment-title">
                 DISAPPOINTMENT
@@ -1851,7 +1823,13 @@ body.glitching .project{
         </div>
 
         <div class="map-paper" id="map-paper" title="do not click the island">
-            <img src="map.png" alt="Doodled map of Disappointment Island" class="map-image" loading="lazy" decoding="async">
+            <img
+                src="map.png"
+                alt="Doodled map of Disappointment Island"
+                class="map-image"
+                loading="lazy"
+                decoding="async"
+            >
 
             <div class="map-doodle one">
                 WHY.
@@ -1880,7 +1858,8 @@ body.glitching .project{
                 <p>
                     0.
                     <br><br>
-                    This is considered extremely disappointing.
+                    This is considered
+                    extremely disappointing.
                 </p>
             </div>
 
@@ -2023,11 +2002,10 @@ function bananaEasterEgg(){
     bananaClicks++;
 
     const message=
-        bananaMessages[
-            (bananaClicks-1)%bananaMessages.length
-        ];
+        bananaMessages[(bananaClicks-1)%bananaMessages.length];
 
     bananaMessage.textContent=message;
+
     bananaMessage.classList.remove("show");
 
     void bananaMessage.offsetWidth;
@@ -2041,7 +2019,9 @@ mainTitle.addEventListener("click",bananaEasterEgg);
 
 mapPaper.addEventListener("click",()=>{
     mapMessage.classList.remove("active");
+
     void mapMessage.offsetWidth;
+
     mapMessage.classList.add("active");
 });
 
@@ -2072,7 +2052,9 @@ function closeScene(){
     clearTimeout(videoTimer);
 
     sceneVideo.pause();
+
     videoOverlay.classList.remove("active");
+
     document.body.style.overflow="";
 
     if(document.fullscreenElement){
@@ -2086,6 +2068,7 @@ dontButton.addEventListener("click",async()=>{
     if(cursed)return;
 
     cursed=true;
+
     await playScene();
 });
 
@@ -2108,8 +2091,7 @@ function triggerCurse(){
 
     curseTimers.push(
         setTimeout(()=>{
-            tagline.innerHTML=
-                "something has gone <strong>VERY WRONG.</strong>";
+            tagline.innerHTML="something has gone <strong>VERY WRONG.</strong>";
         },1000)
     );
 
@@ -2139,6 +2121,7 @@ function stopCurseEffects(){
 
 function resetEverything(){
     curseTimers.forEach(clearTimeout);
+
     curseTimers=[];
 
     cursed=false;
@@ -2152,8 +2135,7 @@ function resetEverything(){
     tagline.innerHTML=
         "A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.";
 
-    footerSmall.textContent=
-        "more stuff eventually. probably.";
+    footerSmall.textContent="more stuff eventually. probably.";
 
     dontButton.textContent="DO NOT PRESS";
 }
@@ -2164,18 +2146,6 @@ sceneVideo.addEventListener("error",()=>{
     console.warn("Could not load scene.mp4");
     closeScene();
 });
-
-console.log(`
-🍌 JOHN BANANA
-
-You found the console.
-
-There is still nothing useful here.
-
-You could've been playing SongGuessr.
-
-Why are you like this.
-`);
 </script>
 
 </body>
