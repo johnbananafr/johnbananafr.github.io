@@ -1,1947 +1,1941 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#f4efe5">
-
 <title>John Banana</title>
 <link rel="icon" type="image/png" href="banana.png">
 <link rel="shortcut icon" type="image/png" href="banana.png">
-
+<link rel="apple-touch-icon" href="banana.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Mono:wght@400;500;700&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --purple:#ab04f9;
-    --purple-dark:#7800ad;
-    --purple-light:#d96cff;
-    --black:#080609;
-    --white:#fffdf8;
-    --cream:#f4efe5;
-    --red:#ff304f;
-    --yellow:#ffe600;
-    --ink:#171218;
-    --gray:#77717d;
-    --comic-font:"Bangers",Impact,sans-serif;
-    --body-font:Inter,Arial,sans-serif;
-    --mono:"DM Mono",monospace;
+--purple:#ab04f9;
+--purple-dark:#7800ad;
+--purple-light:#d96cff;
+--black:#080609;
+--white:#fffdf8;
+--cream:#f4efe5;
+--red:#ff304f;
+--yellow:#ffe600;
+--ink:#171218;
+--gray:#77717d;
+--comic-font:"Bangers",Impact,sans-serif;
+--body-font:Inter,Arial,sans-serif;
+--mono:"DM Mono",monospace
 }
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth
 }
 
 body{
-    margin:0;
-    background:var(--cream);
-    color:var(--ink);
-    font-family:var(--body-font);
-    overflow-x:hidden;
+margin:0;
+background:var(--cream);
+color:var(--ink);
+font-family:var(--body-font);
+overflow-x:hidden
 }
 
 ::selection{
-    background:var(--purple);
-    color:white;
+background:var(--purple);
+color:white
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+color:inherit;
+text-decoration:none
 }
 
 button{
-    font-family:inherit;
+font-family:inherit
 }
 
 body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:999;
-    opacity:.045;
-    background:radial-gradient(circle at 20% 20%,rgba(0,0,0,.35) 0 1px,transparent 1.2px);
-    background-size:14px 14px;
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:999;
+opacity:.045;
+background:radial-gradient(circle at 20% 20%,rgba(0,0,0,.35) 0 1px,transparent 1.2px);
+background-size:14px 14px
 }
 
 header{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    padding:22px 28px;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    z-index:20;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:22px 28px;
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+z-index:20
 }
 
 .logo-wrap{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
+display:flex;
+flex-direction:column;
+align-items:flex-start
 }
 
 .logo{
-    font-family:var(--comic-font);
-    font-size:30px;
-    color:var(--ink);
-    letter-spacing:.03em;
-    transform:rotate(-2deg);
-    text-shadow:3px 3px 0 var(--purple);
-    cursor:pointer;
-    user-select:none;
-    transition:transform .15s ease;
+font-family:var(--comic-font);
+font-size:30px;
+color:var(--ink);
+letter-spacing:.03em;
+transform:rotate(-2deg);
+text-shadow:3px 3px 0 var(--purple);
+cursor:pointer;
+user-select:none;
+transition:transform .15s ease
 }
 
 .logo:hover{
-    transform:rotate(-4deg) scale(1.04);
+transform:rotate(-4deg) scale(1.04)
 }
 
 .watermelon{
-    margin-top:12px;
-    margin-left:3px;
-    width:47px;
-    height:47px;
-    border:3px solid var(--ink);
-    border-radius:50%;
-    background:repeating-linear-gradient(65deg,#3d9e48 0 5px,#277536 5px 10px);
-    box-shadow:4px 4px 0 var(--ink);
-    cursor:pointer;
-    position:relative;
-    transition:transform .12s ease,box-shadow .12s ease;
-    -webkit-tap-highlight-color:transparent;
+margin-top:12px;
+margin-left:3px;
+width:47px;
+height:47px;
+border:3px solid var(--ink);
+border-radius:50%;
+background:repeating-linear-gradient(65deg,#3d9e48 0 5px,#277536 5px 10px);
+box-shadow:4px 4px 0 var(--ink);
+cursor:pointer;
+position:relative;
+transition:transform .12s ease,box-shadow .12s ease;
+-webkit-tap-highlight-color:transparent
 }
 
 .watermelon::after{
-    content:"🍉";
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    transform:rotate(-8deg);
+content:"🍉";
+position:absolute;
+inset:0;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:27px;
+transform:rotate(-8deg)
 }
 
 .watermelon:hover{
-    transform:rotate(-8deg) scale(1.08);
+transform:rotate(-8deg) scale(1.08)
 }
 
 .watermelon:active{
-    transform:translate(3px,3px);
-    box-shadow:1px 1px 0 var(--ink);
+transform:translate(3px,3px);
+box-shadow:1px 1px 0 var(--ink)
 }
 
 .watermelon-count{
-    position:absolute;
-    left:55px;
-    top:7px;
-    white-space:nowrap;
-    background:var(--yellow);
-    border:3px solid var(--ink);
-    padding:5px 8px;
-    font-family:var(--mono);
-    font-size:8px;
-    font-weight:700;
-    box-shadow:3px 3px 0 var(--ink);
-    transform:rotate(2deg);
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .12s ease;
+position:absolute;
+left:55px;
+top:7px;
+white-space:nowrap;
+background:var(--yellow);
+border:3px solid var(--ink);
+padding:5px 8px;
+font-family:var(--mono);
+font-size:8px;
+font-weight:700;
+box-shadow:3px 3px 0 var(--ink);
+transform:rotate(2deg);
+opacity:0;
+pointer-events:none;
+transition:opacity .12s ease
 }
 
 .watermelon.show-count .watermelon-count{
-    opacity:1;
+opacity:1
 }
 
 .header-right{
-    display:flex;
-    align-items:center;
-    gap:12px;
+display:flex;
+align-items:center;
+gap:12px
 }
 
 .header-text{
-    font-family:var(--mono);
-    font-size:9px;
-    font-weight:700;
-    background:var(--ink);
-    color:white;
-    padding:7px 10px;
-    transform:rotate(2deg);
-    text-transform:uppercase;
+font-family:var(--mono);
+font-size:9px;
+font-weight:700;
+background:var(--ink);
+color:white;
+padding:7px 10px;
+transform:rotate(2deg);
+text-transform:uppercase
 }
 
 .youtube-mini{
-    background:var(--red);
-    color:white;
-    border:3px solid var(--ink);
-    padding:7px 11px;
-    font-family:var(--mono);
-    font-size:10px;
-    font-weight:700;
-    box-shadow:3px 3px 0 var(--ink);
-    transition:transform .12s ease,box-shadow .12s ease;
+background:var(--red);
+color:white;
+border:3px solid var(--ink);
+padding:7px 11px;
+font-family:var(--mono);
+font-size:10px;
+font-weight:700;
+box-shadow:3px 3px 0 var(--ink);
+transition:transform .12s ease,box-shadow .12s ease
 }
 
 .youtube-mini:hover{
-    transform:translate(2px,2px) rotate(-2deg);
-    box-shadow:1px 1px 0 var(--ink);
+transform:translate(2px,2px) rotate(-2deg);
+box-shadow:1px 1px 0 var(--ink)
 }
 
 .hero{
-    min-height:100vh;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:100px 30px 70px;
-    background:radial-gradient(circle at 80% 40%,rgba(171,4,249,.15),transparent 28%),var(--cream);
+min-height:100vh;
+position:relative;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:100px 30px 70px;
+background:radial-gradient(circle at 80% 40%,rgba(171,4,249,.15),transparent 28%),var(--cream)
 }
 
 .hero::before{
-    content:"";
-    position:absolute;
-    width:900px;
-    height:900px;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    background:repeating-conic-gradient(from 0deg,rgba(171,4,249,.07) 0deg 8deg,transparent 8deg 18deg);
-    pointer-events:none;
+content:"";
+position:absolute;
+width:900px;
+height:900px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+background:repeating-conic-gradient(from 0deg,rgba(171,4,249,.07) 0deg 8deg,transparent 8deg 18deg);
+pointer-events:none
 }
 
 .hero-content{
-    width:min(1250px,100%);
-    display:grid;
-    grid-template-columns:1fr 500px;
-    align-items:center;
-    gap:30px;
-    position:relative;
-    z-index:2;
+width:min(1250px,100%);
+display:grid;
+grid-template-columns:1fr 500px;
+align-items:center;
+gap:30px;
+position:relative;
+z-index:2
 }
 
 .hero-title{
-    position:relative;
-    padding:25px;
+position:relative;
+padding:25px
 }
 
 .hero-title::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    border:4px solid var(--ink);
-    background:white;
-    z-index:-1;
-    transform:rotate(-1.5deg);
-    box-shadow:12px 12px 0 var(--purple);
+content:"";
+position:absolute;
+inset:0;
+border:4px solid var(--ink);
+background:white;
+z-index:-1;
+transform:rotate(-1.5deg);
+box-shadow:12px 12px 0 var(--purple)
 }
 
 .small-title{
-    font-family:var(--mono);
-    font-weight:700;
-    font-size:11px;
-    color:var(--purple);
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    margin-bottom:15px;
+font-family:var(--mono);
+font-weight:700;
+font-size:11px;
+color:var(--purple);
+text-transform:uppercase;
+letter-spacing:.12em;
+margin-bottom:15px
 }
 
 h1{
-    margin:0;
-    font-family:var(--comic-font);
-    font-size:clamp(90px,12vw,175px);
-    line-height:.72;
-    letter-spacing:.015em;
-    transform:rotate(-2deg);
-    color:var(--ink);
-    text-shadow:6px 6px 0 var(--purple);
-    cursor:pointer;
-    user-select:none;
+margin:0;
+font-family:var(--comic-font);
+font-size:clamp(90px,12vw,175px);
+line-height:.72;
+letter-spacing:.015em;
+transform:rotate(-2deg);
+color:var(--ink);
+text-shadow:6px 6px 0 var(--purple);
+cursor:pointer;
+user-select:none
 }
 
 h1 span{
-    display:block;
-    color:var(--purple);
-    text-shadow:5px 5px 0 var(--ink);
+display:block;
+color:var(--purple);
+text-shadow:5px 5px 0 var(--ink)
 }
 
 .tagline{
-    max-width:470px;
-    margin:30px 0 0;
-    font-family:var(--mono);
-    font-size:12px;
-    font-weight:500;
-    line-height:1.7;
-    color:#48414b;
+max-width:470px;
+margin:30px 0 0;
+font-family:var(--mono);
+font-size:12px;
+font-weight:500;
+line-height:1.7;
+color:#48414b
 }
 
 .tagline strong{
-    color:var(--purple);
+color:var(--purple)
 }
 
 .speech{
-    position:absolute;
-    right:-25px;
-    top:-75px;
-    width:190px;
-    background:white;
-    border:4px solid var(--ink);
-    border-radius:50%;
-    padding:22px 18px;
-    text-align:center;
-    font-family:var(--comic-font);
-    font-size:24px;
-    line-height:.9;
-    transform:rotate(8deg);
-    box-shadow:6px 6px 0 var(--ink);
-    pointer-events:none;
+position:absolute;
+right:-25px;
+top:-75px;
+width:190px;
+background:white;
+border:4px solid var(--ink);
+border-radius:50%;
+padding:22px 18px;
+text-align:center;
+font-family:var(--comic-font);
+font-size:24px;
+line-height:.9;
+transform:rotate(8deg);
+box-shadow:6px 6px 0 var(--ink);
+pointer-events:none
 }
 
 .speech::after{
-    content:"";
-    position:absolute;
-    bottom:-25px;
-    left:35px;
-    width:35px;
-    height:35px;
-    background:white;
-    border-right:4px solid var(--ink);
-    border-bottom:4px solid var(--ink);
-    transform:rotate(35deg);
+content:"";
+position:absolute;
+bottom:-25px;
+left:35px;
+width:35px;
+height:35px;
+background:white;
+border-right:4px solid var(--ink);
+border-bottom:4px solid var(--ink);
+transform:rotate(35deg)
 }
 
 .speech span{
-    color:var(--purple);
+color:var(--purple)
 }
 
 .banana-stage{
-    position:relative;
-    width:100%;
-    height:610px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:var(--purple);
-    border:5px solid var(--ink);
-    box-shadow:14px 14px 0 var(--ink);
-    overflow:visible;
-    transform:rotate(1.2deg);
+position:relative;
+width:100%;
+height:610px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:var(--purple);
+border:5px solid var(--ink);
+box-shadow:14px 14px 0 var(--ink);
+overflow:visible;
+transform:rotate(1.2deg)
 }
 
 .banana-stage::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle,rgba(255,255,255,.3) 1.5px,transparent 1.7px);
-    background-size:18px 18px;
-    opacity:.25;
-    pointer-events:none;
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle,rgba(255,255,255,.3) 1.5px,transparent 1.7px);
+background-size:18px 18px;
+opacity:.25;
+pointer-events:none
 }
 
 .banana-stage::after{
-    content:"BANANA!";
-    position:absolute;
-    bottom:-35px;
-    left:-25px;
-    font-family:var(--comic-font);
-    font-size:70px;
-    color:var(--yellow);
-    -webkit-text-stroke:4px var(--ink);
-    transform:rotate(-8deg);
-    z-index:4;
-    text-shadow:6px 6px 0 var(--ink);
+content:"BANANA!";
+position:absolute;
+bottom:-35px;
+left:-25px;
+font-family:var(--comic-font);
+font-size:70px;
+color:var(--yellow);
+-webkit-text-stroke:4px var(--ink);
+transform:rotate(-8deg);
+z-index:4;
+text-shadow:6px 6px 0 var(--ink)
 }
 
 .banana-stage img{
-    position:relative;
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    padding:20px;
-    filter:drop-shadow(10px 15px 0 rgba(0,0,0,.65));
-    z-index:2;
-    user-select:none;
-    -webkit-user-drag:none;
-    cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
+position:relative;
+width:100%;
+height:100%;
+object-fit:contain;
+padding:20px;
+filter:drop-shadow(10px 15px 0 rgba(0,0,0,.65));
+z-index:2;
+user-select:none;
+-webkit-user-drag:none;
+cursor:pointer;
+-webkit-tap-highlight-color:transparent
 }
 
 .banana-stage img:active{
-    transform:scale(.97);
+transform:scale(.97)
 }
 
 .hero-caption{
-    position:absolute;
-    right:-35px;
-    bottom:70px;
-    z-index:5;
-    background:var(--yellow);
-    color:var(--ink);
-    border:4px solid var(--ink);
-    padding:10px 14px;
-    font-family:var(--comic-font);
-    font-size:20px;
-    transform:rotate(-5deg);
-    box-shadow:5px 5px 0 var(--ink);
-    pointer-events:none;
+position:absolute;
+right:-35px;
+bottom:70px;
+z-index:5;
+background:var(--yellow);
+color:var(--ink);
+border:4px solid var(--ink);
+padding:10px 14px;
+font-family:var(--comic-font);
+font-size:20px;
+transform:rotate(-5deg);
+box-shadow:5px 5px 0 var(--ink);
+pointer-events:none
 }
 
 .banana-click-message{
-    position:absolute;
-    left:50%;
-    bottom:25px;
-    transform:translateX(-50%) rotate(-2deg) scale(.9);
-    background:var(--yellow);
-    color:var(--ink);
-    border:4px solid var(--ink);
-    padding:9px 14px;
-    font-family:var(--comic-font);
-    font-size:22px;
-    box-shadow:5px 5px 0 var(--ink);
-    z-index:10;
-    opacity:0;
-    pointer-events:none;
-    white-space:nowrap;
+position:absolute;
+left:50%;
+bottom:25px;
+transform:translateX(-50%) rotate(-2deg) scale(.9);
+background:var(--yellow);
+color:var(--ink);
+border:4px solid var(--ink);
+padding:9px 14px;
+font-family:var(--comic-font);
+font-size:22px;
+box-shadow:5px 5px 0 var(--ink);
+z-index:10;
+opacity:0;
+pointer-events:none;
+white-space:nowrap
 }
 
 .banana-click-message.show{
-    animation:bananaMessage .4s ease-out forwards;
+animation:bananaMessage .4s ease-out forwards
 }
 
 @keyframes bananaMessage{
-    0%{
-        opacity:0;
-        transform:translateX(-50%) rotate(-8deg) scale(.7);
-    }
-    60%{
-        opacity:1;
-        transform:translateX(-50%) rotate(3deg) scale(1.08);
-    }
-    100%{
-        opacity:1;
-        transform:translateX(-50%) rotate(-2deg) scale(1);
-    }
+0%{opacity:0;transform:translateX(-50%) rotate(-8deg) scale(.7)}
+60%{opacity:1;transform:translateX(-50%) rotate(3deg) scale(1.08)}
+100%{opacity:1;transform:translateX(-50%) rotate(-2deg) scale(1)}
 }
 
 .scroll{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    font-family:var(--mono);
-    font-size:9px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.15em;
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+font-family:var(--mono);
+font-size:9px;
+font-weight:700;
+text-transform:uppercase;
+letter-spacing:.15em
 }
 
 .projects{
-    position:relative;
-    padding:130px 25px;
-    background:var(--purple);
-    border-top:6px solid var(--ink);
-    border-bottom:6px solid var(--ink);
-    overflow:hidden;
+position:relative;
+padding:130px 25px;
+background:var(--purple);
+border-top:6px solid var(--ink);
+border-bottom:6px solid var(--ink);
+overflow:hidden
 }
 
 .projects::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle,rgba(0,0,0,.22) 1.5px,transparent 1.7px);
-    background-size:18px 18px;
-    opacity:.35;
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle,rgba(0,0,0,.22) 1.5px,transparent 1.7px);
+background-size:18px 18px;
+opacity:.35
 }
 
 .projects-inner{
-    width:min(950px,100%);
-    margin:auto;
-    position:relative;
-    z-index:2;
+width:min(950px,100%);
+margin:auto;
+position:relative;
+z-index:2
 }
 
 .projects-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    margin-bottom:50px;
-    transform:rotate(-1deg);
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:50px;
+transform:rotate(-1deg)
 }
 
 .projects-heading h2{
-    margin:0;
-    font-family:var(--comic-font);
-    font-size:80px;
-    line-height:.8;
-    color:white;
-    -webkit-text-stroke:3px var(--ink);
-    text-shadow:7px 7px 0 var(--ink);
+margin:0;
+font-family:var(--comic-font);
+font-size:80px;
+line-height:.8;
+color:white;
+-webkit-text-stroke:3px var(--ink);
+text-shadow:7px 7px 0 var(--ink)
 }
 
 .projects-heading p{
-    background:var(--yellow);
-    border:4px solid var(--ink);
-    padding:10px 14px;
-    font-family:var(--mono);
-    font-size:10px;
-    font-weight:700;
-    transform:rotate(3deg);
-    box-shadow:5px 5px 0 var(--ink);
+background:var(--yellow);
+border:4px solid var(--ink);
+padding:10px 14px;
+font-family:var(--mono);
+font-size:10px;
+font-weight:700;
+transform:rotate(3deg);
+box-shadow:5px 5px 0 var(--ink)
 }
 
 .project{
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    padding:28px;
-    margin-bottom:22px;
-    background:white;
-    border:5px solid var(--ink);
-    box-shadow:8px 8px 0 var(--ink);
-    transition:transform .15s ease,box-shadow .15s ease;
-    overflow:hidden;
+position:relative;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+padding:28px;
+margin-bottom:22px;
+background:white;
+border:5px solid var(--ink);
+box-shadow:8px 8px 0 var(--ink);
+transition:transform .15s ease,box-shadow .15s ease;
+overflow:hidden
 }
 
 .project:nth-of-type(2){
-    transform:rotate(1deg);
+transform:rotate(1deg)
 }
 
 .project:nth-of-type(3){
-    transform:rotate(-1deg);
+transform:rotate(-1deg)
 }
 
 .project:nth-of-type(4){
-    transform:rotate(.8deg);
+transform:rotate(.8deg)
 }
 
 .project:hover{
-    transform:translate(-4px,-4px) rotate(0deg);
-    box-shadow:13px 13px 0 var(--ink);
+transform:translate(-4px,-4px) rotate(0deg);
+box-shadow:13px 13px 0 var(--ink)
 }
 
 .project::before{
-    content:"";
-    position:absolute;
-    width:160px;
-    height:160px;
-    right:-55px;
-    bottom:-65px;
-    background:var(--purple);
-    border-radius:50%;
-    opacity:.15;
+content:"";
+position:absolute;
+width:160px;
+height:160px;
+right:-55px;
+bottom:-65px;
+background:var(--purple);
+border-radius:50%;
+opacity:.15
 }
 
 .project-left{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    position:relative;
-    z-index:2;
-    min-width:0;
+display:flex;
+align-items:center;
+gap:20px;
+position:relative;
+z-index:2;
+min-width:0
 }
 
 .project-number{
-    font-family:var(--comic-font);
-    font-size:36px;
-    color:var(--purple);
-    -webkit-text-stroke:1px var(--ink);
-    width:35px;
-    flex-shrink:0;
+font-family:var(--comic-font);
+font-size:36px;
+color:var(--purple);
+-webkit-text-stroke:1px var(--ink);
+width:35px;
+flex-shrink:0
 }
 
 .project-name{
-    font-family:var(--comic-font);
-    font-size:39px;
-    letter-spacing:.02em;
+font-family:var(--comic-font);
+font-size:39px;
+letter-spacing:.02em
 }
 
 .project-desc{
-    margin-top:3px;
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--gray);
-    font-weight:500;
+margin-top:3px;
+font-family:var(--mono);
+font-size:10px;
+color:var(--gray);
+font-weight:500
 }
 
 .project-arrow{
-    font-family:var(--comic-font);
-    font-size:45px;
-    color:var(--purple);
-    position:relative;
-    z-index:2;
-    transition:transform .15s ease;
-    flex-shrink:0;
+font-family:var(--comic-font);
+font-size:45px;
+color:var(--purple);
+position:relative;
+z-index:2;
+transition:transform .15s ease;
+flex-shrink:0
 }
 
 .project:hover .project-arrow{
-    transform:rotate(-10deg) scale(1.12);
-    color:var(--red);
+transform:rotate(-10deg) scale(1.12);
+color:var(--red)
 }
 
 .youtube-section{
-    padding:100px 25px;
-    background:var(--cream);
+padding:100px 25px;
+background:var(--cream)
 }
 
 .youtube-panel{
-    width:min(950px,100%);
-    margin:auto;
-    position:relative;
-    background:var(--red);
-    border:5px solid var(--ink);
-    box-shadow:12px 12px 0 var(--ink);
-    padding:45px;
-    overflow:hidden;
-    transform:rotate(.7deg);
+width:min(950px,100%);
+margin:auto;
+position:relative;
+background:var(--red);
+border:5px solid var(--ink);
+box-shadow:12px 12px 0 var(--ink);
+padding:45px;
+overflow:hidden;
+transform:rotate(.7deg)
 }
 
 .youtube-panel::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle,rgba(0,0,0,.18) 1.5px,transparent 1.7px);
-    background-size:18px 18px;
-    opacity:.35;
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle,rgba(0,0,0,.18) 1.5px,transparent 1.7px);
+background-size:18px 18px;
+opacity:.35
 }
 
 .youtube-content{
-    position:relative;
-    z-index:2;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:30px;
+position:relative;
+z-index:2;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:30px
 }
 
 .youtube-title{
-    font-family:var(--comic-font);
-    font-size:clamp(45px,7vw,80px);
-    color:white;
-    line-height:.85;
-    -webkit-text-stroke:3px var(--ink);
-    text-shadow:6px 6px 0 var(--ink);
+font-family:var(--comic-font);
+font-size:clamp(45px,7vw,80px);
+color:white;
+line-height:.85;
+-webkit-text-stroke:3px var(--ink);
+text-shadow:6px 6px 0 var(--ink)
 }
 
 .youtube-sub{
-    margin-top:15px;
-    color:white;
-    font-family:var(--mono);
-    font-size:11px;
-    line-height:1.6;
+margin-top:15px;
+color:white;
+font-family:var(--mono);
+font-size:11px;
+line-height:1.6
 }
 
 .youtube-button{
-    flex-shrink:0;
-    background:white;
-    color:var(--ink);
-    border:5px solid var(--ink);
-    padding:17px 23px;
-    font-family:var(--comic-font);
-    font-size:25px;
-    box-shadow:7px 7px 0 var(--ink);
-    transition:.12s;
+flex-shrink:0;
+background:white;
+color:var(--ink);
+border:5px solid var(--ink);
+padding:17px 23px;
+font-family:var(--comic-font);
+font-size:25px;
+box-shadow:7px 7px 0 var(--ink);
+transition:.12s
 }
 
 .youtube-button:hover{
-    transform:translate(4px,4px) rotate(-2deg);
-    box-shadow:3px 3px 0 var(--ink);
+transform:translate(4px,4px) rotate(-2deg);
+box-shadow:3px 3px 0 var(--ink)
 }
 
-.f40-section{
-    padding:30px 18px 100px;
-    background:var(--cream);
+.image-story{
+padding:45px 18px 100px;
+background:var(--cream)
 }
 
-.f40-story{
-    width:min(1250px,100%);
-    margin:auto;
+.story-inner{
+width:min(1150px,100%);
+margin:auto
 }
 
-.f40-card{
-    position:relative;
-    margin-bottom:70px;
+.story-card{
+position:relative;
+background:white;
+border:6px solid var(--ink);
+box-shadow:12px 12px 0 var(--ink);
+overflow:hidden;
+margin-bottom:80px
 }
 
-.f40-card:last-child{
-    margin-bottom:0;
+.story-card:nth-child(1){
+transform:rotate(.7deg)
 }
 
-.f40-label{
-    display:inline-block;
-    position:relative;
-    z-index:5;
-    margin:0 0 -18px 20px;
-    background:var(--yellow);
-    border:5px solid var(--ink);
-    padding:10px 18px;
-    font-family:var(--comic-font);
-    font-size:30px;
-    transform:rotate(-2deg);
-    box-shadow:6px 6px 0 var(--ink);
+.story-card:nth-child(2){
+transform:rotate(-.6deg)
 }
 
-.f40-wrap{
-    position:relative;
-    width:100%;
-    border:6px solid var(--ink);
-    background:var(--ink);
-    box-shadow:15px 15px 0 var(--purple);
-    overflow:hidden;
+.story-card img{
+display:block;
+width:100%;
+height:auto;
+max-height:760px;
+object-fit:contain
 }
 
-.f40-wrap::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,transparent 45%,rgba(255,255,255,.12) 45%,rgba(255,255,255,.12) 47%,transparent 47%);
-    pointer-events:none;
-    z-index:2;
+.story-label{
+position:absolute;
+left:20px;
+top:20px;
+z-index:3;
+background:var(--yellow);
+border:4px solid var(--ink);
+padding:11px 15px;
+font-family:var(--comic-font);
+font-size:clamp(20px,4vw,38px);
+box-shadow:5px 5px 0 var(--ink);
+transform:rotate(-3deg)
 }
 
-.f40-wrap img{
-    display:block;
-    width:100%;
-    height:auto;
+.story-sub{
+position:absolute;
+right:20px;
+bottom:20px;
+z-index:3;
+background:white;
+border:4px solid var(--ink);
+padding:9px 13px;
+font-family:var(--mono);
+font-size:9px;
+font-weight:700;
+box-shadow:4px 4px 0 var(--ink);
+transform:rotate(2deg)
+}
+
+.story-break{
+font-family:var(--comic-font);
+font-size:clamp(45px,8vw,85px);
+text-align:center;
+color:var(--purple);
+text-shadow:5px 5px 0 var(--ink);
+margin:-35px 0 45px;
+transform:rotate(-3deg)
+}
+
+.basketball-section{
+padding:20px 18px 110px;
+background:var(--cream)
+}
+
+.basketball-wrap{
+position:relative;
+width:min(1150px,100%);
+margin:auto;
+background:var(--ink);
+border:6px solid var(--ink);
+box-shadow:15px 15px 0 var(--purple);
+transform:rotate(.5deg);
+overflow:hidden
+}
+
+.basketball-wrap img{
+display:block;
+width:100%;
+height:auto
+}
+
+.basketball-label{
+position:absolute;
+top:25px;
+left:25px;
+max-width:70%;
+background:var(--purple);
+color:white;
+border:5px solid var(--ink);
+padding:12px 17px;
+font-family:var(--comic-font);
+font-size:clamp(25px,5vw,55px);
+line-height:.9;
+-webkit-text-stroke:2px var(--ink);
+box-shadow:6px 6px 0 var(--ink);
+transform:rotate(-2deg)
+}
+
+.basketball-note{
+position:absolute;
+right:20px;
+bottom:20px;
+background:var(--yellow);
+border:4px solid var(--ink);
+padding:10px 14px;
+font-family:var(--mono);
+font-size:9px;
+font-weight:700;
+box-shadow:5px 5px 0 var(--ink);
+transform:rotate(3deg)
 }
 
 .disappointment-section{
-    position:relative;
-    padding:80px 20px 130px;
-    background:var(--cream);
-    overflow:hidden;
+position:relative;
+padding:80px 20px 130px;
+background:var(--cream);
+overflow:hidden
 }
 
 .disappointment-section::before{
-    content:"DISAPPOINTMENT";
-    position:absolute;
-    left:-80px;
-    top:15px;
-    font-family:var(--comic-font);
-    font-size:clamp(80px,15vw,190px);
-    color:var(--purple);
-    opacity:.08;
-    transform:rotate(-6deg);
-    pointer-events:none;
+content:"DISAPPOINTMENT";
+position:absolute;
+left:-80px;
+top:15px;
+font-family:var(--comic-font);
+font-size:clamp(80px,15vw,190px);
+color:var(--purple);
+opacity:.08;
+transform:rotate(-6deg);
+pointer-events:none
 }
 
 .disappointment-section::after{
-    content:"✦     ✕     →     ???     ✦";
-    position:absolute;
-    right:-20px;
-    bottom:35px;
-    font-family:var(--comic-font);
-    font-size:35px;
-    color:var(--purple);
-    opacity:.25;
-    transform:rotate(8deg);
-    pointer-events:none;
+content:"✦     ✕     →     ???     ✦";
+position:absolute;
+right:-20px;
+bottom:35px;
+font-family:var(--comic-font);
+font-size:35px;
+color:var(--purple);
+opacity:.25;
+transform:rotate(8deg);
+pointer-events:none
 }
 
 .disappointment-inner{
-    width:min(1050px,100%);
-    margin:auto;
-    position:relative;
-    z-index:2;
+width:min(1050px,100%);
+margin:auto;
+position:relative;
+z-index:2
 }
 
 .disappointment-heading{
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:30px;
-    margin-bottom:35px;
-    transform:rotate(-1deg);
+position:relative;
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:30px;
+margin-bottom:35px;
+transform:rotate(-1deg)
 }
 
 .disappointment-title{
-    font-family:var(--comic-font);
-    font-size:clamp(65px,9vw,105px);
-    line-height:.75;
-    color:var(--ink);
-    text-shadow:6px 6px 0 var(--purple);
-    margin:0;
+font-family:var(--comic-font);
+font-size:clamp(65px,9vw,105px);
+line-height:.75;
+color:var(--ink);
+text-shadow:6px 6px 0 var(--purple);
+margin:0
 }
 
 .disappointment-title span{
-    display:block;
-    color:var(--purple);
-    text-shadow:4px 4px 0 var(--ink);
+display:block;
+color:var(--purple);
+text-shadow:4px 4px 0 var(--ink)
 }
 
 .disappointment-sticker{
-    flex-shrink:0;
-    background:var(--yellow);
-    border:4px solid var(--ink);
-    padding:12px 16px;
-    font-family:var(--mono);
-    font-size:10px;
-    font-weight:700;
-    text-transform:uppercase;
-    box-shadow:5px 5px 0 var(--ink);
-    transform:rotate(5deg);
+flex-shrink:0;
+background:var(--yellow);
+border:4px solid var(--ink);
+padding:12px 16px;
+font-family:var(--mono);
+font-size:10px;
+font-weight:700;
+text-transform:uppercase;
+box-shadow:5px 5px 0 var(--ink);
+transform:rotate(5deg)
 }
 
 .map-paper{
-    position:relative;
-    background:#fffdf8;
-    border:5px solid var(--ink);
-    padding:18px;
-    box-shadow:11px 11px 0 var(--ink);
-    transform:rotate(.7deg);
-    transition:transform .2s ease,box-shadow .2s ease;
-    cursor:pointer;
+position:relative;
+background:#fffdf8;
+border:5px solid var(--ink);
+padding:18px;
+box-shadow:11px 11px 0 var(--ink);
+transform:rotate(.7deg);
+transition:transform .2s ease,box-shadow .2s ease;
+cursor:pointer
 }
 
 .map-paper:hover{
-    transform:rotate(-.4deg) translate(-3px,-3px);
-    box-shadow:15px 15px 0 var(--ink);
+transform:rotate(-.4deg) translate(-3px,-3px);
+box-shadow:15px 15px 0 var(--ink)
 }
 
 .map-paper::before{
-    content:"";
-    position:absolute;
-    top:-19px;
-    left:50%;
-    width:130px;
-    height:38px;
-    background:repeating-linear-gradient(90deg,rgba(255,230,0,.75) 0 12px,rgba(255,240,120,.75) 12px 24px);
-    border:2px solid rgba(23,18,24,.3);
-    transform:translateX(-50%) rotate(-2deg);
-    z-index:5;
-    opacity:.85;
+content:"";
+position:absolute;
+top:-19px;
+left:50%;
+width:130px;
+height:38px;
+background:repeating-linear-gradient(90deg,rgba(255,230,0,.75) 0 12px,rgba(255,240,120,.75) 12px 24px);
+border:2px solid rgba(23,18,24,.3);
+transform:translateX(-50%) rotate(-2deg);
+z-index:5;
+opacity:.85
 }
 
 .map-image{
-    display:block;
-    width:100%;
-    height:auto;
-    border:3px solid var(--ink);
-    user-select:none;
-    -webkit-user-drag:none;
-    transition:transform .2s ease;
+display:block;
+width:100%;
+height:auto;
+border:3px solid var(--ink);
+user-select:none;
+-webkit-user-drag:none;
+transition:transform .2s ease
 }
 
 .map-paper:hover .map-image{
-    transform:scale(1.01);
+transform:scale(1.01)
 }
 
 .map-doodle{
-    position:absolute;
-    font-family:var(--comic-font);
-    color:var(--ink);
-    font-size:25px;
-    pointer-events:none;
-    z-index:6;
+position:absolute;
+font-family:var(--comic-font);
+color:var(--ink);
+font-size:25px;
+pointer-events:none;
+z-index:6
 }
 
 .map-doodle.one{
-    left:-55px;
-    top:18%;
-    transform:rotate(-12deg);
-    color:var(--purple);
+left:-55px;
+top:18%;
+transform:rotate(-12deg);
+color:var(--purple)
 }
 
 .map-doodle.two{
-    right:-55px;
-    top:55%;
-    transform:rotate(9deg);
-    color:var(--red);
+right:-55px;
+top:55%;
+transform:rotate(9deg);
+color:var(--red)
 }
 
 .map-doodle.three{
-    left:10%;
-    bottom:-42px;
-    background:var(--yellow);
-    border:3px solid var(--ink);
-    padding:7px 12px;
-    font-size:18px;
-    box-shadow:4px 4px 0 var(--ink);
-    transform:rotate(-3deg);
+left:10%;
+bottom:-42px;
+background:var(--yellow);
+border:3px solid var(--ink);
+padding:7px 12px;
+font-size:18px;
+box-shadow:4px 4px 0 var(--ink);
+transform:rotate(-3deg)
 }
 
 .disappointment-info{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:18px;
-    margin-top:45px;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:18px;
+margin-top:45px
 }
 
 .disappointment-card{
-    background:white;
-    border:4px solid var(--ink);
-    padding:20px;
-    box-shadow:6px 6px 0 var(--ink);
-    min-height:125px;
-    transition:transform .15s ease;
+background:white;
+border:4px solid var(--ink);
+padding:20px;
+box-shadow:6px 6px 0 var(--ink);
+min-height:125px;
+transition:transform .15s ease
 }
 
 .disappointment-card:nth-child(1){
-    transform:rotate(-2deg);
+transform:rotate(-2deg)
 }
 
 .disappointment-card:nth-child(2){
-    transform:rotate(1.5deg);
+transform:rotate(1.5deg)
 }
 
 .disappointment-card:nth-child(3){
-    transform:rotate(-1deg);
+transform:rotate(-1deg)
 }
 
 .disappointment-card:hover{
-    transform:translateY(-5px) rotate(0deg);
+transform:translateY(-5px) rotate(0deg)
 }
 
 .disappointment-card h3{
-    margin:0 0 8px;
-    font-family:var(--comic-font);
-    font-size:28px;
-    color:var(--purple);
+margin:0 0 8px;
+font-family:var(--comic-font);
+font-size:28px;
+color:var(--purple)
 }
 
 .disappointment-card p{
-    margin:0;
-    font-family:var(--mono);
-    font-size:9px;
-    line-height:1.6;
-    color:var(--gray);
+margin:0;
+font-family:var(--mono);
+font-size:9px;
+line-height:1.6;
+color:var(--gray)
 }
 
 .map-message{
-    position:fixed;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%) scale(.7) rotate(-3deg);
-    width:min(480px,90%);
-    background:var(--yellow);
-    border:5px solid var(--ink);
-    box-shadow:10px 10px 0 var(--purple);
-    padding:30px;
-    text-align:center;
-    z-index:5000;
-    opacity:0;
-    pointer-events:none;
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%) scale(.7) rotate(-3deg);
+width:min(480px,90%);
+background:var(--yellow);
+border:5px solid var(--ink);
+box-shadow:10px 10px 0 var(--purple);
+padding:30px;
+text-align:center;
+z-index:5000;
+opacity:0;
+pointer-events:none
 }
 
 .map-message.active{
-    animation:mapMessageIn .35s ease-out forwards;
+animation:mapMessageIn .35s ease-out forwards
 }
 
 @keyframes mapMessageIn{
-    0%{
-        opacity:0;
-        transform:translate(-50%,-50%) scale(.7) rotate(-7deg);
-    }
-    70%{
-        opacity:1;
-        transform:translate(-50%,-50%) scale(1.05) rotate(2deg);
-    }
-    100%{
-        opacity:1;
-        transform:translate(-50%,-50%) scale(1) rotate(-1deg);
-    }
+0%{opacity:0;transform:translate(-50%,-50%) scale(.7) rotate(-7deg)}
+70%{opacity:1;transform:translate(-50%,-50%) scale(1.05) rotate(2deg)}
+100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-1deg)}
 }
 
 .map-message h2{
-    margin:0;
-    font-family:var(--comic-font);
-    font-size:55px;
-    color:var(--purple);
-    text-shadow:3px 3px 0 var(--ink);
+margin:0;
+font-family:var(--comic-font);
+font-size:55px;
+color:var(--purple);
+text-shadow:3px 3px 0 var(--ink)
 }
 
 .map-message p{
-    margin:15px 0 0;
-    font-family:var(--mono);
-    font-size:10px;
-    line-height:1.7;
+margin:15px 0 0;
+font-family:var(--mono);
+font-size:10px;
+line-height:1.7
 }
 
 .map-message button{
-    margin-top:20px;
-    background:white;
-    color:var(--ink);
-    border:4px solid var(--ink);
-    padding:9px 16px;
-    font-family:var(--mono);
-    font-weight:700;
-    cursor:pointer;
-    box-shadow:4px 4px 0 var(--ink);
+margin-top:20px;
+background:white;
+color:var(--ink);
+border:4px solid var(--ink);
+padding:9px 16px;
+font-family:var(--mono);
+font-weight:700;
+cursor:pointer;
+box-shadow:4px 4px 0 var(--ink)
 }
 
 .map-message button:active{
-    transform:translate(3px,3px);
-    box-shadow:1px 1px 0 var(--ink);
+transform:translate(3px,3px);
+box-shadow:1px 1px 0 var(--ink)
 }
 
 .caption-section{
-    padding:30px 25px 100px;
-    text-align:center;
-    background:var(--cream);
+padding:30px 25px 100px;
+text-align:center;
+background:var(--cream)
 }
 
 .stupid-caption{
-    display:inline-block;
-    font-family:var(--comic-font);
-    font-size:clamp(40px,7vw,75px);
-    color:var(--ink);
-    transform:rotate(-2deg);
-    text-shadow:5px 5px 0 var(--purple);
+display:inline-block;
+font-family:var(--comic-font);
+font-size:clamp(40px,7vw,75px);
+color:var(--ink);
+transform:rotate(-2deg);
+text-shadow:5px 5px 0 var(--purple)
 }
 
 .caption-small{
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--gray);
-    margin-top:15px;
+font-family:var(--mono);
+font-size:10px;
+color:var(--gray);
+margin-top:15px
 }
 
 .danger-zone{
-    padding:70px 25px 100px;
-    background:var(--black);
-    text-align:center;
-    border-top:6px solid var(--ink);
+padding:70px 25px 100px;
+background:var(--black);
+text-align:center;
+border-top:6px solid var(--ink)
 }
 
 .danger-label{
-    color:white;
-    font-family:var(--mono);
-    font-size:9px;
-    letter-spacing:.15em;
-    text-transform:uppercase;
-    margin-bottom:18px;
-    opacity:.5;
+color:white;
+font-family:var(--mono);
+font-size:9px;
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:18px;
+opacity:.5
 }
 
 .dont-button{
-    position:relative;
-    display:inline-block;
-    background:var(--purple);
-    color:white;
-    border:5px solid white;
-    padding:18px 30px;
-    font-family:var(--comic-font);
-    font-size:38px;
-    letter-spacing:.04em;
-    cursor:pointer;
-    box-shadow:9px 9px 0 white;
-    transform:rotate(-2deg);
-    transition:background .12s ease,transform .12s ease,box-shadow .12s ease;
+position:relative;
+display:inline-block;
+background:var(--purple);
+color:white;
+border:5px solid white;
+padding:18px 30px;
+font-family:var(--comic-font);
+font-size:38px;
+letter-spacing:.04em;
+cursor:pointer;
+box-shadow:9px 9px 0 white;
+transform:rotate(-2deg);
+transition:background .12s ease,transform .12s ease,box-shadow .12s ease
 }
 
 .dont-button:hover{
-    background:var(--red);
-    transform:rotate(2deg) scale(1.04);
-    box-shadow:12px 12px 0 white;
+background:var(--red);
+transform:rotate(2deg) scale(1.04);
+box-shadow:12px 12px 0 white
 }
 
 .dont-button:active{
-    transform:translate(7px,7px);
-    box-shadow:2px 2px 0 white;
+transform:translate(7px,7px);
+box-shadow:2px 2px 0 white
 }
 
 .footer{
-    padding:45px 25px 70px;
-    background:var(--black);
-    text-align:center;
-    color:white;
-    border-top:1px solid #29232d;
+padding:45px 25px 70px;
+background:var(--black);
+text-align:center;
+color:white;
+border-top:1px solid #29232d
 }
 
 .footer-big{
-    font-family:var(--comic-font);
-    font-size:35px;
-    color:var(--purple);
-    text-shadow:3px 3px 0 white;
+font-family:var(--comic-font);
+font-size:35px;
+color:var(--purple);
+text-shadow:3px 3px 0 white
 }
 
 .footer-small{
-    margin-top:12px;
-    font-family:var(--mono);
-    font-size:9px;
-    color:#66606b;
+margin-top:12px;
+font-family:var(--mono);
+font-size:9px;
+color:#66606b
 }
 
 .video-overlay{
-    position:fixed;
-    inset:0;
-    z-index:10000;
-    background:#000;
-    display:none;
-    align-items:center;
-    justify-content:center;
+position:fixed;
+inset:0;
+z-index:10000;
+background:#000;
+display:none;
+align-items:center;
+justify-content:center
 }
 
 .video-overlay.active{
-    display:flex;
+display:flex
 }
 
 .video-overlay video{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    background:#000;
+width:100%;
+height:100%;
+object-fit:contain;
+background:#000
 }
 
 body.glitching{
-    animation:mildGlitch .18s steps(2,end) infinite;
+animation:mildGlitch .18s steps(2,end) infinite
 }
 
 @keyframes mildGlitch{
-    0%,100%{
-        transform:translate(0,0);
-    }
-    50%{
-        transform:translate(1px,0);
-    }
+0%,100%{transform:translate(0,0)}
+50%{transform:translate(1px,0)}
 }
 
 body.glitching::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:1000;
-    pointer-events:none;
-    background:linear-gradient(transparent 0 48%,rgba(171,4,249,.06) 50%,transparent 52%);
-    opacity:.35;
+content:"";
+position:fixed;
+inset:0;
+z-index:1000;
+pointer-events:none;
+background:linear-gradient(transparent 0 48%,rgba(171,4,249,.06) 50%,transparent 52%);
+opacity:.35
 }
 
 body.glitching .hero,
 body.glitching .projects,
 body.glitching .youtube-section,
-body.glitching .f40-section,
+body.glitching .image-story,
+body.glitching .basketball-section,
 body.glitching .disappointment-section,
 body.glitching .danger-zone,
 body.glitching .footer{
-    filter:contrast(1.08) saturate(1.08);
+filter:contrast(1.08) saturate(1.08)
 }
 
 body.glitching h1{
-    animation:textGlitch .25s steps(2,end) infinite;
+animation:textGlitch .25s steps(2,end) infinite
 }
 
 @keyframes textGlitch{
-    0%,100%{
-        transform:rotate(-2deg);
-    }
-    50%{
-        transform:translate(2px,-1px) rotate(-2deg);
-    }
+0%,100%{transform:rotate(-2deg)}
+50%{transform:translate(2px,-1px) rotate(-2deg)}
 }
 
 body.glitching .project{
-    animation:projectGlitch .3s steps(2,end) infinite;
+animation:projectGlitch .3s steps(2,end) infinite
 }
 
 @keyframes projectGlitch{
-    0%,100%{
-        transform:translate(0);
-    }
-    50%{
-        transform:translate(2px,-1px);
-    }
+0%,100%{transform:translate(0)}
+50%{transform:translate(2px,-1px)}
 }
 
 .cursed-message{
-    position:fixed;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%) scale(0);
-    z-index:2000;
-    width:min(600px,90%);
-    background:var(--black);
-    color:white;
-    border:7px solid var(--purple);
-    box-shadow:15px 15px 0 red,-15px -15px 0 cyan;
-    padding:35px;
-    text-align:center;
-    opacity:0;
-    pointer-events:none;
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%) scale(0);
+z-index:2000;
+width:min(600px,90%);
+background:var(--black);
+color:white;
+border:7px solid var(--purple);
+box-shadow:15px 15px 0 red,-15px -15px 0 cyan;
+padding:35px;
+text-align:center;
+opacity:0;
+pointer-events:none
 }
 
 .cursed-message.active{
-    animation:cursedAppear .5s forwards;
+animation:cursedAppear .5s forwards
 }
 
 @keyframes cursedAppear{
-    0%{
-        transform:translate(-50%,-50%) scale(0) rotate(8deg);
-        opacity:0;
-    }
-    70%{
-        transform:translate(-50%,-50%) scale(1.04) rotate(-1deg);
-        opacity:1;
-    }
-    100%{
-        transform:translate(-50%,-50%) scale(1) rotate(0);
-        opacity:1;
-    }
+0%{transform:translate(-50%,-50%) scale(0) rotate(8deg);opacity:0}
+70%{transform:translate(-50%,-50%) scale(1.04) rotate(-1deg);opacity:1}
+100%{transform:translate(-50%,-50%) scale(1) rotate(0);opacity:1}
 }
 
 .cursed-message h2{
-    margin:0;
-    font-family:var(--comic-font);
-    font-size:65px;
-    color:var(--purple);
-    text-shadow:4px 4px 0 white;
+margin:0;
+font-family:var(--comic-font);
+font-size:65px;
+color:var(--purple);
+text-shadow:4px 4px 0 white
 }
 
 .cursed-message p{
-    margin:15px 0 0;
-    font-family:var(--mono);
-    font-size:11px;
-    line-height:1.7;
+margin:15px 0 0;
+font-family:var(--mono);
+font-size:11px;
+line-height:1.7
 }
 
 .cursed-message button{
-    margin-top:25px;
-    background:white;
-    color:black;
-    border:4px solid white;
-    padding:10px 18px;
-    font-family:var(--mono);
-    font-weight:700;
-    cursor:pointer;
+margin-top:25px;
+background:white;
+color:black;
+border:4px solid white;
+padding:10px 18px;
+font-family:var(--mono);
+font-weight:700;
+cursor:pointer
 }
 
 @media(max-width:800px){
-    body::before{
-        opacity:.025;
-    }
-
-    header{
-        padding:14px;
-    }
-
-    .header-text{
-        display:none;
-    }
-
-    .logo{
-        font-size:24px;
-    }
-
-    .watermelon{
-        width:40px;
-        height:40px;
-        margin-top:9px;
-    }
-
-    .watermelon-count{
-        left:47px;
-        top:3px;
-        font-size:7px;
-    }
-
-    .youtube-mini{
-        padding:6px 8px;
-        font-size:8px;
-    }
-
-    .hero{
-        min-height:auto;
-        padding:110px 12px 80px;
-    }
-
-    .hero-content{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
-
-    .hero-title{
-        padding:20px 16px;
-    }
-
-    .small-title{
-        font-size:9px;
-    }
-
-    h1{
-        font-size:clamp(65px,20vw,105px);
-        line-height:.75;
-    }
-
-    .tagline{
-        margin-top:25px;
-        font-size:10px;
-        line-height:1.7;
-    }
-
-    .speech{
-        right:-4px;
-        top:-58px;
-        width:135px;
-        font-size:18px;
-        padding:15px;
-    }
-
-    .banana-stage{
-        height:min(115vw,480px);
-        min-height:350px;
-        width:calc(100% - 8px);
-        margin:auto;
-    }
-
-    .banana-stage img{
-        padding:8px;
-    }
-
-    .banana-stage::after{
-        font-size:45px;
-        left:3px;
-        bottom:-25px;
-    }
-
-    .hero-caption{
-        right:-2px;
-        bottom:24px;
-        font-size:14px;
-        padding:8px 10px;
-    }
-
-    .banana-click-message{
-        font-size:16px;
-        bottom:14px;
-    }
-
-    .scroll{
-        display:none;
-    }
-
-    .projects{
-        padding:75px 12px 90px;
-    }
-
-    .projects-heading{
-        display:block;
-        margin-bottom:35px;
-    }
-
-    .projects-heading h2{
-        font-size:62px;
-    }
-
-    .projects-heading p{
-        display:inline-block;
-        margin-top:18px;
-    }
-
-    .project{
-        padding:20px 15px;
-        gap:10px;
-        margin-bottom:20px;
-    }
-
-    .project-left{
-        gap:9px;
-        min-width:0;
-    }
-
-    .project-number{
-        width:24px;
-        font-size:25px;
-    }
-
-    .project-name{
-        font-size:clamp(25px,7vw,34px);
-        line-height:.95;
-    }
-
-    .project-desc{
-        font-size:8px;
-        line-height:1.5;
-        max-width:230px;
-    }
-
-    .project-arrow{
-        font-size:35px;
-    }
-
-    .youtube-section{
-        padding:70px 12px;
-    }
-
-    .youtube-panel{
-        padding:28px 18px;
-    }
-
-    .youtube-content{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:25px;
-    }
-
-    .youtube-title{
-        font-size:52px;
-    }
-
-    .youtube-sub{
-        font-size:9px;
-    }
-
-    .youtube-button{
-        font-size:20px;
-        padding:14px 18px;
-    }
-
-    .f40-section{
-        padding:15px 8px 80px;
-    }
-
-    .f40-card{
-        margin-bottom:55px;
-    }
-
-    .f40-label{
-        font-size:21px;
-        padding:8px 12px;
-        margin-left:10px;
-        margin-bottom:-14px;
-    }
-
-    .f40-wrap{
-        border-width:4px;
-        box-shadow:9px 9px 0 var(--purple);
-    }
-
-    .disappointment-section{
-        padding:65px 10px 100px;
-    }
-
-    .disappointment-heading{
-        display:block;
-        margin-bottom:30px;
-    }
-
-    .disappointment-title{
-        font-size:clamp(55px,16vw,78px);
-    }
-
-    .disappointment-sticker{
-        display:inline-block;
-        margin-top:22px;
-        font-size:8px;
-    }
-
-    .map-paper{
-        padding:8px;
-        box-shadow:7px 7px 0 var(--ink);
-    }
-
-    .map-paper::before{
-        width:90px;
-        height:27px;
-        top:-14px;
-    }
-
-    .map-doodle{
-        font-size:15px;
-    }
-
-    .map-doodle.one{
-        left:-2px;
-        top:5%;
-    }
-
-    .map-doodle.two{
-        right:-2px;
-        top:auto;
-        bottom:15%;
-    }
-
-    .map-doodle.three{
-        left:4%;
-        bottom:-31px;
-        font-size:12px;
-        padding:6px 8px;
-    }
-
-    .disappointment-info{
-        grid-template-columns:1fr;
-        gap:18px;
-        margin-top:50px;
-    }
-
-    .disappointment-card{
-        min-height:auto;
-        padding:17px;
-    }
-
-    .disappointment-card h3{
-        font-size:24px;
-    }
-
-    .disappointment-card p{
-        font-size:8px;
-    }
-
-    .caption-section{
-        padding:25px 15px 80px;
-    }
-
-    .stupid-caption{
-        font-size:clamp(36px,11vw,60px);
-    }
-
-    .danger-zone{
-        padding:60px 15px 85px;
-    }
-
-    .danger-label{
-        max-width:300px;
-        margin:0 auto 18px;
-        line-height:1.6;
-    }
-
-    .dont-button{
-        font-size:28px;
-        padding:14px 19px;
-        box-shadow:7px 7px 0 white;
-    }
-
-    .cursed-message{
-        width:calc(100% - 24px);
-        padding:24px 15px;
-    }
-
-    .cursed-message h2{
-        font-size:48px;
-    }
-
-    .cursed-message p{
-        font-size:9px;
-    }
-
-    .map-message{
-        width:calc(100% - 24px);
-        padding:24px 16px;
-    }
-
-    .map-message h2{
-        font-size:42px;
-    }
-
-    .footer{
-        padding:40px 15px 60px;
-    }
+body::before{opacity:.025}
+
+header{
+padding:15px 13px;
+align-items:flex-start
+}
+
+.header-text{
+display:none
+}
+
+.header-right{
+gap:7px
+}
+
+.logo{
+font-size:23px
+}
+
+.watermelon{
+width:40px;
+height:40px;
+margin-top:9px
+}
+
+.watermelon::after{
+font-size:23px
+}
+
+.watermelon-count{
+left:46px;
+top:2px;
+font-size:7px;
+padding:4px 6px
+}
+
+.youtube-mini{
+padding:6px 7px;
+font-size:8px;
+white-space:nowrap
+}
+
+.hero{
+min-height:auto;
+padding:105px 12px 75px
+}
+
+.hero-content{
+grid-template-columns:1fr;
+gap:42px
+}
+
+.hero-title{
+padding:20px 17px
+}
+
+h1{
+font-size:clamp(68px,20vw,110px)
+}
+
+.small-title{
+font-size:9px
+}
+
+.tagline{
+font-size:10px;
+line-height:1.65;
+margin-top:24px
+}
+
+.speech{
+right:-3px;
+top:-55px;
+width:135px;
+font-size:17px;
+padding:15px 11px
+}
+
+.speech::after{
+width:27px;
+height:27px;
+bottom:-19px
+}
+
+.banana-stage{
+height:min(470px,105vw);
+width:calc(100% - 8px);
+margin:auto
+}
+
+.banana-stage img{
+padding:8px
+}
+
+.banana-stage::after{
+font-size:43px;
+left:0;
+bottom:-25px;
+-webkit-text-stroke:3px var(--ink)
+}
+
+.hero-caption{
+right:-2px;
+bottom:27px;
+font-size:14px;
+padding:8px 10px
+}
+
+.banana-click-message{
+bottom:14px;
+font-size:15px;
+padding:7px 10px
+}
+
+.scroll{
+font-size:7px;
+bottom:15px;
+white-space:nowrap
+}
+
+.projects{
+padding:85px 12px
+}
+
+.projects-heading{
+margin-bottom:35px
+}
+
+.projects-heading h2{
+font-size:60px
+}
+
+.projects-heading p{
+font-size:8px;
+padding:8px 10px
+}
+
+.project{
+padding:18px 14px;
+gap:8px;
+margin-bottom:18px;
+box-shadow:6px 6px 0 var(--ink)
+}
+
+.project-left{
+gap:9px
+}
+
+.project-number{
+font-size:25px;
+width:24px
+}
+
+.project-name{
+font-size:clamp(25px,8vw,34px);
+line-height:.9
+}
+
+.project-desc{
+font-size:8px;
+line-height:1.4
+}
+
+.project-arrow{
+font-size:35px
+}
+
+.youtube-section{
+padding:70px 12px
+}
+
+.youtube-panel{
+padding:28px 17px;
+box-shadow:8px 8px 0 var(--ink)
+}
+
+.youtube-content{
+flex-direction:column;
+align-items:flex-start;
+gap:25px
+}
+
+.youtube-title{
+font-size:52px
+}
+
+.youtube-sub{
+font-size:9px
+}
+
+.youtube-button{
+font-size:21px;
+padding:14px 18px
+}
+
+.image-story{
+padding:30px 9px 70px
+}
+
+.story-card{
+border-width:4px;
+box-shadow:7px 7px 0 var(--ink);
+margin-bottom:55px
+}
+
+.story-label{
+left:10px;
+top:10px;
+max-width:78%;
+font-size:22px;
+padding:8px 10px;
+border-width:3px;
+box-shadow:4px 4px 0 var(--ink)
+}
+
+.story-sub{
+right:8px;
+bottom:8px;
+font-size:7px;
+padding:6px 8px;
+border-width:3px;
+box-shadow:3px 3px 0 var(--ink)
+}
+
+.story-break{
+font-size:48px;
+margin:-20px 0 28px
+}
+
+.basketball-section{
+padding:10px 9px 80px
+}
+
+.basketball-wrap{
+border-width:4px;
+box-shadow:8px 8px 0 var(--purple)
+}
+
+.basketball-label{
+top:12px;
+left:12px;
+max-width:82%;
+font-size:30px;
+padding:8px 10px;
+border-width:3px;
+box-shadow:4px 4px 0 var(--ink)
+}
+
+.basketball-note{
+right:8px;
+bottom:8px;
+font-size:7px;
+padding:6px 8px;
+border-width:3px;
+box-shadow:3px 3px 0 var(--ink)
+}
+
+.disappointment-section{
+padding:65px 10px 100px
+}
+
+.disappointment-heading{
+display:block;
+margin-bottom:28px
+}
+
+.disappointment-title{
+font-size:clamp(55px,17vw,75px)
+}
+
+.disappointment-sticker{
+display:inline-block;
+margin-top:22px;
+font-size:8px
+}
+
+.map-paper{
+padding:8px;
+box-shadow:7px 7px 0 var(--ink)
+}
+
+.map-paper::before{
+width:90px;
+height:27px;
+top:-14px
+}
+
+.map-doodle.one{
+left:-3px;
+top:5%;
+font-size:14px
+}
+
+.map-doodle.two{
+right:-3px;
+top:auto;
+bottom:15%;
+font-size:14px
+}
+
+.map-doodle.three{
+left:4%;
+bottom:-31px;
+font-size:12px;
+padding:6px 9px
+}
+
+.disappointment-info{
+grid-template-columns:1fr;
+gap:17px;
+margin-top:48px
+}
+
+.disappointment-card{
+min-height:auto;
+padding:16px;
+box-shadow:5px 5px 0 var(--ink)
+}
+
+.disappointment-card h3{
+font-size:23px
+}
+
+.disappointment-card p{
+font-size:8px
+}
+
+.map-message{
+width:calc(100% - 24px);
+padding:23px 15px;
+border-width:4px;
+box-shadow:7px 7px 0 var(--purple)
+}
+
+.map-message h2{
+font-size:42px
+}
+
+.map-message p{
+font-size:8px
+}
+
+.caption-section{
+padding:20px 15px 75px
+}
+
+.stupid-caption{
+font-size:clamp(36px,11vw,60px)
+}
+
+.danger-zone{
+padding:55px 15px 75px
+}
+
+.danger-label{
+font-size:7px;
+line-height:1.5
+}
+
+.dont-button{
+font-size:27px;
+padding:14px 18px;
+border-width:4px;
+box-shadow:7px 7px 0 white
+}
+
+.cursed-message{
+width:calc(100% - 24px);
+padding:24px 15px;
+border-width:5px;
+box-shadow:8px 8px 0 red,-8px -8px 0 cyan
+}
+
+.cursed-message h2{
+font-size:48px
+}
+
+.cursed-message p{
+font-size:9px
+}
+
+.footer{
+padding:38px 15px 55px
+}
+
+.footer-big{
+font-size:31px
+}
 }
 
 @media(max-width:420px){
-    header{
-        padding:12px;
-    }
+.header-right .youtube-mini{
+font-size:7px;
+padding:5px 6px
+}
 
-    .logo{
-        font-size:21px;
-    }
+.logo{
+font-size:21px
+}
 
-    .youtube-mini{
-        font-size:7px;
-        padding:5px 6px;
-    }
+.hero-title{
+padding:18px 12px
+}
 
-    .hero{
-        padding-top:100px;
-    }
+h1{
+font-size:68px
+}
 
-    .hero-title{
-        padding:18px 12px;
-    }
+.speech{
+width:118px;
+font-size:15px;
+right:-2px
+}
 
-    h1{
-        font-size:70px;
-    }
+.banana-stage{
+height:370px
+}
 
-    .speech{
-        width:115px;
-        font-size:15px;
-        top:-50px;
-        right:-3px;
-    }
+.banana-stage::after{
+font-size:36px
+}
 
-    .banana-stage{
-        height:350px;
-        min-height:0;
-    }
+.hero-caption{
+font-size:11px;
+bottom:25px
+}
 
-    .banana-stage::after{
-        font-size:36px;
-    }
+.project-name{
+font-size:25px
+}
 
-    .hero-caption{
-        font-size:11px;
-        bottom:20px;
-    }
+.project-desc{
+max-width:190px
+}
 
-    .project-name{
-        font-size:24px;
-    }
+.project-arrow{
+font-size:30px
+}
 
-    .project-desc{
-        max-width:190px;
-    }
-
-    .project-arrow{
-        font-size:30px;
-    }
-
-    .youtube-title{
-        font-size:44px;
-    }
-
-    .f40-label{
-        font-size:18px;
-    }
-
-    .disappointment-title{
-        font-size:54px;
-    }
+.disappointment-title{
+font-size:55px
+}
 }
 
 @media(prefers-reduced-motion:reduce){
-    *,
-    *::before,
-    *::after{
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        scroll-behavior:auto!important;
-        transition:none!important;
-    }
+*,
+*::before,
+*::after{
+animation-duration:.01ms!important;
+animation-iteration-count:1!important;
+scroll-behavior:auto!important;
+transition:none!important
+}
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="logo-wrap">
-        <div class="logo" id="logo" title="click me">
-            JOHN BANANA
-        </div>
+<div class="logo-wrap">
+<div class="logo" id="logo" title="click me">JOHN BANANA</div>
+<div class="watermelon" id="watermelon" title="you probably shouldn't press this either">
+<div class="watermelon-count" id="watermelon-count">YOU HAVE PRESSED THIS 0 TIMES</div>
+</div>
+</div>
 
-        <div class="watermelon" id="watermelon" title="you probably shouldn't press this either">
-            <div class="watermelon-count" id="watermelon-count">
-                YOU HAVE PRESSED THIS 0 TIMES
-            </div>
-        </div>
-    </div>
-
-    <div class="header-right">
-        <div class="header-text">
-            probably unnecessary
-        </div>
-
-        <a class="youtube-mini" href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener">
-            ▶ YOUTUBE
-        </a>
-    </div>
+<div class="header-right">
+<div class="header-text">probably unnecessary</div>
+<a class="youtube-mini" href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener">▶ YOUTUBE</a>
+</div>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="hero-title">
-            <div class="small-title">
-                somewhere on the internet
-            </div>
+<div class="hero-content">
+<div class="hero-title">
+<div class="small-title">somewhere on the internet</div>
 
-            <h1 id="main-title">
-                JOHN
-                <span>BANANA</span>
-            </h1>
+<h1 id="main-title">
+JOHN
+<span>BANANA</span>
+</h1>
 
-            <p class="tagline" id="tagline">
-                A small collection of
-                <strong>games</strong>,
-                questionable ideas,
-                and things that probably
-                should've stayed in the drafts.
-            </p>
+<p class="tagline" id="tagline">
+A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.
+</p>
 
-            <div class="speech">
-                WAIT...
-                <br>
-                <span>HE MADE A WEBSITE?</span>
-            </div>
-        </div>
+<div class="speech">
+WAIT...
+<br>
+<span>HE MADE A WEBSITE?</span>
+</div>
+</div>
 
-        <div class="banana-stage">
-            <img src="image.png" alt="John Banana" loading="eager" decoding="async" id="banana-image">
+<div class="banana-stage">
+<img src="image.png" alt="John Banana" loading="eager" decoding="async" id="banana-image">
+<div class="hero-caption">HE'S JUST STANDING THERE.</div>
+<div class="banana-click-message" id="banana-click-message">🍌 HEY.</div>
+</div>
+</div>
 
-            <div class="hero-caption">
-                HE'S JUST STANDING THERE.
-            </div>
-
-            <div class="banana-click-message" id="banana-click-message">
-                🍌 HEY.
-            </div>
-        </div>
-    </div>
-
-    <div class="scroll">
-        ↓ there is more nonsense below ↓
-    </div>
+<div class="scroll">↓ there is more nonsense below ↓</div>
 </section>
 
 <section class="projects" id="projects">
-    <div class="projects-inner">
-        <div class="projects-heading">
-            <h2>STUFF.</h2>
-            <p>100% real projects</p>
-        </div>
+<div class="projects-inner">
 
-        <a href="https://johnbananafr.github.io/songguessr/" class="project">
-            <div class="project-left">
-                <div class="project-number">01</div>
-                <div>
-                    <div class="project-name">SongGuessr</div>
-                    <div class="project-desc">
-                        Guess the song before the clip gets longer.
-                    </div>
-                </div>
-            </div>
+<div class="projects-heading">
+<h2>STUFF.</h2>
+<p>100% real projects</p>
+</div>
 
-            <div class="project-arrow">↗</div>
-        </a>
+<a href="https://johnbananafr.github.io/songguessr/" class="project">
+<div class="project-left">
+<div class="project-number">01</div>
+<div>
+<div class="project-name">SongGuessr</div>
+<div class="project-desc">Guess the song before the clip gets longer.</div>
+</div>
+</div>
+<div class="project-arrow">↗</div>
+</a>
 
-        <a href="https://johnbananafr.github.io/sorted/" class="project">
-            <div class="project-left">
-                <div class="project-number">02</div>
-                <div>
-                    <div class="project-name">SORTED</div>
-                    <div class="project-desc">
-                        Put things in the correct order.
-                    </div>
-                </div>
-            </div>
+<a href="https://johnbananafr.github.io/sorted/" class="project">
+<div class="project-left">
+<div class="project-number">02</div>
+<div>
+<div class="project-name">SORTED</div>
+<div class="project-desc">Put things in the correct order.</div>
+</div>
+</div>
+<div class="project-arrow">↗</div>
+</a>
 
-            <div class="project-arrow">↗</div>
-        </a>
+<a href="https://johnbananafr.github.io/normal" class="project">
+<div class="project-left">
+<div class="project-number">03</div>
+<div>
+<div class="project-name">HOW NORMAL ARE YOU?</div>
+<div class="project-desc">Find out how normal you really are.</div>
+</div>
+</div>
+<div class="project-arrow">↗</div>
+</a>
 
-        <a href="https://johnbananafr.github.io/normal" class="project">
-            <div class="project-left">
-                <div class="project-number">03</div>
-                <div>
-                    <div class="project-name">HOW NORMAL ARE YOU?</div>
-                    <div class="project-desc">
-                        Find out how normal you really are.
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-arrow">↗</div>
-        </a>
-    </div>
+</div>
 </section>
 
 <section class="youtube-section">
-    <div class="youtube-panel">
-        <div class="youtube-content">
-            <div>
-                <div class="youtube-title">
-                    THE
-                    <br>
-                    YOUTUBE
-                    <br>
-                    THING.
-                </div>
+<div class="youtube-panel">
+<div class="youtube-content">
+<div>
+<div class="youtube-title">
+THE
+<br>
+YOUTUBE
+<br>
+THING.
+</div>
 
-                <div class="youtube-sub">
-                    videos • fruit • questionable decisions
-                    <br>
-                    somehow there is already a whole channel
-                </div>
-            </div>
+<div class="youtube-sub">
+videos • fruit • questionable decisions
+<br>
+somehow there is already a whole channel
+</div>
+</div>
 
-            <a href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener" class="youtube-button">
-                ▶ WATCH IT
-            </a>
-        </div>
-    </div>
+<a href="https://www.youtube.com/@johnbananafr" target="_blank" rel="noopener" class="youtube-button">▶ WATCH IT</a>
+
+</div>
+</div>
 </section>
 
-<section class="f40-section">
-    <div class="f40-story">
+<section class="image-story">
+<div class="story-inner">
 
-        <div class="f40-card">
-            <div class="f40-label">
-                JOHN BANANA FINDS A CAR IN THE WILD!!
-            </div>
+<div class="story-card">
+<img src="wowf40.png" alt="John Banana finds a Ferrari F40 in the wild" loading="lazy" decoding="async">
+<div class="story-label">JOHN BANANA FINDS A CAR IN THE WILD!!</div>
+<div class="story-sub">FIELD REPORT: F40 SPOTTED</div>
+</div>
 
-            <div class="f40-wrap">
-                <img
-                    src="wowf40.png"
-                    alt="John Banana pointing at a Ferrari F40"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </div>
-        </div>
+<div class="story-break">5 MINUTES LATER...</div>
 
-        <div class="f40-card">
-            <div class="f40-label">
-                5 MINUTES LATER...
-            </div>
+<div class="story-card">
+<img src="f40.png" alt="John Banana with a Ferrari F40" loading="lazy" decoding="async">
+<div class="story-label">HE'S STILL HERE.</div>
+<div class="story-sub">THIS ESCALATED QUICKLY</div>
+</div>
 
-            <div class="f40-wrap">
-                <img
-                    src="f40.png"
-                    alt="Ferrari F40"
-                    loading="lazy"
-                    decoding="async"
-                >
-            </div>
-        </div>
+</div>
+</section>
 
-    </div>
+<section class="basketball-section">
+<div class="basketball-wrap">
+<img src="lebron.png" alt="John Banana and Mike W playing basketball" loading="lazy" decoding="async">
+<div class="basketball-label">JOHN BANANA DISCOVERS BASKETBALL.</div>
+<div class="basketball-note">mike w was there. nobody knows why.</div>
+</div>
 </section>
 
 <section class="disappointment-section" id="disappointment-island">
-    <div class="disappointment-inner">
+<div class="disappointment-inner">
 
-        <div class="disappointment-heading">
-            <h2 class="disappointment-title">
-                DISAPPOINTMENT
-                <span>ISLAND.</span>
-            </h2>
+<div class="disappointment-heading">
+<h2 class="disappointment-title">
+DISAPPOINTMENT
+<span>ISLAND.</span>
+</h2>
 
-            <div class="disappointment-sticker">
-                YES.
-                <br>
-                THIS IS REAL.
-            </div>
-        </div>
+<div class="disappointment-sticker">
+YES.
+<br>
+THIS IS REAL.
+</div>
+</div>
 
-        <div class="map-paper" id="map-paper" title="do not click the island">
-            <img
-                src="map.png"
-                alt="Doodled map of Disappointment Island"
-                class="map-image"
-                loading="lazy"
-                decoding="async"
-            >
+<div class="map-paper" id="map-paper" title="do not click the island">
+<img src="map.png" alt="Doodled map of Disappointment Island" class="map-image" loading="lazy" decoding="async">
 
-            <div class="map-doodle one">
-                WHY.
-            </div>
+<div class="map-doodle one">WHY.</div>
+<div class="map-doodle two">OH NO.</div>
+<div class="map-doodle three">JOHN WAS HERE →</div>
+</div>
 
-            <div class="map-doodle two">
-                OH NO.
-            </div>
+<div class="disappointment-info">
 
-            <div class="map-doodle three">
-                JOHN WAS HERE →
-            </div>
-        </div>
+<div class="disappointment-card">
+<h3>FIELD REPORT</h3>
+<p>John Banana travelled here.<br><br>Nobody knows why.</p>
+</div>
 
-        <div class="disappointment-info">
-            <div class="disappointment-card">
-                <h3>FIELD REPORT</h3>
-                <p>
-                    John Banana travelled here.
-                    Nobody knows why.
-                </p>
-            </div>
+<div class="disappointment-card">
+<h3>BANANAS FOUND</h3>
+<p>0.<br><br>This is considered extremely disappointing.</p>
+</div>
 
-            <div class="disappointment-card">
-                <h3>BANANAS FOUND</h3>
-                <p>
-                    0.
-                    <br><br>
-                    This is considered
-                    extremely disappointing.
-                </p>
-            </div>
+<div class="disappointment-card">
+<h3>OVERALL RATING</h3>
+<p>★☆☆☆☆<br><br>Would probably not visit again.</p>
+</div>
 
-            <div class="disappointment-card">
-                <h3>OVERALL RATING</h3>
-                <p>
-                    ★☆☆☆☆
-                    <br><br>
-                    Would probably not visit again.
-                </p>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
 </section>
 
 <div class="map-message" id="map-message">
-    <h2>YOU FOUND IT.</h2>
-
-    <p>
-        CONGRATULATIONS.
-        <br><br>
-        YOU ARE NOW TECHNICALLY
-        ON DISAPPOINTMENT ISLAND.
-        <br><br>
-        THERE IS NOTHING HERE.
-    </p>
-
-    <button id="map-close">
-        LEAVE THE ISLAND
-    </button>
+<h2>YOU FOUND IT.</h2>
+<p>
+CONGRATULATIONS.
+<br><br>
+YOU ARE NOW TECHNICALLY ON DISAPPOINTMENT ISLAND.
+<br><br>
+THERE IS NOTHING HERE.
+</p>
+<button id="map-close">LEAVE THE ISLAND</button>
 </div>
 
 <section class="caption-section">
-    <div class="stupid-caption">
-        THIS WAS A TERRIBLE IDEA.
-    </div>
-
-    <div class="caption-small">
-        anyway here's the website
-    </div>
+<div class="stupid-caption">THIS WAS A TERRIBLE IDEA.</div>
+<div class="caption-small">anyway here's the website</div>
 </section>
 
 <section class="danger-zone">
-    <div class="danger-label">
-        seriously. there is absolutely no reason to click this.
-    </div>
-
-    <button class="dont-button" id="dont-button">
-        DO NOT PRESS
-    </button>
+<div class="danger-label">seriously. there is absolutely no reason to click this.</div>
+<button class="dont-button" id="dont-button">DO NOT PRESS</button>
 </section>
 
 <div class="video-overlay" id="video-overlay">
-    <video id="scene-video" src="scene.mp4" playsinline preload="auto"></video>
+<video id="scene-video" src="scene.mp4" playsinline preload="auto"></video>
 </div>
 
 <div class="cursed-message" id="cursed-message">
-    <h2>OH NO.</h2>
-
-    <p>
-        YOU PRESSED THE BUTTON.
-        <br><br>
-        WHY WOULD YOU DO THAT.
-        <br><br>
-        JOHN BANANA IS CURRENTLY EXPERIENCING
-        UNFORESEEN TECHNICAL DIFFICULTIES.
-    </p>
-
-    <button id="escape-button">
-        UNDO MY MISTAKE
-    </button>
+<h2>OH NO.</h2>
+<p>
+YOU PRESSED THE BUTTON.
+<br><br>
+WHY WOULD YOU DO THAT.
+<br><br>
+JOHN BANANA IS CURRENTLY EXPERIENCING UNFORESEEN TECHNICAL DIFFICULTIES.
+</p>
+<button id="escape-button">UNDO MY MISTAKE</button>
 </div>
 
 <footer class="footer">
-    <div class="footer-big">
-        JOHN BANANA
-    </div>
-
-    <div class="footer-small" id="footer-small">
-        more stuff eventually.
-        probably.
-    </div>
+<div class="footer-big">JOHN BANANA</div>
+<div class="footer-small" id="footer-small">more stuff eventually. probably.</div>
 </footer>
 
 <script>
@@ -1972,45 +1966,35 @@ let videoTimer=null;
 let curseTimers=[];
 
 watermelon.addEventListener("click",()=>{
-    watermelonClicks++;
-    watermelon.classList.add("show-count");
-
-    watermelonCount.textContent=
-        `YOU HAVE PRESSED THIS ${watermelonClicks} TIME${watermelonClicks===1?"":"S"}`;
-
-    clearTimeout(watermelon.hideTimer);
-
-    watermelon.hideTimer=setTimeout(()=>{
-        watermelon.classList.remove("show-count");
-    },2200);
+watermelonClicks++;
+watermelon.classList.add("show-count");
+watermelonCount.textContent=`YOU HAVE PRESSED THIS ${watermelonClicks} TIME${watermelonClicks===1?"":"S"}`;
+clearTimeout(watermelon.hideTimer);
+watermelon.hideTimer=setTimeout(()=>{
+watermelon.classList.remove("show-count");
+},2200);
 });
 
 const bananaMessages=[
-    "🍌 HEY.",
-    "🍌 STOP CLICKING ME.",
-    "🍌 WHY.",
-    "🍌 I SAID STOP.",
-    "🍌 THIS IS GETTING CONCERNING.",
-    "🍌 YOU HAVE TOO MUCH FREE TIME.",
-    "🍌 JOHN BANANA HAS NOTICED YOU.",
-    "🍌 OKAY THAT'S ENOUGH.",
-    "🍌 SERIOUSLY.",
-    "🍌 BANANA."
+"🍌 HEY.",
+"🍌 STOP CLICKING ME.",
+"🍌 WHY.",
+"🍌 I SAID STOP.",
+"🍌 THIS IS GETTING CONCERNING.",
+"🍌 YOU HAVE TOO MUCH FREE TIME.",
+"🍌 JOHN BANANA HAS NOTICED YOU.",
+"🍌 OKAY THAT'S ENOUGH.",
+"🍌 SERIOUSLY.",
+"🍌 BANANA."
 ];
 
 function bananaEasterEgg(){
-    bananaClicks++;
-
-    const message=
-        bananaMessages[(bananaClicks-1)%bananaMessages.length];
-
-    bananaMessage.textContent=message;
-
-    bananaMessage.classList.remove("show");
-
-    void bananaMessage.offsetWidth;
-
-    bananaMessage.classList.add("show");
+bananaClicks++;
+const message=bananaMessages[(bananaClicks-1)%bananaMessages.length];
+bananaMessage.textContent=message;
+bananaMessage.classList.remove("show");
+void bananaMessage.offsetWidth;
+bananaMessage.classList.add("show");
 }
 
 bananaImage.addEventListener("click",bananaEasterEgg);
@@ -2018,133 +2002,102 @@ logo.addEventListener("click",bananaEasterEgg);
 mainTitle.addEventListener("click",bananaEasterEgg);
 
 mapPaper.addEventListener("click",()=>{
-    mapMessage.classList.remove("active");
-
-    void mapMessage.offsetWidth;
-
-    mapMessage.classList.add("active");
+mapMessage.classList.remove("active");
+void mapMessage.offsetWidth;
+mapMessage.classList.add("active");
 });
 
 mapClose.addEventListener("click",()=>{
-    mapMessage.classList.remove("active");
+mapMessage.classList.remove("active");
 });
 
 async function playScene(){
-    videoOverlay.classList.add("active");
-    document.body.style.overflow="hidden";
+videoOverlay.classList.add("active");
+document.body.style.overflow="hidden";
+sceneVideo.currentTime=0;
+clearTimeout(videoTimer);
 
-    sceneVideo.currentTime=0;
+try{
+await sceneVideo.play();
+}catch(error){
+console.warn("scene.mp4 could not autoplay:",error);
+}
 
-    clearTimeout(videoTimer);
-
-    try{
-        await sceneVideo.play();
-    }catch(error){
-        console.warn("scene.mp4 could not autoplay:",error);
-    }
-
-    videoTimer=setTimeout(closeScene,600000);
+videoTimer=setTimeout(closeScene,600000);
 }
 
 sceneVideo.addEventListener("ended",closeScene);
 
 function closeScene(){
-    clearTimeout(videoTimer);
+clearTimeout(videoTimer);
+sceneVideo.pause();
+videoOverlay.classList.remove("active");
+document.body.style.overflow="";
 
-    sceneVideo.pause();
+if(document.fullscreenElement){
+document.exitFullscreen().catch(()=>{});
+}
 
-    videoOverlay.classList.remove("active");
-
-    document.body.style.overflow="";
-
-    if(document.fullscreenElement){
-        document.exitFullscreen().catch(()=>{});
-    }
-
-    triggerCurse();
+triggerCurse();
 }
 
 dontButton.addEventListener("click",async()=>{
-    if(cursed)return;
-
-    cursed=true;
-
-    await playScene();
+if(cursed)return;
+cursed=true;
+await playScene();
 });
 
 function triggerCurse(){
-    document.body.classList.add("glitching");
+document.body.classList.add("glitching");
+dontButton.textContent="YOU PRESSED IT";
 
-    dontButton.textContent="YOU PRESSED IT";
+curseTimers.push(setTimeout(()=>{
+hero.style.transform="skewX(-1deg)";
+},300));
 
-    curseTimers.push(
-        setTimeout(()=>{
-            hero.style.transform="skewX(-1deg)";
-        },300)
-    );
+curseTimers.push(setTimeout(()=>{
+mainTitle.innerHTML='JOHN<br><span>BANANA?</span>';
+},700));
 
-    curseTimers.push(
-        setTimeout(()=>{
-            mainTitle.innerHTML='JOHN<br><span>BANANA?</span>';
-        },700)
-    );
+curseTimers.push(setTimeout(()=>{
+tagline.innerHTML="something has gone <strong>VERY WRONG.</strong>";
+},1000));
 
-    curseTimers.push(
-        setTimeout(()=>{
-            tagline.innerHTML="something has gone <strong>VERY WRONG.</strong>";
-        },1000)
-    );
+curseTimers.push(setTimeout(()=>{
+footerSmall.textContent="please leave";
+},1300));
 
-    curseTimers.push(
-        setTimeout(()=>{
-            footerSmall.textContent="please leave";
-        },1300)
-    );
+curseTimers.push(setTimeout(()=>{
+cursedMessage.classList.add("active");
+},1700));
 
-    curseTimers.push(
-        setTimeout(()=>{
-            cursedMessage.classList.add("active");
-        },1700)
-    );
-
-    curseTimers.push(
-        setTimeout(()=>{
-            stopCurseEffects();
-        },5000)
-    );
+curseTimers.push(setTimeout(()=>{
+stopCurseEffects();
+},5000));
 }
 
 function stopCurseEffects(){
-    document.body.classList.remove("glitching");
-    hero.style.transform="";
+document.body.classList.remove("glitching");
+hero.style.transform="";
 }
 
 function resetEverything(){
-    curseTimers.forEach(clearTimeout);
-
-    curseTimers=[];
-
-    cursed=false;
-
-    cursedMessage.classList.remove("active");
-
-    stopCurseEffects();
-
-    mainTitle.innerHTML='JOHN<br><span>BANANA</span>';
-
-    tagline.innerHTML=
-        "A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.";
-
-    footerSmall.textContent="more stuff eventually. probably.";
-
-    dontButton.textContent="DO NOT PRESS";
+curseTimers.forEach(clearTimeout);
+curseTimers=[];
+cursed=false;
+cursedMessage.classList.remove("active");
+stopCurseEffects();
+mainTitle.innerHTML='JOHN<br><span>BANANA</span>';
+tagline.innerHTML="A small collection of <strong>games</strong>, questionable ideas, and things that probably should've stayed in the drafts.";
+footerSmall.textContent="more stuff eventually. probably.";
+dontButton.textContent="DO NOT PRESS";
 }
 
 escapeButton.addEventListener("click",resetEverything);
 
 sceneVideo.addEventListener("error",()=>{
-    console.warn("Could not load scene.mp4");
-    closeScene();
+console.warn("Could not load scene.mp4");
+closeScene();
 });
 </script>
 
